@@ -33,15 +33,15 @@ export class EmailFormComponent implements OnInit {
   @Input() public hintBody = 'Message';
   @Input() public txtSendBt = 'Send';
 
-  private _btClass = 'send-bt';
-  private _btPtrClass = '';
-  private _emailMatcher = new EmailErrorStateMatcher();
-  private _emailFormControl = new FormControl('', [
+  public btClass = 'send-bt';
+  public btPtrClass = '';
+  public emailMatcher = new EmailErrorStateMatcher();
+  public emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
-  private _bodyMatcher = new EmailErrorStateMatcher();
-  private _bodyFormControl = new FormControl('', [
+  public bodyMatcher = new EmailErrorStateMatcher();
+  public bodyFormControl = new FormControl('', [
     Validators.required,
   ]);
 
@@ -51,21 +51,21 @@ export class EmailFormComponent implements OnInit {
   }
 
   public onMouseEnter(): void {
-    this._btClass = 'send-bt-hover';
-    this._btPtrClass = 'cursor-ptr';
+    this.btClass = 'send-bt-hover';
+    this.btPtrClass = 'cursor-ptr';
   }
 
   public onMouseLeave(): void {
-    this._btClass = 'send-bt';
-    this._btPtrClass = '';
+    this.btClass = 'send-bt';
+    this.btPtrClass = '';
   }
 
   public emailHasError(errorType: string): boolean {
-    return this._emailFormControl.hasError(errorType);
+    return this.emailFormControl.hasError(errorType);
   }
 
   public bodyHasError(errorType: string): boolean {
-    return this._bodyFormControl.hasError(errorType);
+    return this.bodyFormControl.hasError(errorType);
   }
 
 }

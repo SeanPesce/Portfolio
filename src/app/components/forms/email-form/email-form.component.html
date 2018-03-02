@@ -2,7 +2,7 @@
 <div [ngStyle]="{ 'minWidth.px':(minWidth>=0?minWidth:''), 'maxWidth.px':(maxWidth>=0?maxWidth:''), 'minHeight.px':(minHeight>=0?minHeight:''), 'maxHeight.px':(maxHeight>=0?maxHeight:'') }">
   <form action="https://formspree.io/pesce.sean@gmail.com" method="POST" target="_blank">
     <mat-form-field style="display:block;">
-      <input matInput placeholder="{{hintEmail}}" type="email" name="From" [formControl]="_emailFormControl" [errorStateMatcher]="_emailMatcher" style="background-color:white;">
+      <input matInput placeholder="{{hintEmail}}" type="email" name="From" [formControl]="emailFormControl" [errorStateMatcher]="emailMatcher" style="background-color:white;">
       <mat-error *ngIf="emailHasError('email') && !emailHasError('required')">
         Please enter a valid email address
       </mat-error>
@@ -11,14 +11,14 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field style="display:block;">
-      <textarea matInput placeholder="{{hintBody}}" name="Message" [formControl]="_bodyFormControl" [errorStateMatcher]="_bodyMatcher" [ngStyle]="{ 'height.px':(bodyFieldHeight>=0?bodyFieldHeight:''), 'backgroundColor':'white' }"></textarea>
+      <textarea matInput placeholder="{{hintBody}}" name="Message" [formControl]="bodyFormControl" [errorStateMatcher]="bodyMatcher" [ngStyle]="{ 'height.px':(bodyFieldHeight>=0?bodyFieldHeight:''), 'backgroundColor':'white' }"></textarea>
       <mat-error *ngIf="bodyHasError('required')">
         Message can't be empty
       </mat-error>
     </mat-form-field>
     <div style="display:flex; width:100%; position:relative;">
-      <button mat-button [ngClass]="_btClass + ' '" style="display:block; width:100%; height:100%; border-radius:1px; border-color:transparent; border-style:solid; padding:1px 6px 1px 6px;">{{txtSendBt}}</button>
-      <input type="submit" [ngClass]="_btPtrClass + ' '" value="{{txtSendBt}}" [attr.disabled]="(emailHasError('required') || bodyHasError('required') || emailHasError('email')) ? '' : null" style="opacity:0.0; position:absolute; width:100%; height:100%;" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+      <button mat-button [ngClass]="btClass + ' '" style="display:block; width:100%; height:100%; border-radius:1px; border-color:transparent; border-style:solid; padding:1px 6px 1px 6px;">{{txtSendBt}}</button>
+      <input type="submit" [ngClass]="btPtrClass + ' '" value="{{txtSendBt}}" [attr.disabled]="(emailHasError('required') || bodyHasError('required') || emailHasError('email')) ? '' : null" style="opacity:0.0; position:absolute; width:100%; height:100%;" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     </div>
   </form>
 </div>

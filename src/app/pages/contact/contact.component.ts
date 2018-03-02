@@ -13,7 +13,7 @@ export class ContactPageComponent implements OnInit {
 
   public readonly profiles: SocialMedia[] = Globals.SOCIAL_MEDIA;
 
-  private _showSocialMedia = true;
+  public showSocial = true;
 
   constructor() { }
 
@@ -29,11 +29,11 @@ export class ContactPageComponent implements OnInit {
   }
 
   showSocialMedia() {
-    this._showSocialMedia = true;
+    this.showSocial = true;
   }
 
   hideSocialMedia() {
-    this._showSocialMedia = false;
+    this.showSocial = false;
   }
 
 }
