@@ -12,6 +12,13 @@ export const ASSETS_DEV  = '../assets/';
 export const ASSETS_PROD = 'assets/';
 export const ASSETS = PRODUCTION_MODE ? ASSETS_PROD : ASSETS_DEV;
 
+export const EMAIL_OBFS: string[] = [
+  'pesce.sean',
+  '@',
+  'gmai',
+  'l.com'
+];
+
 export const PROFILE_PICS: string[] = [
   ASSETS + '/img/profile/01.png',
   ASSETS + '/img/profile/02.jpg',

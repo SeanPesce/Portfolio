@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-
+import * as Globals from './../../../globals';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -23,6 +23,12 @@ export class EmailErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./email-form.component.css']
 })
 export class EmailFormComponent implements OnInit {
+
+  public readonly emailAction = 'https://formspree.io/'
+                                + Globals.EMAIL_OBFS[0]
+                                + Globals.EMAIL_OBFS[1]
+                                + Globals.EMAIL_OBFS[2]
+                                + Globals.EMAIL_OBFS[3];
 
   @Input() public minWidth = -1;
   @Input() public maxWidth = -1;
@@ -66,6 +72,10 @@ export class EmailFormComponent implements OnInit {
 
   public bodyHasError(errorType: string): boolean {
     return this.bodyFormControl.hasError(errorType);
+  }
+
+  public errorExists(): boolean {
+    return this.emailHasError('required') || this.bodyHasError('required') || this.emailHasError('email');
   }
 
 }

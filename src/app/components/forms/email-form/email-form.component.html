@@ -1,6 +1,6 @@
 <!-- Author: Sean Pesce -->
 <div [ngStyle]="{ 'minWidth.px':(minWidth>=0?minWidth:''), 'maxWidth.px':(maxWidth>=0?maxWidth:''), 'minHeight.px':(minHeight>=0?minHeight:''), 'maxHeight.px':(maxHeight>=0?maxHeight:'') }">
-  <form ngNoForm action="https://formspree.io/pesce.sean@gmail.com" method="POST" target="_blank">
+  <form ngNoForm action="{{emailAction}}" method="POST" target="_blank">
     <mat-form-field style="display:block;">
       <input matInput placeholder="{{hintEmail}}" type="email" name="From" [formControl]="emailFormControl" [errorStateMatcher]="emailMatcher" style="background-color:white;">
       <mat-error *ngIf="emailHasError('email') && !emailHasError('required')">
@@ -17,8 +17,8 @@
       </mat-error>
     </mat-form-field>
     <div style="display:flex; width:100%; position:relative;">
-      <button mat-button [ngClass]="btClass + ' '" style="display:block; width:100%; height:100%; border-radius:1px; border-color:transparent; border-style:solid; padding:1px 6px 1px 6px;">{{txtSendBt}}</button>
-      <input type="submit" [ngClass]="btPtrClass + ' '" value="{{txtSendBt}}" [attr.disabled]="(emailHasError('required') || bodyHasError('required') || emailHasError('email')) ? '' : null" style="opacity:0.0; position:absolute; width:100%; height:100%;" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+      <button mat-button [ngClass]="btClass + ' '" style="display:block; width:100%; height:100%; border-radius:1px; border-color:transparent; border-style:solid; padding:1px 6px 1px 6px;">{{errorExists() ? '' : txtSendBt}}</button>
+      <input type="submit" [ngClass]="btPtrClass + ' '" value="{{errorExists() ? '' : txtSendBt}}" [attr.disabled]="errorExists() ? '' : null" style="opacity:0.0; position:absolute; width:100%; height:100%;" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     </div>
   </form>
 </div>
