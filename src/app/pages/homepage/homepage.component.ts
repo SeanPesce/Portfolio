@@ -12,31 +12,48 @@ export class HomePageComponent implements OnInit {
   public readonly AUTHOR = Globals.AUTHOR;
   public readonly ASSETS = Globals.ASSETS;
 
-  private _profilePicIndex = 0;
-
-  public profilePic = Globals.PROFILE_PICS[this._profilePicIndex];
+  public profilePicIndex = 0;
+  public profilePic = Globals.PROFILE_PICS[this.profilePicIndex];
+  public hoverLeft  = false;
+  public hoverRight = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  nextProfilePic() {
-    if (this._profilePicIndex >= (Globals.PROFILE_PICS.length - 1) || this._profilePicIndex < 0) {
-      this._profilePicIndex = 0;
+  public nextProfilePic(): void {
+    if (this.profilePicIndex >= (Globals.PROFILE_PICS.length - 1) || this.profilePicIndex < 0) {
+      this.profilePicIndex = 0;
     } else {
-      this._profilePicIndex++;
+      this.profilePicIndex++;
     }
-    this.profilePic = Globals.PROFILE_PICS[this._profilePicIndex];
+    this.profilePic = Globals.PROFILE_PICS[this.profilePicIndex];
   }
 
-  previousProfilePic() {
-    if (this._profilePicIndex <= 0 || this._profilePicIndex >= Globals.PROFILE_PICS.length) {
-      this._profilePicIndex = Globals.PROFILE_PICS.length - 1;
+  public previousProfilePic(): void {
+    if (this.profilePicIndex <= 0 || this.profilePicIndex >= Globals.PROFILE_PICS.length) {
+      this.profilePicIndex = Globals.PROFILE_PICS.length - 1;
     } else {
-      this._profilePicIndex--;
+      this.profilePicIndex--;
     }
-    this.profilePic = Globals.PROFILE_PICS[this._profilePicIndex];
+    this.profilePic = Globals.PROFILE_PICS[this.profilePicIndex];
+  }
+
+  public onMouseEnterLeft(): void {
+    this.hoverLeft = true;
+  }
+
+  public onMouseLeaveLeft(): void {
+    this.hoverLeft = false;
+  }
+
+  public onMouseEnterRight(): void {
+    this.hoverRight = true;
+  }
+
+  public onMouseLeaveRight(): void {
+    this.hoverRight = false;
   }
 
 }

@@ -1,5 +1,5 @@
 <!-- Author: Sean Pesce -->
-<app-page-header [title]="'Social Media & Contact Info'"></app-page-header>
+<app-page-header [title]="'Social Media & Email'"></app-page-header>
 <div class="content-background content-section" style="padding-bottom:30px;">
   <div style="width:50%; padding-left:25%; padding-right:25%; min-width:400px; text-align:center; align-items:center;">
     <mat-tab-group style="padding-bottom:30px; text-align:center; align-items:center;" (selectedTabChange)="onTabChange($event)">
@@ -8,7 +8,7 @@
     </mat-tab-group>
     <div style="display:flex; flex-direction:column; width:100%; text-align:center; align-items:center;">
       <div [ngStyle]="{ 'display': showSocial ? 'block' : 'none' }" style="position:absolute; text-align:center; align-items:center; padding-bottom:30px;"><app-social-media-card *ngFor="let profile of profiles" [profile]="profile" [minWidth]="200" [maxWidth]="400"></app-social-media-card></div>
-      <div [ngStyle]="{ 'display': showSocial ? 'none' : 'block' }" style="position:absolute; text-align:center; align-items:center; padding-bottom:30px;"><app-email-form [minWidth]="320" [maxWidth]="320" [bodyFieldHeight]="200"></app-email-form></div>
+      <div [ngStyle]="{ 'display': showSocial ? 'none' : 'block' }" style="position:absolute; text-align:center; align-items:center; padding-bottom:30px;"><mat-card class="bg-color-light"><app-email-form [minWidth]="320" [maxWidth]="320" [bodyFieldHeight]="200"></app-email-form></mat-card></div>
     </div>
   </div>
 </div>
