@@ -23,5 +23,5 @@ See the auto-generated [Angular CLI Readme](Readme_AngularCLI.md).
 
 ## License  
 
-*@TODO*  
+[Apache License 2.0](LICENSE)  
 
