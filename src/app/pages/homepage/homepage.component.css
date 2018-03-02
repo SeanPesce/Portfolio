@@ -1,0 +1,52 @@
+/* Author: Sean Pesce */
+/*
+  Reference: https://github.com/angular/material.angular.io/blob/master/src/app/pages/homepage/homepage.scss
+*/
+
+.header-section {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.header-headline {
+  font-weight: 300;
+  color: var(--sp-color-txt-dark-bg);
+}
+
+.header-headline h1 {
+  font-size: 56px;
+  line-height: 56px;
+  margin: 15px 5px;
+}
+
+.header-headline h2 {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 15px 0 25px 0;
+}
+
+.header-button {
+  color: var(--sp-color-primary);
+}
+
+.header-button:hover {
+  opacity: 0.9;
+}
+
+.content-section h2 {
+  font-size: 25px;
+  font-weight: 400;
+  padding-left: 16px;
+  text-align: left;
+}
+
+.content-section p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0 0 24px 0;
+  padding-left: 16px;
+  text-align: left;
+}
+
+

@@ -1,0 +1,8 @@
+<!-- Author: Sean Pesce -->
+<app-page-header [title]="'Social Media & Contact Info'"></app-page-header>
+<div class="content-background content-section">
+  <div style="width:20%; padding-left:40%; padding-right:40%;">
+    <h3 mat-subheader class="mat-h3" style="text-align:left; margin-bottom:5px;">Social Media</h3>
+    <app-social-media-card *ngFor="let profile of profiles" [profile]="profile" [minWidth]="200" [maxWidth]="250"></app-social-media-card>
+  </div>
+</div>

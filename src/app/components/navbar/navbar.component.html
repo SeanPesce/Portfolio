@@ -1,0 +1,35 @@
+<!-- Author: Sean Pesce -->
+<nav>
+  <mat-toolbar class="mat-elevation-z6 theme-color-primary" style="position:fixed; top:0px; left:0px; right:0px;">
+    <div style="width:50%;">
+      <a mat-button routerLink="/" title="Resume & About Me">About</a>
+      <a mat-button routerLink="/projects" title="Personal Projects">Projects</a>
+      <a mat-button routerLink="/skills" title="Languages, tools, platforms, etc.">Skills</a>
+      <a mat-button routerLink="/education" title="Degrees & Education">Education</a>
+      <a mat-button routerLink="/employment" title="Employment History">Work</a>
+      <a mat-button routerLink="/contact" title="Social Media">Contact</a>
+    </div>
+    <div style="width:50%; height:100%;">
+      <app-nav-social-button [title]="'YouTube'"
+        [url]="'https://youtube.com/channel/UCgsMpXiR3PawqKM7MWLJGzQ'"
+        [img]="ASSETS + '/img/social/icon/YouTube-white-transparent.svg'">
+      </app-nav-social-button>
+      <app-nav-social-button [title]="'Reddit'"
+        [url]="'https://www.reddit.com/u/SeanPesce'"
+        [img]="ASSETS + '/img/social/icon/Reddit-white-transparent.svg'">
+      </app-nav-social-button>
+      <app-nav-social-button [title]="'Twitter'"
+        [url]="'https://twitter.com/SeanPesce'"
+        [img]="ASSETS + '/img/social/icon/Twitter-rounded-square-white.svg'">
+      </app-nav-social-button>
+      <app-nav-social-button [title]="'LinkedIn'"
+        [url]="'https://www.linkedin.com/in/SeanPesce'"
+        [img]="ASSETS + '/img/social/icon/LinkedIn-white-transparent.svg'">
+      </app-nav-social-button>
+      <app-nav-social-button [title]="'GitHub'"
+        [url]="'https://github.com/SeanPesce'"
+        [img]="ASSETS + '/img/social/icon/GitHub-circle-white-transparent.svg'">
+      </app-nav-social-button>
+    </div>
+  </mat-toolbar>
+</nav>

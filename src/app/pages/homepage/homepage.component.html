@@ -1,0 +1,36 @@
+<!-- Author: Sean Pesce -->
+<header class="header-background">
+  <div class="header-section">
+    <div class="header-headline">
+      <h1 class="mat-h1">{{AUTHOR}}</h1>
+      <h2 class="mat-h2">Software Developer</h2>
+    </div>
+    <div style="padding-top:30px; padding-bottom:60px;">
+      <a mat-raised-button href="{{ASSETS + '/doc/Resume_SeanPesce.pdf'}}" class="header-button" title="Download resume (PDF)" aria-label="Download resume" target="_blank">
+        <mat-icon style="margin-left:-5px; padding-right:5px;">file_download</mat-icon>
+        Resume (PDF)
+      </a>
+    </div>
+  </div>
+</header>
+<div class="content-background content-section">
+  <div style="padding-left:10%; padding-right:10%; padding-bottom:50px; min-width:600px;"><!--
+
+ --><div style="justify-content:right; display:inline-block; height:300px; vertical-align:middle;">
+      <div style="display:table-cell; text-align:right; overflow:hidden; height:300px; min-height:300px; max-height:300px; vertical-align:middle;">
+        <img src="{{profilePic}}" alt="Avatar" style="width:300px; height:auto; cursor:pointer; margin-left:auto; margin-right:auto;" (click)="nextProfilePic()" title="Click to see the next image">
+      </div>
+    </div><!--
+
+ --><div style="justify-content:left; text-align:left; display:inline-block; vertical-align:bottom;">
+      <div style="display:table-cell; vertical-align:top; height:200px;">
+        <h2 class="mat-h2" style="margin-bottom:5px;">About Me</h2>
+        <p class="mat-h2" style="max-width:375px;">
+          <!-- @TODO: Fill out bio -->
+          Software developer, as a hobby and as a profession.
+        </p>
+      </div>
+    </div><!--
+
+--></div>
+</div>

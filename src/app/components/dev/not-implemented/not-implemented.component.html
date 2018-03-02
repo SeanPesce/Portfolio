@@ -1,0 +1,6 @@
+<!-- Author: Sean Pesce -->
+<div [ngStyle]="{ 'width.px': width, 'height.px': height, 'paddingTop.px': paddingTop, 'paddingRight.px': paddingRight, 'paddingBottom.px': paddingBottom, 'paddingLeft.px': paddingLeft, 'marginTop.px': marginTop, 'marginRight.px': marginRight, 'marginBottom.px': marginBottom, 'marginLeft.px': marginLeft, 'borderRadius.px': borderRadius, 'borderStyle': (borderRadius != 0) ? 'solid' : 'none', 'textAlign': textAlign, 'backgroundColor': bgColor, 'borderColor': borderColor }"
+ title="{{hoverText}}">
+  <h4 mat-subheader class="mat-h4 txt-color-dark"  *ngIf="!lightText">{{text}}<br>- Sean</h4>
+  <h4 mat-subheader class="mat-h4 txt-color-light" *ngIf="lightText">{{text}}<br>- Sean</h4>
+</div>

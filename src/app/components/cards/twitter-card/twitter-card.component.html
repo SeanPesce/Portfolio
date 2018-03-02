@@ -1,0 +1,13 @@
+<!-- Author: Sean Pesce -->
+<!-- Source: https://publish.twitter.com -->
+<div>
+  <div *ngIf="(followButton && !(tweetButton || timeline)) || !(followButton || tweetButton || timeline)">
+    <a href="https://twitter.com/SeanPesce?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false" *ngIf="!large">Follow @SeanPesce</a>
+    <a href="https://twitter.com/SeanPesce?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false" *ngIf="large">Follow @SeanPesce</a>
+  </div>
+  <div *ngIf="tweetButton && !timeline">
+    <a href="https://twitter.com/intent/tweet?screen_name=SeanPesce&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false" *ngIf="!large">Tweet to @SeanPesce</a>
+    <a href="https://twitter.com/intent/tweet?screen_name=SeanPesce&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-size="large" data-show-count="false" *ngIf="large">Tweet to @SeanPesce</a>
+  </div>
+  <a class="twitter-timeline" href="https://twitter.com/SeanPesce?ref_src=twsrc%5Etfw" *ngIf="timeline">Tweets by SeanPesce</a>
+</div>

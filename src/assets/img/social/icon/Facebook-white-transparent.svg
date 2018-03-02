@@ -1,0 +1,14 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+<desc>
+Source: https://www.iconfinder.com/icons/1298738/facebook_icon
+</desc>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" width="128" height="128" fill="none"/>
+  <path id="Facebook" fill-rule="evenodd" fill="#ffffff" d="m68.369,128l-61.304,0c-3.903,0 -7.065,-3.164 -7.065,-7.065l0,-113.87c0,-3.903 3.162,-7.065 7.065,-7.065l113.871,0c3.901,0 7.064,3.162 7.064,7.065l0,113.87c0,3.902 -3.163,7.065 -7.064,7.065l-32.618,0l0,-49.569l16.638,0l2.491,-19.318l-19.129,0l0,-12.333c0,-5.593 1.553,-9.404 9.573,-9.404l10.229,-0.004l0,-17.278c-1.769,-0.235 -7.841,-0.761 -14.906,-0.761c-14.749,0 -24.846,9.003 -24.846,25.535l0,14.246l-16.68,0l0,19.318l16.681,0l0,49.568z" clip-rule="evenodd"/>
+ </g>
+</svg>

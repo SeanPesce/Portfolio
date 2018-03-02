@@ -1,0 +1,21 @@
+/* Author: Sean Pesce */
+
+.options-bt {
+  color: var(--sp-color-light-hover);
+  cursor: pointer;
+}
+
+.options-bt:hover {
+  background-color: var(--sp-color-light-hover);
+  color: var(--sp-color-dark);
+}
+
+
+.utility-skill-icon {
+  height: 100%;
+  width: 100%;
+  padding-top: 2px;
+  text-align: center;
+  font-size: 30px;
+  color: var(--sp-color-primary);
+}

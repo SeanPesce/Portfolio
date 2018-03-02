@@ -1,0 +1,39 @@
+<!-- Author: Sean Pesce -->
+<div style="text-align:left; padding-bottom:16px;">
+  <mat-card>
+    <mat-card-header style="width:100%;">
+      <a mat-card-avatar href="{{url}}" title="{{employer}}" attr.aria-valuenow="{{ariaLabel}}" target="{{target}}">
+        <img src="{{logo}}" alt="Logo" style="height:100%; padding-top:2px;" *ngIf="logo?.length > 0">
+        <mat-icon class="employer-icon" *ngIf="!logo || logo?.length <= 0">{{icon}}</mat-icon>
+      </a>
+      <mat-card-subtitle style="margin-bottom:3px; padding-left:8px;">Employer</mat-card-subtitle>
+      <mat-card-title style="padding-left:8px; margin-bottom:10px;">
+          <h1 class="mat-h1" style="margin:0px; font-size:26px;">{{employer}}</h1>
+      </mat-card-title>
+      <div style="position:absolute; right:0px; top:0px; padding:24px;" *ngIf="start?.length > 0">
+        <h3 class="mat-h3" style="float:right;">{{start}} - {{end?.length > 0 ? end : 'Present'}}</h3>
+      </div>
+    </mat-card-header>
+    <div *ngFor="let position of positions; let i = index;">
+      <mat-card-content class="bg-color-light" style="padding:10px; margin-bottom:8px;">
+        <div *ngIf="position?.title?.length > 0">
+          <h5 class="mat-h5 txt-color-dark" style="margin-bottom:-5px;">Position</h5>
+          <h2 class="mat-h2" style="margin-bottom:5px;">{{position?.title}}</h2>
+        </div>
+        <div *ngIf="position?.summary?.length > 0">
+          <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Description</h5>
+          <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;">{{position?.summary}}</h4>
+        </div>
+        <div *ngIf="position?.tasks?.length > 0">
+        <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-5px;">Responsibilities</h5>
+          <ul style="margin-top:0px;">
+            <li *ngFor="let task of position?.tasks;"><h4 class="mat-h4" style="margin-bottom:-2px; line-height:20px;">{{task}}</h4></li>
+          </ul>
+        </div>
+      </mat-card-content>
+      <div style="padding:0px 0px 8px 0px;" *ngIf="positions?.length > i+1">
+        <mat-divider style="width:94%; left:3%;"></mat-divider>
+      </div>
+    </div>
+  </mat-card>
+</div>

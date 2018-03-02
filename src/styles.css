@@ -1,0 +1,95 @@
+/* Author: Sean Pesce */
+/*
+  References:
+
+    https://material.angular.io/guide/theming
+    https://github.com/angular/material.angular.io/blob/master/src/app/pages/homepage/homepage.scss
+*/
+
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+  /* --sp-color-primary: #3f51b5; */
+  /* --sp-color-primary: #182136; */
+  /* --sp-color-primary: #0d1d43; */
+  --sp-color-primary: #3f51b5;
+  --sp-color-light: #fafafa;
+  --sp-color-light-hover: #dcdcdc;
+  --sp-color-dark: rgba(0, 0, 0, 0.54);
+  --sp-color-txt-light-bg: var(--sp-color-dark);
+  --sp-color-txt-dark-bg: var(--sp-color-light);
+}
+
+.dbg-div {
+  background-color: red;
+  opacity: 0.3;
+}
+
+.theme-color-primary {
+  background-color: var(--sp-color-primary);
+  color: var(--sp-color-txt-dark-bg);
+}
+
+.bg-color-primary {
+  background-color: var(--sp-color-primary);
+}
+
+.bg-color-light {
+  background-color: var(--sp-color-light);
+}
+
+.bg-color-light-hover {
+  background-color: var(--sp-color-light-hover);
+}
+
+.bg-color-white {
+  background-color: white;
+}
+
+.border-color-primary {
+  border-color: var(--sp-color-primary);
+}
+
+.border-color-light-hover {
+  border-color: var(--sp-color-light-hover);
+}
+
+.txt-color-primary {
+  color: var(--sp-color-primary);
+}
+
+.txt-color-dark {
+  color: var(--sp-color-dark);
+}
+
+.txt-color-light {
+  color: var(--sp-color-light);
+}
+
+
+.header-background {
+  overflow: hidden;
+  background-color: var(--sp-color-primary);
+  width: 100%;
+}
+
+.content-background {
+  width: 100%;
+  background-color: var(--sp-color-light);
+}
+
+.content-section {
+  text-align: center;
+  padding-top: 60px;
+  color: var(--sp-color-txt-light-bg);
+}
+
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}

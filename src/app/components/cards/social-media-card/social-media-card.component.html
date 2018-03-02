@@ -1,0 +1,35 @@
+<!-- Author: Sean Pesce -->
+<div style="text-align:left; padding-bottom:6px;" [ngStyle]="{ 'minWidth.px': minWidth, 'maxWidth.px': maxWidth }" *ngIf="profile">
+  <mat-card style="padding:8px;" [ngClass]="_cardClass + ' '">
+    <mat-card-header style="width:100%;">
+      <a mat-card-avatar
+       style="text-align:center;"
+       [ngStyle]="{ 'height.px': imageHeight(), 'width.px': 50 }"
+       href="{{profile?.url?.length > 0 ? profile?.url : profile?.website}}"
+       title="{{profile?.title}}"
+       attr.aria-valuenow="{{ariaLabelLogo?.length > 0 ? ariaLabelLogo : profile?.title + ' Logo'}}"
+       target="{{target}}"
+      >
+        <img src="{{profile?.logo}}" alt="Logo" style="padding-top:2px; background-color:transparent;" [ngStyle]="{ 'height.px': imageHeight(), 'width.px': imageHeight() }" *ngIf="profile?.logo?.length > 0">
+        <mat-icon class="profile-icon" [ngStyle]="{ 'fontSize.px': imageHeight() }" *ngIf="!profile?.logo || profile?.logo?.length <= 0">{{icon}}</mat-icon>
+      </a>
+      <mat-card-title style="padding-left:2px; margin-bottom:0px;">
+          <h1 class="mat-h1" style="font-size:26px; margin-bottom:0px;">{{profile?.title}}</h1>
+          <a
+           href="{{profile?.url?.length > 0 ? profile?.url : profile?.website}}"
+           style="position:absolute; height:100%; width:100%; top:0px; left:0px; background-color:transparent; opacity:0.0;"
+           title="{{profile?.title}}" attr.aria-valuenow="{{ariaLabelCard?.length > 0 ? ariaLabelCard : profile?.title}}"
+           target="{{target}}"
+           (mouseenter)="onMouseEnter()"
+           (mouseleave)="onMouseLeave()"
+          ></a>
+      </mat-card-title>
+      <mat-card-subtitle style="margin-bottom:0px; margin-top:2px; padding-left:2px;" *ngIf="displayUsername()">{{profile?.username}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content *ngIf="summary?.length > 0">
+      <mat-card-subtitle style="margin-top:5px;">{{summary}}</mat-card-subtitle>
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

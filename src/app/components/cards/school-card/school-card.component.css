@@ -1,0 +1,9 @@
+/* Author: Sean Pesce */
+.school-icon {
+  height: 100%;
+  width: 100%;
+  padding-top: 2px;
+  text-align: center;
+  font-size: 80px;
+  color: var(--sp-color-primary);
+}

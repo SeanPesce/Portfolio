@@ -1,0 +1,25 @@
+<!-- Author: Sean Pesce -->
+<div style="text-align:left; padding-bottom:16px;">
+  <mat-card>
+    <mat-card-header style="width:100%;">
+      <a mat-card-avatar style="height:70px;" href="{{url}}" title="{{school}}" attr.aria-valuenow="{{ariaLabel}}" target="{{target}}">
+        <img src="{{logo}}" alt="Logo" style="height:70px; width:70px; padding-top:2px;" *ngIf="logo?.length > 0">
+        <mat-icon class="school-icon"  style="height:70px; width:70px;" *ngIf="!logo || logo?.length <= 0">{{icon}}</mat-icon>
+      </a>
+      <mat-card-subtitle style="margin-bottom:8px; padding-left:40px;"><span *ngIf="schoolLabel">School</span><span *ngIf="!schoolLabel" class="unselectable" style="color:transparent;">_</span></mat-card-subtitle>
+      <mat-card-title style="padding-left:40px; margin-bottom:0px;">
+          <h1 class="mat-h1" style="font-size:26px; margin-bottom:0px;">{{school}}</h1>
+      </mat-card-title>
+      <mat-card-subtitle style="margin-bottom:3px; margin-top:8px; padding-left:40px;" *ngIf="degreeLabel && (degree?.length > 0 || (start?.length > 0 && end?.length == 0))">Degree</mat-card-subtitle>
+      <mat-card-title style="padding-left:40px; margin-bottom:0px;" *ngIf="degree?.length > 0 || (start?.length > 0 && end?.length == 0)">
+          <h2 class="mat-h2" style="margin:0px;">{{degree?.length > 0 ? degree : 'In-progress'}}</h2>
+      </mat-card-title>
+      <div style="position:absolute; right:0px; top:0px; padding:24px;" *ngIf="start?.length > 0">
+        <mat-card-subtitle style="margin-bottom:8px; float:right;">{{start}} - {{end?.length > 0 ? end : 'Present'}}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content *ngIf="summary?.length > 0">
+      <mat-card-subtitle style="margin-top:5px;">{{summary}}</mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+</div>

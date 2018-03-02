@@ -1,0 +1,51 @@
+<!-- Author: Sean Pesce -->
+<div style="text-align:left; padding-bottom:6px;" [ngStyle]="{ 'minWidth.px': minWidth, 'maxWidth.px': maxWidth }" *ngIf="utility">
+  <mat-card style="padding:8px;" [ngClass]="_cardClass + ' '">
+    <mat-card-header style="width:100%;">
+      <a mat-card-avatar *ngIf="showIcon"
+        style="text-align:center; height:30px; width:30px;"
+        href="{{utility?.url}}"
+        title="{{utility?.name}}"
+        attr.aria-valuenow="{{ariaLabelLogo?.length > 0 ? ariaLabelLogo : utility?.name + ' Logo'}}"
+        target="{{target}}"
+      >
+        <img src="{{utility?.logo}}" alt="Icon" style="padding-top:2px; background-color:transparent; height:30px; width:30px;" *ngIf="utility?.logo?.length > 0">
+        <mat-icon class="utility-skill-icon" *ngIf="!utility?.logo || utility?.logo?.length <= 0">{{icon}}</mat-icon>
+      </a>
+      <mat-card-title style="padding-left:2px; padding-right:24px; margin-bottom:0px;">
+          <h1 class="mat-h1" style="font-size:26px; margin-bottom:0px;">{{utility?.name}}</h1>
+          <a
+            style="position:absolute; height:100%; width:100%; top:0px; left:0px; background-color:transparent; opacity:0.0;"
+            title="{{utility?.name}}" attr.aria-valuenow="{{ariaLabelCard?.length > 0 ? ariaLabelCard : utility?.name}}"
+            target="{{target}}"
+            (mouseenter)="onMouseEnter()"
+            (mouseleave)="onMouseLeave()"
+          ></a>
+          <div class="options-bt" [matMenuTriggerFor]="optionsMenu" style="position:absolute; right:0px; top:0px; padding:8px;" *ngIf="showOptions" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+            <mat-icon>{{btIconOptions}}</mat-icon>
+          </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="margin-bottom:5px;" *ngIf="showYears" [ngStyle]="{ 'paddingLeft.px': showIcon ? 0 : 2, 'marginLeft.px': showIcon ? 0 : 8 }">
+      <mat-card-subtitle style="margin-top:2px;"><span *ngIf="yearsExperience() >= 1">{{yearsExperience()}}+ years</span><span *ngIf="yearsExperience() < 1">1 year</span></mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-content style="margin-bottom:5px;" *ngIf="showLanguages && utility?.languages?.length > 0" [ngStyle]="{ 'paddingLeft.px': showIcon ? 0 : 2, 'marginLeft.px': showIcon ? 0 : 8 }">
+      <mat-card-subtitle style="margin-top:2px;"><span *ngFor="let language of utility?.languages; let i = index;">{{(i > 0 ? ', ' : '') + language}}</span></mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-content style="margin-bottom:5px;" *ngIf="showDescription && utility?.description?.length > 0" [ngStyle]="{ 'paddingLeft.px': showIcon ? 0 : 2, 'marginLeft.px': showIcon ? 0 : 8 }">
+      <mat-card-subtitle style="margin-top:2px;">{{utility?.description}}</mat-card-subtitle>
+    </mat-card-content>
+
+    <!-- Comments between elements below fix a formatting issue, do not remove them -->
+    <mat-card-actions *ngIf="showButtons" style="margin-top:0px; margin-bottom:-8px; margin-left:-8px; margin-right:-8px; padding:0px; overflow: hidden;" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"><!--
+      --><button mat-button style="margin:0px; padding:0px; width:50%;"><mat-icon class="txt-color-dark">{{btIconLeft}}</mat-icon></button><!--
+      --><button mat-button style="margin:0px; padding:0px; width:50%;"><mat-icon class="txt-color-dark">{{btIconRight}}</mat-icon></button><!--
+    --></mat-card-actions>
+  </mat-card>
+
+</div>
+
+<mat-menu #optionsMenu="matMenu">
+  <a href="{{utility?.url}}" target="{{target}}" style="text-decoration:none;" *ngIf="utility?.url?.length > 0"><button mat-menu-item [title]="'Go to the ' + utility?.name + ' homepage (external site)'">Website</button></a>
+  <button mat-menu-item [title]="'View my ' + utility?.name + ' projects'" (click)="openNotImplDialog()">My projects</button>
+</mat-menu>

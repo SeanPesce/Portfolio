@@ -1,0 +1,16 @@
+<!-- Author: Sean Pesce -->
+<app-page-header [title]="'Employment History'"></app-page-header>
+<div class="content-background content-section">
+  <div style="width:50%; padding-left:25%; padding-right:25%;">
+    <app-job-card
+      [employer]="'Westhampton Free Library'"
+      [start]="'2011'"
+      [positions]="[ {title:'Digital Services Clerk',
+                        summary:'Provide general-purpose technical assistance for employee and patron issues related to computer systems, software, and/or hardware. Queries could either be in-person or over the phone, and questions were not limited to a specific platform or operating system.',
+                        tasks:['In-house software assistance & computer maintenance','Customer service & instruction']},
+                     {title:'Technical Services Clerk',tasks:['Data entry','Database upkeep & maintenance']} ]"
+      [url]="'http://westhamptonlibrary.net/'"
+      [logo]="ASSETS + '/img/logo/WesthamptonLibrary.png'">
+    </app-job-card>
+  </div>
+</div>

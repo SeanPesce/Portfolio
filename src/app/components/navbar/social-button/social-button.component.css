@@ -1,0 +1,21 @@
+/* Author: Sean Pesce */
+
+.navbar-social-bt {
+  background-color: var(--sp-color-primary);
+  color: var(--sp-color-txt-dark-bg);
+  height: inherit;
+  float: right;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 0px 2px 0px 2px;
+}
+
+.navbar-social-bt img {
+  display: block;
+  margin: 10px 8px 10px 8px;
+}
+
+.navbar-social-bt a:hover {
+  opacity: 0.75;
+}
