@@ -1,6 +1,6 @@
 <!-- Author: Sean Pesce -->
 <div [ngStyle]="{ 'minWidth.px':(minWidth>=0?minWidth:''), 'maxWidth.px':(maxWidth>=0?maxWidth:''), 'minHeight.px':(minHeight>=0?minHeight:''), 'maxHeight.px':(maxHeight>=0?maxHeight:'') }">
-  <form action="https://formspree.io/pesce.sean@gmail.com" method="POST" target="_blank">
+  <form ngNoForm action="https://formspree.io/pesce.sean@gmail.com" method="POST" target="_blank">
     <mat-form-field style="display:block;">
       <input matInput placeholder="{{hintEmail}}" type="email" name="From" [formControl]="emailFormControl" [errorStateMatcher]="emailMatcher" style="background-color:white;">
       <mat-error *ngIf="emailHasError('email') && !emailHasError('required')">
