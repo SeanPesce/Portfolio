@@ -1,6 +1,6 @@
-# SeanPesce.github.io  
+# [Portfolio Website](https://SeanPesce.github.io/Portfolio)  
 
-My personal GitHub-hosted website, featuring my resume & software portfolio.  
+GitHub page for my resume & software portfolio.  
 
 
 ## Built With  
