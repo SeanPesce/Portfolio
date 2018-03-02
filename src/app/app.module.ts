@@ -38,6 +38,7 @@ import { LanguageSkillCardComponent } from './components/cards/language-skill-ca
 import { UtilitySkillCardComponent } from './components/cards/utility-skill-card/utility-skill-card.component';
 import { NotImplementedDialogComponent } from './components/dialogs/not-implemented-dialog/not-implemented-dialog.component';
 import { NotImplementedComponent } from './components/dev/not-implemented/not-implemented.component';
+import { SoftwareSkillCardComponent } from './components/cards/software-skill-card/software-skill-card.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { NotImplementedComponent } from './components/dev/not-implemented/not-im
     LanguageSkillCardComponent,
     UtilitySkillCardComponent,
     NotImplementedDialogComponent,
-    NotImplementedComponent
+    NotImplementedComponent,
+    SoftwareSkillCardComponent
   ],
   imports: [
     BrowserModule,

@@ -4,8 +4,9 @@ export class Skill {
   public description = '';
   public proficient = true;
   public start: number = (new Date()).getFullYear() - 1; // Year I started developing this skill
+  public logo = '';
 
-  constructor(name: string, description: string, proficient: boolean, start: number) {
+  constructor(name: string, description: string, proficient: boolean, start: number, logo: string) {
     if (name != null) {
       this.name = name;
     }
@@ -15,6 +16,9 @@ export class Skill {
     this.proficient = proficient;
     if (start >= 2010) {
       this.start = start;
+    }
+    if (logo != null) {
+      this.logo = logo;
     }
   }
 }

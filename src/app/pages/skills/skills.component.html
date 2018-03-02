@@ -1,7 +1,7 @@
 <!-- Author: Sean Pesce -->
 <app-page-header [title]="'Skills'"></app-page-header>
 <div class="content-background content-section">
-  <div style="padding-left:10%; padding-right:10%; padding-bottom:50px; min-width:500px;"><!--
+  <div style="padding-left:8%; padding-right:8%; padding-bottom:50px; min-width:500px;"><!--
 
   --><div style="justify-content:left; display:inline-block; vertical-align:top; padding-right:3%;">
       <h4 mat-subheader class="mat-h4" style="text-align:left; margin-bottom:5px;" title="Programming languages">Languages</h4>
@@ -18,7 +18,8 @@
   --><div style="justify-content:left; display:inline-block; vertical-align:top; padding-left:3%;">
       <h4 mat-subheader class="mat-h4" style="text-align:left; margin-bottom:5px;" title="Other software">Software</h4>
       <!-- @TODO -->
-      <app-not-implemented [width]="250" [height]="200" [paddingTop]="100" [paddingLeft]="30"></app-not-implemented>
+      <app-software-skill-card *ngFor="let software of softwares" [software]="software" [minWidth]="233" [maxWidth]="253">
+      </app-software-skill-card>
     </div><!--
 
 --></div>

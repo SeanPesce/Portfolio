@@ -2,6 +2,7 @@
 import { environment } from './../environments/environment';
 import { LanguageSkill } from './classes/skill-language';
 import { SocialMedia } from './classes/social-media-profile';
+import { SoftwareSkill } from './classes/skill-software';
 import { UtilitySkill } from './classes/skill-utility';
 
 export const AUTHOR = 'Sean Pesce';
@@ -147,6 +148,13 @@ export const LANGUAGES: LanguageSkill[] = [
     logo: ''
   },
   {
+    name: 'JavaScript',
+    description: '',
+    proficient: false,
+    start: 2017,
+    logo: ''
+  },
+  {
     name: 'MySQL',
     description: '',
     proficient: true,
@@ -240,6 +248,15 @@ export const UTILITIES: UtilitySkill[] = [
     url: 'https://www.microsoft.com/en-us/research/project/detours/'
   },
   {
+    name: 'Node.js',
+    description: 'JavaScript run-time environment',
+    proficient: false,
+    start: 2017,
+    logo: '',
+    languages: ['TypeScript'],
+    url: 'https://nodejs.org/en/'
+  },
+  {
     name: 'POSIX',
     description: 'C standard library for POSIX systems',
     proficient: true,
@@ -283,5 +300,128 @@ export const UTILITIES: UtilitySkill[] = [
     logo: '',
     languages: ['C', 'C++'],
     url: 'https://msdn.microsoft.com/en-us/library/windows/desktop/ff818516(v=vs.85).aspx'
+  }
+];
+
+export const SOFTWARES: SoftwareSkill[] = [
+  {
+    name: '010 Editor',
+    description: 'Hex editor & binary templates',
+    proficient: true,
+    start: 2017,
+    logo: '',
+    url: 'https://www.sweetscape.com/010editor/'
+  },
+  {
+    name: 'Adobe Photoshop',
+    description: 'Image editor',
+    proficient: true,
+    start: 2013,
+    logo: '',
+    url: 'https://www.adobe.com/products/photoshop.html'
+  },
+  {
+    name: 'Android Studio',
+    description: 'IDE',
+    proficient: false,
+    start: 2017,
+    logo: '',
+    url: 'https://developer.android.com/studio/index.html'
+  },
+  {
+    name: 'Cheat Engine',
+    description: 'Debugger',
+    proficient: true,
+    start: 2014,
+    logo: '',
+    url: 'http://www.cheatengine.org/'
+  },
+  {
+    name: 'Eclipse',
+    description: 'IDE',
+    proficient: true,
+    start: 2013,
+    logo: '',
+    url: 'https://www.eclipse.org/ide/'
+  },
+  {
+    name: 'GDB',
+    description: 'Debugger',
+    proficient: false,
+    start: 2015,
+    logo: '',
+    url: 'https://www.gnu.org/software/gdb/'
+  },
+  {
+    name: 'Git',
+    description: 'Version control',
+    proficient: false,
+    start: 2013,
+    logo: '',
+    url: 'https://git-scm.com/'
+  },
+  {
+    name: 'IDA',
+    description: 'Disassembler',
+    proficient: false,
+    start: 2016,
+    logo: '',
+    url: 'https://www.hex-rays.com/products/ida/'
+  },
+  {
+    name: 'IntelliJ IDEA',
+    description: 'IDE',
+    proficient: false,
+    start: 2016,
+    logo: '',
+    url: 'https://www.jetbrains.com/idea/'
+  },
+  {
+    name: 'MySQL Workbench',
+    description: 'Database design',
+    proficient: false,
+    start: 2015,
+    logo: '',
+    url: 'https://www.mysql.com/products/workbench/'
+  },
+  {
+    name: 'NetBeans',
+    description: 'IDE',
+    proficient: true,
+    start: 2013,
+    logo: '',
+    url: 'https://netbeans.org/'
+  },
+  {
+    name: 'Visual Studio',
+    description: 'IDE',
+    proficient: true,
+    start: 2014,
+    logo: '',
+    url: 'https://www.visualstudio.com/'
+  },
+  {
+    name: 'VS Code',
+    description: 'IDE',
+    proficient: true,
+    start: 2016,
+    logo: '',
+    url: 'https://code.visualstudio.com/'
+  },
+  {
+    name: 'VMWare Workstation',
+    description: 'Hypervisor',
+    proficient: true,
+    start: 2016,
+    logo: '',
+    url: 'https://www.vmware.com/products/workstation-pro.html'
+  },
+  {
+    name: 'Wireshark',
+    description: 'Network analyzer',
+    proficient: false,
+    start: 2016,
+    logo: '',
+    url: 'https://www.wireshark.org/'
   }
 ];
