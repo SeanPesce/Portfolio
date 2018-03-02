@@ -14,7 +14,7 @@ export class SoftwareSkillCardComponent implements OnInit {
   @Input() public ariaLabelLogo = '';
   @Input() public showIcon = false;
   @Input() public target = '_blank';
-  @Input() public icon = 'build';
+  @Input() public icon = 'assessment';
   @Input() public btIconOptions = 'more_vert';
   @Input() public btIconLeft = 'info_outline';
   @Input() public btIconRight = 'folder_open';

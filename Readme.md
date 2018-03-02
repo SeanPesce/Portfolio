@@ -21,7 +21,12 @@ See the auto-generated [Angular CLI Readme](Readme_AngularCLI.md).
 
 ## Author  
 
- * Sean Pesce - [Website](https://SeanPesce.github.io) | [GitHub](https://github.com/SeanPesce) | [Twitter](https://twitter.com/SeanPesce) | [Reddit](https://www.reddit.com/u/SeanPesce)  
+ * **Sean Pesce** - [Website](https://SeanPesce.github.io) | [GitHub](https://github.com/SeanPesce) | [Twitter](https://twitter.com/SeanPesce) | [Reddit](https://www.reddit.com/u/SeanPesce)  
+
+
+## Acknowledgments  
+
+ * [Formspree](https://formspree.io/) - Email forwarding  
 
 
 ## License  

@@ -1,8 +1,14 @@
 <!-- Author: Sean Pesce -->
 <app-page-header [title]="'Social Media & Contact Info'"></app-page-header>
-<div class="content-background content-section">
-  <div style="width:20%; padding-left:40%; padding-right:40%;">
-    <h3 mat-subheader class="mat-h3" style="text-align:left; margin-bottom:5px;">Social Media</h3>
-    <app-social-media-card *ngFor="let profile of profiles" [profile]="profile" [minWidth]="200" [maxWidth]="250"></app-social-media-card>
+<div class="content-background content-section" style="padding-bottom:30px;">
+  <div style="width:50%; padding-left:25%; padding-right:25%; min-width:400px; text-align:center; align-items:center;">
+    <mat-tab-group style="padding-bottom:30px; text-align:center; align-items:center;" (selectedTabChange)="onTabChange($event)">
+      <mat-tab label="Social Media"></mat-tab>
+      <mat-tab label="Email Me"></mat-tab>
+    </mat-tab-group>
+    <div style="display:flex; flex-direction:column; width:100%; text-align:center; align-items:center;">
+      <div [ngStyle]="{ 'display': _showSocialMedia ? 'block' : 'none' }" style="position:absolute; text-align:center; align-items:center; padding-bottom:30px;"><app-social-media-card *ngFor="let profile of profiles" [profile]="profile" [minWidth]="200" [maxWidth]="400"></app-social-media-card></div>
+      <div [ngStyle]="{ 'display': _showSocialMedia ? 'none' : 'block' }" style="position:absolute; text-align:center; align-items:center; padding-bottom:30px;"><app-email-form [minWidth]="320" [maxWidth]="320" [bodyFieldHeight]="200"></app-email-form></div>
+    </div>
   </div>
 </div>

@@ -9,13 +9,17 @@ import {
   MatCardModule,
   MatDialogModule,
   MatDividerModule,
+  MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatMenuModule,
   MatStepperModule,
+  MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/homepage/homepage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -39,6 +43,7 @@ import { UtilitySkillCardComponent } from './components/cards/utility-skill-card
 import { NotImplementedDialogComponent } from './components/dialogs/not-implemented-dialog/not-implemented-dialog.component';
 import { NotImplementedComponent } from './components/dev/not-implemented/not-implemented.component';
 import { SoftwareSkillCardComponent } from './components/cards/software-skill-card/software-skill-card.component';
+import { EmailFormComponent } from './components/forms/email-form/email-form.component';
 
 
 @NgModule({
@@ -63,20 +68,26 @@ import { SoftwareSkillCardComponent } from './components/cards/software-skill-ca
     UtilitySkillCardComponent,
     NotImplementedDialogComponent,
     NotImplementedComponent,
-    SoftwareSkillCardComponent
+    SoftwareSkillCardComponent,
+    EmailFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
     MatDividerModule,
+    MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
+    MatInputModule,
     MatListModule,
     MatMenuModule,
     MatStepperModule,
+    MatTabsModule,
     MatToolbarModule,
     AppRoutingModule,
     RouterModule.forRoot(ROUTES, {useHash: true})

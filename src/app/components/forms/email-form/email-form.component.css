@@ -1,0 +1,21 @@
+/* Author: Sean Pesce */
+
+.send-bt {
+  background-color: var(--sp-color-light);
+  color: var(--sp-color-dark);
+}
+
+.send-bt-hover {
+  background-color: var(--sp-color-light-hover);
+  color: var(--sp-color-dark);
+  cursor: pointer;
+}
+
+.send-bt-disabled {
+  background-color: white;
+  color: var(--sp-color-light-hover);
+}
+
+.cursor-ptr {
+  cursor: pointer;
+}
