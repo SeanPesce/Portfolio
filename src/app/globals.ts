@@ -1,7 +1,11 @@
+
 // Author: Sean Pesce
+import * as Projects from './project-list';
 import { environment } from './../environments/environment';
 import { ImageSlide } from './classes/image-slide';
 import { LanguageSkill } from './classes/skill-language';
+import { Project } from './classes/project';
+import { ProjectType } from './enums/project-type';
 import { SocialMedia } from './classes/social-media-profile';
 import { SoftwareSkill } from './classes/skill-software';
 import { UtilitySkill } from './classes/skill-utility';
@@ -19,6 +23,8 @@ export const EMAIL_OBFS: string[] = [
   'gmai',
   'l.com'
 ];
+
+export const PROJECTS: Project [] = Projects.PROJECTS;
 
 export const PROFILE_PICS: ImageSlide[] = [
   {

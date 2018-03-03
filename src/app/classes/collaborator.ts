@@ -5,9 +5,9 @@ export class Collaborator {
   public name = '';
   public username = '';
   public website = '';
-  public github = '';
+  public portfolio = ''; // GitHub, GitLab, BitBucket, etc
 
-  constructor(name: string, username: string, website: string, github: string) {
+  constructor(name: string, username: string, website: string, portfolio: string) {
     if (name != null) {
       this.name = name;
     }
@@ -17,8 +17,8 @@ export class Collaborator {
     if (website != null) {
       this.website = website;
     }
-    if (github != null) {
-      this.github = github;
+    if (portfolio != null) {
+      this.portfolio = portfolio;
     }
   }
 }

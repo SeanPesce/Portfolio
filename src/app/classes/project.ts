@@ -9,12 +9,13 @@ export class Project {
   public title = '';
   public role = '';
   public type: ProjectType = ProjectType.PERSONAL;
-  public category = ''; // Bugfix, video game mod, etc.
+  public categories: string[] = []; // Bugfix, video game mod, etc.
   public description = '';
   public repository = '';
   public website = '';
   public download = '';
   public start: number = (new Date()).getFullYear() - 1; // Year the project was started
+  public end = 0; // End of life (0 = still supported or in development)
   public status = ''; // In development, completed, no longer supported, etc.
   public collaborators: Collaborator[] = [];
   public acknowledgements: Collaborator[] = [];
@@ -24,7 +25,7 @@ export class Project {
   public images: ImageSlide[] = [];
   public videos: Video[] = [];
 
-  constructor(title: string, role: string, type: ProjectType, category: string, description: string, repository: string,
+  constructor(title: string, role: string, type: ProjectType, categories: string[], description: string, repository: string,
               website: string, download: string, start: number, status: string, collaborators: Collaborator[],
               acknowledgements: Collaborator[], license: string, languages: string[], utilities: string[],
               images: ImageSlide[], videos: Video[]) {
@@ -37,8 +38,8 @@ export class Project {
     if (type != null) {
       this.type = type;
     }
-    if (category != null) {
-      this.category = category;
+    if (categories != null) {
+      this.categories = categories;
     }
     if (description != null) {
       this.description = description;
@@ -52,7 +53,9 @@ export class Project {
     if (download != null) {
       this.download = download;
     }
-    this.start = start;
+    if (start >= 2010) {
+      this.start = start;
+    }
     if (status != null) {
       this.status = status;
     }
