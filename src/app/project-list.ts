@@ -247,6 +247,46 @@ export const PROJECTS: Project[] = [
       },
     ],
     videos: []
+  },
+  {
+    title: 'Dark Souls Overhaul Project',
+    role: 'Co-lead Developer',
+    type: ProjectType.PERSONAL,
+    categories: [ 'Video game', 'Bug fix', 'Feature enhancement', 'New feature', 'Team' ],
+    description: 'Unofficial game patch for Dark Souls™: Prepare to Die Edition. Tasks include '
+                + 'reverse-engineering of undocumented file types, data structures, and engine bytecode'
+                + ' to develop bug-fixes and enhancements.',
+    repository: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul',
+    website: '',
+    download: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul/releases',
+    start: 2016,
+    end: 0,
+    status: 'In development',
+    collaborators: [
+      {
+        name: 'Giovanni Frank Crisanti',
+        username: 'metal-crow',
+        website: '',
+        portfolio: 'https://github.com/metal-crow'
+      }
+    ],
+    acknowledgements: [],
+    license: '',
+    languages: [ 'C', 'C++', 'x86 assembly' ],
+    utilities: [ 'DirectX SDK', 'MS Detours', 'SeqAn', 'STL', 'Windows API' ],
+    images: [],
+    videos: [
+      {
+        title: 'Game Improvement: Increased multiplayer limit',
+        description: '',
+        url: 'https://www.youtube.com/watch?v=evYCvJXgrwU'
+      },
+      {
+        title: 'Game Improvement: Unlimited save slots',
+        description: '',
+        url: 'https://www.youtube.com/watch?v=QWTtksCB7Hk'
+      }
+    ]
   }
 ];
 
