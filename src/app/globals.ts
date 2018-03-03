@@ -1,5 +1,6 @@
 // Author: Sean Pesce
 import { environment } from './../environments/environment';
+import { ImageSlide } from './classes/image-slide';
 import { LanguageSkill } from './classes/skill-language';
 import { SocialMedia } from './classes/social-media-profile';
 import { SoftwareSkill } from './classes/skill-software';
@@ -19,10 +20,25 @@ export const EMAIL_OBFS: string[] = [
   'l.com'
 ];
 
-export const PROFILE_PICS: string[] = [
-  ASSETS + '/img/profile/01.png',
-  ASSETS + '/img/profile/02.jpg',
-  ASSETS + '/img/profile/Avatar-dark.png'
+export const PROFILE_PICS: ImageSlide[] = [
+  {
+    src: '/img/profile/01.png',
+    title: 'My girlfriend and I (2017)',
+    alt: 'Pofile picture',
+    ariaLabel: ''
+  },
+  {
+    src: '/img/profile/02.jpg',
+    title: 'Me and my coworkers (2016)',
+    alt: 'Pofile picture',
+    ariaLabel: ''
+  },
+  {
+    src: '/img/profile/Avatar-dark.png',
+    title: 'My online avatar',
+    alt: 'Avatar',
+    ariaLabel: ''
+  }
 ];
 
 export const SOCIAL_MEDIA: SocialMedia[] = [

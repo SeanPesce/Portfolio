@@ -1,0 +1,26 @@
+/* Author: Sean Pesce */
+
+.outer-f-img-div {
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.inner-f-img-div {
+  overflow: hidden;
+  position: relative;
+
+}
+
+/*
+    Fix for the very minor img element twitching when
+    using 'transform: scale' in other elements
+*/
+.scale-trans-fix {
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1.0, 1.0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+

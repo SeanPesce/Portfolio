@@ -14,18 +14,9 @@
   </div>
 </header>
 <div class="content-background content-section">
-  <div style="padding-left:10%; padding-right:10%; padding-bottom:50px; min-width:600px;"><!--
-
- --><div style="justify-content:right; display:inline-block; height:300px; vertical-align:top;">
-      <div style="display:flex; text-align:right; overflow:hidden; height:300px; min-height:300px; max-height:300px; vertical-align:middle; justify-content:center;">
-        <img src="{{profilePic}}" alt="Pofile picture" style="width:300px; height:auto; margin-left:auto; margin-right:auto;"
-          title="{{(profilePicIndex == 0) ? 'My girlfriend and I' : (profilePicIndex == 1 ? 'Me and my coworkers' : (profilePicIndex == 2 ? 'My online avatar' : ''))}}">
-      </div>
-      <div class="bg-left-arrow" (mouseenter)="onMouseEnterLeft()" (mouseleave)="onMouseLeaveLeft()" title="Previous image" (click)="previousProfilePic()" style="position:absolute; cursor:pointer; margin-top:-300px; margin-bottom:4px; height:300px; width:140px; overflow:hidden;" [ngStyle]="{ 'opacity': hoverLeft ? 0.7 : 0.0 }"></div>
-      <div class="bg-right-arrow" (mouseenter)="onMouseEnterRight()" (mouseleave)="onMouseLeaveRight()" title="Next image" (click)="nextProfilePic()" style="position:absolute; cursor:pointer; margin-left:160px; margin-top:-300px; margin-bottom:4px; height:300px; width:140px; overflow:hidden;" [ngStyle]="{ 'opacity': hoverRight ? 0.7 : 0.0 }"></div>
-    </div><!--
-
- --><div style="justify-content:left; text-align:left; padding-top:3px; display:inline-block; vertical-align:bottom;">
+  <div style="padding-left:10%; padding-right:10%; padding-bottom:50px; min-width:600px;">
+    <app-slideshow [slides]="slides" [width]="300"></app-slideshow>
+    <div style="justify-content:left; text-align:left; padding-top:3px; display:inline-block; vertical-align:bottom;">
       <div style="display:table-cell; vertical-align:top; height:200px;">
         <h2 class="mat-h2" style="margin-bottom:5px;">About Me</h2>
         <p class="mat-h2" style="max-width:420px;">

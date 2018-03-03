@@ -1,0 +1,17 @@
+<!-- Author: Sean Pesce -->
+<div *ngIf="slides?.length > 0" [ngStyle]="{ 'height':widthString() }" style="justify-content:right; display:inline-block; vertical-align:top;"><!--
+  --><div [ngStyle]="heightStyle()" style="display:flex; text-align:right; overflow:hidden; vertical-align:middle; justify-content:center;">
+      <app-uniform-image
+        [width]="width"
+        [src]="src()"
+        [title]="title()"
+        [alt]="alt()"
+        [ariaLabel]="ariaLabel()"
+        [useAssetsPath]="useAssetsPath"
+        [usePercent]="usePercent"
+      >
+      </app-uniform-image>
+    </div>
+  <div class="bg-left-arrow" (mouseenter)="onMouseEnterLeft()" (mouseleave)="onMouseLeaveLeft()" title="{{title()}}" (click)="previousProfilePic()" [ngStyle]="{ 'height':widthString(), 'opacity':(hoverLeft?0.7:0.0),  'marginTop':(0-width)+units(), 'width':((width/2.0)-(width/20.0))+units(), 'backgroundSize':(((width/2.0)-(width/20.0))+units())+' '+widthString(), 'backgroundPosition':'-40px 0px' }" style="position:absolute; cursor:pointer; margin-bottom:4px; overflow:hidden;"></div>
+  <div class="bg-right-arrow" (mouseenter)="onMouseEnterRight()" (mouseleave)="onMouseLeaveRight()" title="{{title()}}" (click)="nextProfilePic()"  [ngStyle]="{ 'height':widthString(), 'opacity':(hoverRight?0.7:0.0), 'marginTop':(0-width)+units(), 'width':((width/2.0)-(width/20.0))+units(), 'marginLeft':((width/2.0)+(width/20.0))+units(), 'backgroundSize':(((width/2.0)-(width/20.0))+units())+' '+widthString(), 'backgroundPosition':'40px 0px' }" style="position:absolute; cursor:pointer; margin-bottom:4px; overflow:hidden;"></div>
+</div>

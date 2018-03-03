@@ -44,6 +44,9 @@ import { NotImplementedDialogComponent } from './components/dialogs/not-implemen
 import { NotImplementedComponent } from './components/dev/not-implemented/not-implemented.component';
 import { SoftwareSkillCardComponent } from './components/cards/software-skill-card/software-skill-card.component';
 import { EmailFormComponent } from './components/forms/email-form/email-form.component';
+import { UniformImageComponent } from './components/uniform-image/uniform-image.component';
+import { SlideshowComponent } from './components/slideshow/slideshow.component';
+import { ProjectShowcaseComponent } from './components/project-showcase/project-showcase.component';
 
 
 @NgModule({
@@ -69,7 +72,10 @@ import { EmailFormComponent } from './components/forms/email-form/email-form.com
     NotImplementedDialogComponent,
     NotImplementedComponent,
     SoftwareSkillCardComponent,
-    EmailFormComponent
+    EmailFormComponent,
+    UniformImageComponent,
+    SlideshowComponent,
+    ProjectShowcaseComponent
   ],
   imports: [
     BrowserModule,
