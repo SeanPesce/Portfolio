@@ -1,1 +1,11 @@
 /* Author: Sean Pesce */
+
+.options-bt {
+  color: var(--sp-color-light-hover);
+  cursor: pointer;
+}
+
+.options-bt:hover {
+  background-color: var(--sp-color-light-hover);
+  color: var(--sp-color-dark);
+}

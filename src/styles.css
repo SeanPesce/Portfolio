@@ -12,8 +12,9 @@
 :root {
   /* --sp-color-primary: #3f51b5; */
   /* --sp-color-primary: #182136; */
+  /* --sp-color-primary: #3b4b6f; */
   /* --sp-color-primary: #0d1d43; */
-  --sp-color-primary: #3f51b5;
+  --sp-color-primary: #3b4b6f;
   --sp-color-light: #fafafa;
   --sp-color-light-hover: #dcdcdc;
   --sp-color-dark: rgba(0, 0, 0, 0.54);
@@ -29,6 +30,10 @@
 .theme-color-primary {
   background-color: var(--sp-color-primary);
   color: var(--sp-color-txt-dark-bg);
+}
+
+.bg-color-transparent {
+  background-color: transparent;
 }
 
 .bg-color-primary {
@@ -67,6 +72,14 @@
   color: var(--sp-color-light);
 }
 
+.txt-url-black {
+  color: black;
+}
+
+.txt-url-black:hover {
+  color: var(--sp-color-primary);
+}
+
 
 .header-background {
   overflow: hidden;
@@ -85,6 +98,11 @@
   color: var(--sp-color-txt-light-bg);
 }
 
+
+.center-element {
+  margin: auto;
+  width: 100%;
+}
 
 .unselectable {
   -moz-user-select: -moz-none;

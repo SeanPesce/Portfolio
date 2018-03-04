@@ -7,11 +7,12 @@ import { Video } from './video';
 export class Project {
 
   public title = '';
-  public role = '';
+  public role = ''; // My role in the development process
   public type: ProjectType = ProjectType.PERSONAL;
   public categories: string[] = []; // Bugfix, video game mod, etc.
   public description = '';
   public repository = '';
+  public isPrivate = false; // Whether the source code/downloads are private
   public website = '';
   public download = '';
   public start: number = (new Date()).getFullYear() - 1; // Year the project was started
@@ -26,7 +27,7 @@ export class Project {
   public videos: Video[] = [];
 
   constructor(title: string, role: string, type: ProjectType, categories: string[], description: string, repository: string,
-              website: string, download: string, start: number, status: string, collaborators: Collaborator[],
+              isPrivate: boolean, website: string, download: string, start: number, status: string, collaborators: Collaborator[],
               acknowledgements: Collaborator[], license: string, languages: string[], utilities: string[],
               images: ImageSlide[], videos: Video[]) {
     if (title != null) {
@@ -47,6 +48,7 @@ export class Project {
     if (repository != null) {
       this.repository = repository;
     }
+    this.isPrivate = isPrivate;
     if (website != null) {
       this.website = website;
     }

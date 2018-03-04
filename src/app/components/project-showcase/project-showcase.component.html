@@ -1,1 +1,29 @@
 <!-- Author: Sean Pesce -->
+<div style="padding-bottom:16px;" [ngStyle]="{ 'minWidth.px': minWidth, 'maxWidth.px': maxWidth }" class="center-element">
+  <mat-card>
+    <mat-card-header style="width:100%;">
+      <a href="{{(project?.website?.length > 0) ? project?.website : ((project?.download?.length > 0) ? project?.download : project?.repository)}}"
+          title="{{project?.title + ((project?.website?.length > 0) ? ' website' : ((project?.download?.length > 0) ? ' download' : (project?.repository?.length > 0) ? ' repository' : ''))}}"
+          target="_blank" style="text-decoration:none;" class="txt-url-black">
+        <mat-card-title style="margin-bottom:10px;">
+          <h1 class="mat-h1" style="margin:0px; font-size:26px; text-decoration:none;">{{project?.title}}</h1>
+        </mat-card-title>
+      </a>
+    </mat-card-header>
+    <!-- <a style="position:absolute; height:100%; width:100%; top:0px; left:0px; background-color:transparent; opacity:0.0;"
+      target="_blank"
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()"
+    ></a> -->
+    <div class="options-bt" [matMenuTriggerFor]="optionsMenu" style="position:absolute; right:0px; top:0px; padding:8px;" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+      <mat-icon>{{btIconOptions}}</mat-icon>
+    </div>
+    <mat-card-content>
+      <mat-card-subtitle>@TODO</mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<mat-menu #optionsMenu="matMenu">
+  <button mat-menu-item [title]="'@TODO'" (click)="openNotImplDialog()">@TODO</button>
+</mat-menu>

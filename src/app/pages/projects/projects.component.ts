@@ -1,5 +1,8 @@
 // Author: Sean Pesce
-import { Component, OnInit } from '@angular/core';
+import * as Globals from './../../globals';
+import { Component, Input, OnInit } from '@angular/core';
+import { Project } from './../../classes/project';
+
 
 @Component({
   selector: 'app-page-projects',
@@ -7,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsPageComponent implements OnInit {
+
+  @Input() public projects: Project[] = Globals.PROJECTS;
 
   constructor() { }
 

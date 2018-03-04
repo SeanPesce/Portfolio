@@ -1,4 +1,7 @@
 <!-- Author: Sean Pesce -->
 <app-page-header [title]="'Personal Projects'"></app-page-header>
-<app-not-implemented [width]="400" [height]="200" [paddingTop]="100" [paddingLeft]="100"></app-not-implemented>
-
+<div class="content-background content-section" style="padding-bottom:30px;">
+  <div style="width:80%; padding-left:10%; padding-right:10%; min-width:400px;">
+    <app-project-showcase *ngFor="let project of projects" [project]="project"></app-project-showcase>
+  </div>
+</div>

@@ -4,13 +4,14 @@ import { ProjectType } from './enums/project-type';
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Dark Souls Config Utility',
+    title: 'Dark Souls Configuration Utility',
     role: 'Creator',
     type: ProjectType.PERSONAL,
     categories: [ 'Utility', 'Video game' ],
     description: 'All-in-one settings utility for consolidating the installation and configuration processes'
                  + ' of various community mods & fixes for Dark Souls™: Prepare to Die Edition.',
     repository: 'https://github.com/SeanPesce/Dark_Souls_Config_Utility',
+    isPrivate: false,
     website: '',
     download: 'https://github.com/SeanPesce/Dark_Souls_Config_Utility/releases',
     start: 2014,
@@ -58,8 +59,10 @@ export const PROJECTS: Project[] = [
           ],
   videos: [ {
             title: 'v0.94 Demo',
+            author: 'Sean Pesce',
             description: '',
-            url: 'https://www.youtube.com/watch?v=OiVRokZtZAo'
+            url: 'https://www.youtube.com/watch?v=OiVRokZtZAo',
+            embed: ''
           } ]
   },
   {
@@ -67,9 +70,10 @@ export const PROJECTS: Project[] = [
     role: 'Creator',
     type: ProjectType.PERSONAL,
     categories: [ 'Bug fix', 'Video game' ],
-    description: '',
+    description: 'Automated fix for a common input bug in Dark Souls™: Prepare to Die Edition.',
     repository: 'https://github.com/SeanPesce/FPSFix-Plus',
-    website: 'Automated fix for a common input bug in Dark Souls™: Prepare to Die Edition.',
+    isPrivate: false,
+    website: '',
     download: 'https://www.nexusmods.com/darksouls/mods/1343/',
     start: 2016,
     end: 2017,
@@ -107,6 +111,7 @@ export const PROJECTS: Project[] = [
     categories: [ 'Video game', 'Feature enhancement' ],
     description: 'Extended customization mod for field of view in Deus Ex: Mankind Divided and Deus Ex: Breach.',
     repository: 'https://github.com/SeanPesce/DXMD-FoV-Changer',
+    isPrivate: false,
     website: '',
     download: 'https://github.com/SeanPesce/DXMD-FoV-Changer/releases',
     start: 2016,
@@ -132,8 +137,10 @@ export const PROJECTS: Project[] = [
     videos: [
       {
         title: 'Example FoV presets',
+        author: 'Sean Pesce',
         description: '',
-        url: 'https://www.youtube.com/watch?v=qWjd7HO216A'
+        url: 'https://www.youtube.com/watch?v=qWjd7HO216A',
+        embed: ''
       }
     ]
   },
@@ -145,6 +152,7 @@ export const PROJECTS: Project[] = [
     description: 'Direct3D9 Wrapper DLL/classes with a built-in overlay framework that implements an in-game CLI'
                 + ' and a text feed for printing on-screen messages in DirectX9 programs.',
     repository: 'https://github.com/SeanPesce/Direct3D9-Overlay',
+    isPrivate: false,
     website: '',
     download: 'https://github.com/SeanPesce/Direct3D9-Overlay/releases',
     start: 2016,
@@ -191,8 +199,10 @@ export const PROJECTS: Project[] = [
     videos: [
       {
         title: 'Early build',
+        author: 'Sean Pesce',
         description: 'Note: This was a very early build; the vast majority of features were implemented after this recording.',
-        url: 'https://www.youtube.com/watch?v=F2FiOhFi0pw'
+        url: 'https://www.youtube.com/watch?v=F2FiOhFi0pw',
+        embed: ''
       }
     ]
   },
@@ -204,6 +214,7 @@ export const PROJECTS: Project[] = [
     description: 'A small program that runs in the background and periodically reminds'
                 + ' the user to take a break from their screen to avoid eye strain.',
     repository: 'https://github.com/SeanPesce/Rest-Your-Eyes',
+    isPrivate: true,
     website: '',
     download: 'https://github.com/SeanPesce/Rest-Your-Eyes/releases',
     start: 2017,
@@ -257,6 +268,7 @@ export const PROJECTS: Project[] = [
                 + 'reverse-engineering of undocumented file types, data structures, and engine bytecode'
                 + ' to develop bug-fixes and enhancements.',
     repository: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul',
+    isPrivate: false,
     website: '',
     download: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul/releases',
     start: 2016,
@@ -278,13 +290,26 @@ export const PROJECTS: Project[] = [
     videos: [
       {
         title: 'Game Improvement: Increased multiplayer limit',
+        author: 'metal-crow',
         description: '',
-        url: 'https://www.youtube.com/watch?v=evYCvJXgrwU'
+        url: 'https://www.youtube.com/watch?v=evYCvJXgrwU',
+        embed: ''
+      },
+      {
+        title: 'Game Improvement: Movement while casting',
+        author: 'metal-crow',
+        description: '',
+        url: 'https://streamable.com/gvy2a',
+        embed: '<div style="width: 100%; height: 0px; position: relative; padding-bottom: 62.817%;">'
+              + '<iframe src="https://streamable.com/s/gvy2a/ekvqba" frameborder="0" width="100%" height="100%"'
+              + ' allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>'
       },
       {
         title: 'Game Improvement: Unlimited save slots',
+        author: 'Sean Pesce',
         description: '',
-        url: 'https://www.youtube.com/watch?v=QWTtksCB7Hk'
+        url: 'https://www.youtube.com/watch?v=QWTtksCB7Hk',
+        embed: ''
       }
     ]
   }
