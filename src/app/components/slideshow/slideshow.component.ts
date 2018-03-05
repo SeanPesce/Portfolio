@@ -2,6 +2,8 @@
 import * as Globals from './../../globals';
 import { Component, Input, OnInit } from '@angular/core';
 import { ImageSlide } from './../../classes/image-slide';
+import { MatDialog } from '@angular/material';
+import { NotImplementedDialogComponent } from './../dialogs/not-implemented-dialog/not-implemented-dialog.component';
 
 @Component({
   selector: 'app-slideshow',
@@ -20,8 +22,9 @@ export class SlideshowComponent implements OnInit {
   public index = 0;
   public hoverLeft = false;
   public hoverRight = false;
+  public hoverCenter = false;
 
-  constructor() { }
+  constructor(public expandDialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -58,6 +61,13 @@ export class SlideshowComponent implements OnInit {
     }
   }
 
+  public expand(): void {
+    const dialogRef = this.expandDialog.open(NotImplementedDialogComponent, {
+      width: '350px',
+      data: {}
+    });
+  }
+
   public onMouseEnterLeft(): void {
     this.hoverLeft = true;
   }
@@ -72,6 +82,14 @@ export class SlideshowComponent implements OnInit {
 
   public onMouseLeaveRight(): void {
     this.hoverRight = false;
+  }
+
+  public onMouseEnterCenter(): void {
+    this.hoverCenter = true;
+  }
+
+  public onMouseLeaveCenter(): void {
+    this.hoverCenter = false;
   }
 
   public imagePath(): string {
