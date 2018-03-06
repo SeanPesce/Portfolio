@@ -13,13 +13,16 @@ import 'rxjs/add/operator/takeWhile';
 })
 export class UniformImageComponent implements OnInit, AfterViewInit {
 
-  public readonly ASSETS = Globals.ASSETS;
+  public static readonly ASSETS = Globals.ASSETS;
 
   @Input() public width = 200;
   @Input() public src = '';
   @Input() public title = '';
   @Input() public alt = '';
   @Input() public ariaLabel = '';
+  @Input() public backgroundColor = 'transparent';
+  @Input() public borderWidth = 0;
+  @Input() public borderColor = 'transparent';
   @Input() public useAssetsPath = true;
   @Input() public usePercent = false; // If false, use pixels for measurement
 
@@ -45,7 +48,7 @@ export class UniformImageComponent implements OnInit, AfterViewInit {
   }
 
   public imagePath(): string {
-    return this.useAssetsPath ? (this.ASSETS + this.src) : this.src;
+    return this.useAssetsPath ? (UniformImageComponent.ASSETS + this.src) : this.src;
   }
 
   public widthString(): string {
@@ -95,6 +98,10 @@ export class UniformImageComponent implements OnInit, AfterViewInit {
 
   public onImageError(): void {
 
+  }
+
+  get ASSETS(): string {
+    return UniformImageComponent.ASSETS;
   }
 
 }

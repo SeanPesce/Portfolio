@@ -18,6 +18,7 @@ export class SchoolCardComponent implements OnInit {
   @Input() public ariaLabel = this.school;
   @Input() public target = '_blank';
   @Input() public summary = '';
+  @Input() public maxWidth = 1000;
 
   @Input() public schoolLabel = false;
   @Input() public degreeLabel = false;

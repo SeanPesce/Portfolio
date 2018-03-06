@@ -1,5 +1,9 @@
 // Author: Sean Pesce
 import { Component } from '@angular/core';
+import { PRODUCTION_MODE } from './globals';
+import { VERSION as NG_MAT_VERSION } from '@angular/material';
+import { VERSION as NG_COMPILER_VERSION } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +11,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Sean Pesce';
+
+  public static readonly title = 'Sean Pesce';
+
+  constructor() {
+    if (!PRODUCTION_MODE) {
+      console.log(`Angular:\n\tCompiler v${NG_COMPILER_VERSION.full}\n\tMaterial v${NG_MAT_VERSION.full}`);
+    }
+  }
+
+  get windowWidth(): number {
+    return window.innerWidth;
+  }
 }

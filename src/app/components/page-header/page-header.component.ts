@@ -1,4 +1,5 @@
 // Author: Sean Pesce
+import * as Globals from '../../globals';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -13,6 +14,14 @@ export class PageHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  get MOBILE_WIDTH_CUTOFF(): number {
+    return Globals.MOBILE_WIDTH_CUTOFF;
+  }
+
+  get windowWidth(): number {
+    return window.innerWidth;
   }
 
 }

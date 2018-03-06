@@ -9,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationPageComponent implements OnInit {
 
-  public readonly ASSETS = Globals.ASSETS;
+  public static readonly ASSETS = Globals.ASSETS;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
+  }
+
+  get ASSETS(): string {
+    return EducationPageComponent.ASSETS;
   }
 
 }

@@ -6,9 +6,9 @@
 <!-- Visible component -->
 <div class="outer-f-img-div" style="margin:0px; padding:0px;" [ngStyle]="dimenStyle()">
   <div [ngStyle]="dimenStyle()" style="display:table;">
-    <div style="display:table-cell; vertical-align:middle;">
+    <div style="display:table-cell; vertical-align:middle;" [ngStyle]="{'backgroundColor':backgroundColor}">
       <!-- Keep desired width and hide overflow on top/bottom -->
-      <img class="inner-f-img-div scale-trans-fix" [src]="imagePath()" [ngStyle]="{'width':widthString(), 'maxWidth':widthString(), 'minWidth':widthString(), 'height':'auto', 'marginTop':(fullImage.offsetHeight>width)?(0-((fullImage.offsetHeight/2.0)-(width/2.0)))+units():0}" style="height:auto;"
+      <img class="inner-f-img-div scale-trans-fix" [src]="imagePath()" [ngStyle]="{'width':(width-(2*borderWidth))+units(), 'maxWidth':(width-(2*borderWidth))+units(), 'minWidth':(width-(2*borderWidth))+units(), 'height':'auto', 'marginTop':(fullImage.offsetHeight>width)?(0-((fullImage.offsetHeight/2.0)-(width/2.0)))+units():0, 'borderWidth':borderWidth+units(), 'borderColor':borderColor, 'borderStyle':(borderWidth>0)?'solid':''}" style="height:auto;"
         title="{{title}}" alt="{{alt}}" attr.aria-valuenow="{{ariaLabel}}">
     </div>
   </div>

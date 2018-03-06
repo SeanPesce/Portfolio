@@ -1,4 +1,5 @@
 // Author: Sean Pesce
+import * as Globals from './../../../globals';
 import { Component, Input, OnInit } from '@angular/core';
 import { JobPosition } from './../../../classes/job-position';
 
@@ -17,12 +18,17 @@ export class JobCardComponent implements OnInit {
   @Input() public end = '';
   @Input() public ariaLabel = this.employer;
   @Input() public target = '_blank';
+  @Input() public maxWidth = 1000;
 
   @Input() public positions: JobPosition[] = [];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
   }
 
 }

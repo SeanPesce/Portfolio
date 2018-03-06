@@ -1,15 +1,14 @@
 <!-- Author: Sean Pesce -->
 <nav>
-  <mat-toolbar class="mat-elevation-z6 theme-color-primary" style="position:fixed; top:0px; left:0px; right:0px; z-index:2;">
-    <div style="width:50%;">
-      <a mat-button routerLink="/" title="Resume & About Me">About</a>
-      <a mat-button routerLink="/projects" title="Personal Projects">Projects</a>
-      <a mat-button routerLink="/skills" title="Languages, tools, platforms, etc.">Skills</a>
-      <a mat-button routerLink="/education" title="Degrees & Education">Education</a>
-      <a mat-button routerLink="/employment" title="Employment History">Work</a>
-      <a mat-button routerLink="/contact" title="Social Media">Contact</a>
+  <mat-toolbar class="mat-elevation-z6 theme-color-primary" style="position:fixed; top:0px; left:0px; z-index:2;">
+    <div *ngIf="!isMobile()" style="display:inline-block;" [ngStyle]="{ 'width':((windowWidth > 1000) ? 50 : 100)+'%', 'maxWidth':windowWidth+'px' }">
+      <a mat-button *ngFor="let page of PAGE_ROUTES; let i = index;" [routerLink]="'/' + PAGE_ROUTES[i]" [title]="PAGE_HOVER_TXT[i]">{{PAGE_TITLES[i]}}</a>
     </div>
-    <div style="width:50%; height:100%;">
+    <div *ngIf="isMobile()">
+      <!-- <button mat-icon-button><mat-icon>menu</mat-icon></button> -->
+      <button mat-button [matMenuTriggerFor]="navMenu">{{navTitle}}<mat-icon>arrow_drop_down</mat-icon></button>
+    </div>
+    <div *ngIf="(!isMobile()) && windowWidth > 1000" style="width:50%; height:100%; display:inline-block; white-space:normal;">
       <app-nav-social-button [title]="'YouTube'"
         [url]="'https://youtube.com/channel/UCgsMpXiR3PawqKM7MWLJGzQ'"
         [img]="ASSETS + '/img/social/icon/YouTube-white-transparent.svg'">
@@ -33,3 +32,7 @@
     </div>
   </mat-toolbar>
 </nav>
+
+<mat-menu #navMenu="matMenu" class="bg-color-light">
+  <button mat-menu-item *ngFor="let page of PAGE_ROUTES; let i = index;" [routerLink]="'/' + PAGE_ROUTES[i]" [title]="PAGE_HOVER_TXT[i]" class="txt-color-primary" (click)="onMenuItemPressed(i)">{{PAGE_TITLES[i]}}</button>
+</mat-menu>

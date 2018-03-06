@@ -12,13 +12,29 @@ import { UtilitySkill } from './../../classes/skill-utility';
 })
 export class SkillsPageComponent implements OnInit {
 
-  public readonly languages: LanguageSkill[] = Globals.LANGUAGES;
-  public readonly utilities: UtilitySkill[] = Globals.UTILITIES;
-  public readonly softwares: SoftwareSkill[] = Globals.SOFTWARES;
+  public static readonly languages: LanguageSkill[] = Globals.LANGUAGES;
+  public static readonly utilities: UtilitySkill[] = Globals.UTILITIES;
+  public static readonly softwares: SoftwareSkill[] = Globals.SOFTWARES;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
+  }
+
+  get languages(): LanguageSkill[] {
+    return SkillsPageComponent.languages;
+  }
+
+  get utilities(): UtilitySkill[] {
+    return SkillsPageComponent.utilities;
+  }
+
+  get softwares(): SoftwareSkill[] {
+    return SkillsPageComponent.softwares;
   }
 
 }

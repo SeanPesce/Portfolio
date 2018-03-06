@@ -18,4 +18,8 @@ export class ProjectsPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
+  }
+
 }

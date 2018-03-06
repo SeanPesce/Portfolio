@@ -1,24 +1,14 @@
 // Author: Sean Pesce
+import { Contributor } from './contributor';
 
-export class Collaborator {
+export class Collaborator extends Contributor {
 
-  public name = '';
-  public username = '';
-  public website = '';
-  public portfolio = ''; // GitHub, GitLab, BitBucket, etc
+  public role = '';
 
-  constructor(name: string, username: string, website: string, portfolio: string) {
-    if (name != null) {
-      this.name = name;
-    }
-    if (username != null) {
-      this.username = username;
-    }
-    if (website != null) {
-      this.website = website;
-    }
-    if (portfolio != null) {
-      this.portfolio = portfolio;
+  constructor(name: string, username: string, website: string, portfolio: string, role: string) {
+    super(name, username, website, portfolio);
+    if (role != null) {
+      this.role = role;
     }
   }
 }

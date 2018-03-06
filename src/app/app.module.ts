@@ -4,6 +4,7 @@ import * as Globals from './globals';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MatButtonModule,
   MatCardModule,
@@ -47,6 +48,10 @@ import { EmailFormComponent } from './components/forms/email-form/email-form.com
 import { UniformImageComponent } from './components/uniform-image/uniform-image.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
 import { ProjectShowcaseComponent } from './components/project-showcase/project-showcase.component';
+import { ImageExpandDialogComponent } from './components/dialogs/image-expand-dialog/image-expand-dialog.component';
+
+// Pipes
+import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
 
 
 @NgModule({
@@ -75,11 +80,14 @@ import { ProjectShowcaseComponent } from './components/project-showcase/project-
     EmailFormComponent,
     UniformImageComponent,
     SlideshowComponent,
-    ProjectShowcaseComponent
+    ProjectShowcaseComponent,
+    ImageExpandDialogComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -99,6 +107,7 @@ import { ProjectShowcaseComponent } from './components/project-showcase/project-
     RouterModule.forRoot(ROUTES, {useHash: true})
   ],
   entryComponents: [
+    ImageExpandDialogComponent,
     NotImplementedDialogComponent
   ],
   providers: [],

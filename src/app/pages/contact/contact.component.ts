@@ -11,13 +11,17 @@ import { SocialMedia } from './../../classes/social-media-profile';
 })
 export class ContactPageComponent implements OnInit {
 
-  public readonly profiles: SocialMedia[] = Globals.SOCIAL_MEDIA;
+  public static readonly profiles: SocialMedia[] = Globals.SOCIAL_MEDIA;
 
   public showSocial = true;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
   }
 
   onTabChange(event: MatTabChangeEvent): void {
@@ -36,4 +40,7 @@ export class ContactPageComponent implements OnInit {
     this.showSocial = false;
   }
 
+  get profiles(): SocialMedia[] {
+    return ContactPageComponent.profiles;
+  }
 }

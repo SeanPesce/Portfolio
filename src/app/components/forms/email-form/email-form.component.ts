@@ -24,7 +24,7 @@ export class EmailErrorStateMatcher implements ErrorStateMatcher {
 })
 export class EmailFormComponent implements OnInit {
 
-  public readonly emailAction = 'https://formspree.io/'
+  public static readonly emailAction = 'https://formspree.io/'
                                 + Globals.EMAIL_OBFS[0]
                                 + Globals.EMAIL_OBFS[1]
                                 + Globals.EMAIL_OBFS[2]
@@ -76,6 +76,10 @@ export class EmailFormComponent implements OnInit {
 
   public errorExists(): boolean {
     return this.emailHasError('required') || this.bodyHasError('required') || this.emailHasError('email');
+  }
+
+  get emailAction(): string {
+    return EmailFormComponent.emailAction;
   }
 
 }

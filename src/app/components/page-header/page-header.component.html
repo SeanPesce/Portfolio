@@ -1,6 +1,6 @@
 <!-- Author: Sean Pesce -->
-<header class="header-background">
-  <div class="header-section">
+<header *ngIf="windowWidth >= MOBILE_WIDTH_CUTOFF" class="header-background">
+  <div fxFlexFill class="header-background header-section container" fxLayout="column" fxLayoutAlign="stretch">
     <h1 class="mat-h1">{{title}}</h1>
   </div>
 </header>

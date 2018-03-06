@@ -1,5 +1,5 @@
 <!-- Author: Sean Pesce -->
-<div style="text-align:left; padding-bottom:16px;">
+<div style="text-align:left; padding-bottom:16px; margin:auto" [ngStyle]="{ 'maxWidth':maxWidth+'px' }">
   <mat-card>
     <mat-card-header style="width:100%;">
       <a mat-card-avatar style="height:70px;" href="{{url}}" title="{{school}}" attr.aria-valuenow="{{ariaLabel}}" target="{{target}}">
@@ -8,9 +8,9 @@
       </a>
       <mat-card-subtitle style="margin-bottom:8px; padding-left:40px;"><span *ngIf="schoolLabel">School</span><span *ngIf="!schoolLabel" class="unselectable" style="color:transparent;">_</span></mat-card-subtitle>
       <mat-card-title style="padding-left:40px; margin-bottom:0px;">
-          <h1 class="mat-h1" style="font-size:26px; margin-bottom:0px;">{{school}}</h1>
+          <a href="{{url}}" class="txt-url-black" title="{{school}}" target="{{target}}"><h1 class="mat-h1" style="font-size:26px; margin-bottom:0px;">{{school}}</h1></a>
       </mat-card-title>
-      <mat-card-subtitle style="margin-bottom:3px; margin-top:8px; padding-left:40px;" *ngIf="degreeLabel && (degree?.length > 0 || (start?.length > 0 && end?.length == 0))">Degree</mat-card-subtitle>
+      <mat-card-subtitle class="mat-h2" style="margin-bottom:3px; margin-top:8px; padding-left:40px;" *ngIf="degreeLabel && (degree?.length > 0 || (start?.length > 0 && end?.length == 0))">Degree</mat-card-subtitle>
       <mat-card-title style="padding-left:40px; margin-bottom:0px;" *ngIf="degree?.length > 0 || (start?.length > 0 && end?.length == 0)">
           <h2 class="mat-h2" style="margin:0px;">{{degree?.length > 0 ? degree : 'In-progress'}}</h2>
       </mat-card-title>

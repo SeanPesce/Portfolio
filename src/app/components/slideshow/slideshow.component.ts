@@ -3,7 +3,7 @@ import * as Globals from './../../globals';
 import { Component, Input, OnInit } from '@angular/core';
 import { ImageSlide } from './../../classes/image-slide';
 import { MatDialog } from '@angular/material';
-import { NotImplementedDialogComponent } from './../dialogs/not-implemented-dialog/not-implemented-dialog.component';
+import { ImageExpandDialogComponent } from './../dialogs/image-expand-dialog/image-expand-dialog.component';
 
 @Component({
   selector: 'app-slideshow',
@@ -12,10 +12,13 @@ import { NotImplementedDialogComponent } from './../dialogs/not-implemented-dial
 })
 export class SlideshowComponent implements OnInit {
 
-  public readonly ASSETS = Globals.ASSETS;
+  public static readonly ASSETS = Globals.ASSETS;
 
   @Input() public width = 200;
   @Input() public slides: ImageSlide[] = [];
+  @Input() public backgroundColor = 'transparent';
+  @Input() public borderWidth = 0;
+  @Input() public borderColor = 'transparent';
   @Input() public useAssetsPath = true;
   @Input() public usePercent = false; // If false, use pixels for measurement
 
@@ -46,7 +49,7 @@ export class SlideshowComponent implements OnInit {
   }
 
   public nextProfilePic(): void {
-    if (this.index >= (Globals.PROFILE_PICS.length - 1) || this.index < 0) {
+    if (this.index >= (this.slides.length - 1) || this.index < 0) {
       this.index = 0;
     } else {
       this.index++;
@@ -54,17 +57,20 @@ export class SlideshowComponent implements OnInit {
   }
 
   public previousProfilePic(): void {
-    if (this.index <= 0 || this.index >= Globals.PROFILE_PICS.length) {
-      this.index = Globals.PROFILE_PICS.length - 1;
+    if (this.index <= 0 || this.index >= this.slides.length) {
+      this.index = this.slides.length - 1;
     } else {
       this.index--;
     }
   }
 
   public expand(): void {
-    const dialogRef = this.expandDialog.open(NotImplementedDialogComponent, {
-      width: '350px',
-      data: {}
+    const dialogRef = this.expandDialog.open(ImageExpandDialogComponent, {
+      data: {
+        src: this.slides[this.index].src,
+        title: this.slides[this.index].title,
+        useAssetsPath: this.useAssetsPath
+      }
     });
   }
 
@@ -93,7 +99,7 @@ export class SlideshowComponent implements OnInit {
   }
 
   public imagePath(): string {
-    return this.useAssetsPath ? (this.ASSETS + this.src()) : this.src();
+    return this.useAssetsPath ? (SlideshowComponent.ASSETS + this.src()) : this.src();
   }
 
   public widthString(): string {
@@ -123,6 +129,10 @@ export class SlideshowComponent implements OnInit {
 
   public units(): string {
     return this.usePercent ? '%' : 'px';
+  }
+
+  get ASSETS(): string {
+    return SlideshowComponent.ASSETS;
   }
 
 }

@@ -1,9 +1,9 @@
 <!-- Author: Sean Pesce -->
 <app-page-header [title]="'Skills'"></app-page-header>
-<div class="content-background content-section">
-  <div style="padding-left:8%; padding-right:8%; padding-bottom:50px; min-width:500px;"><!--
+<div [ngClass]="'content-background ' + (isMobile() ? 'content-section-mobile ' : 'content-section ')">
+  <div style="width:90%; padding-left:5%; padding-right:5%; padding-bottom:50px;"><!--
 
-  --><div style="justify-content:left; display:inline-block; vertical-align:top; padding-right:3%;">
+  --><div style="justify-content:left; display:inline-block; vertical-align:top; padding-right:3%; padding-bottom:32px;">
       <h4 mat-subheader class="mat-h4" style="text-align:left; margin-bottom:5px;" title="Programming languages">Languages</h4>
       <app-language-skill-card *ngFor="let language of languages" [language]="language" [minWidth]="233" [maxWidth]="253">
       </app-language-skill-card>

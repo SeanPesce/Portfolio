@@ -10,14 +10,30 @@ import { ImageSlide } from './../../classes/image-slide';
 })
 export class HomePageComponent implements OnInit {
 
-  public readonly AUTHOR = Globals.AUTHOR;
-  public readonly ASSETS = Globals.ASSETS;
+  public static readonly AUTHOR = Globals.AUTHOR;
+  public static readonly ASSETS = Globals.ASSETS;
 
   public slides: ImageSlide[] = Globals.PROFILE_PICS;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
+  }
+
+  get ASSETS(): string {
+    return HomePageComponent.ASSETS;
+  }
+
+  get AUTHOR(): string {
+    return HomePageComponent.AUTHOR;
+  }
+
+  get windowWidth(): number {
+    return window.innerWidth;
   }
 
 }

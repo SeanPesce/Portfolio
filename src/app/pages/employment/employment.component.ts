@@ -9,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmploymentPageComponent implements OnInit {
 
-  public readonly ASSETS = Globals.ASSETS;
+  public static readonly ASSETS = Globals.ASSETS;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
+  }
+
+  get ASSETS(): string {
+    return EmploymentPageComponent.ASSETS;
   }
 
 }

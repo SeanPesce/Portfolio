@@ -1,12 +1,16 @@
 // Author: Sean Pesce
 import { Project } from './classes/project';
-import { ProjectType } from './enums/project-type';
+import { ProjectFormat } from './enums/project-format';
+import { ProjectPlatform } from './enums/project-platform';
+import { ProjectPurpose } from './enums/project-purpose';
 
 export const PROJECTS: Project[] = [
   {
     title: 'Dark Souls Configuration Utility',
     role: 'Creator',
-    type: ProjectType.PERSONAL,
+    purpose: ProjectPurpose.RECREATIONAL,
+    platforms: [ ProjectPlatform.WINDOWS ],
+    formats: [ ProjectFormat.DESKTOP_GUI_APP ],
     categories: [ 'Utility', 'Video game' ],
     description: 'All-in-one settings utility for consolidating the installation and configuration processes'
                  + ' of various community mods & fixes for Dark Souls™: Prepare to Die Edition.',
@@ -47,6 +51,7 @@ export const PROJECTS: Project[] = [
   license: 'GNU General Public License v3.0',
   languages: [ 'Java', 'CSS' ],
   utilities: [ 'JavaFX', 'Inno Setup' ],
+  software: [ 'Eclipse', 'Git', 'NetBeans' ],
   images: [ { src: 'https://camo.githubusercontent.com/1559890d02bf25c602bf69ecef43cb8620d'
                 + 'ee606/687474703a2f2f692e696d6775722e636f6d2f62715a414234732e706e67',
             title: 'Graphics settings tab', alt: 'Screenshot', ariaLabel: ''
@@ -68,7 +73,9 @@ export const PROJECTS: Project[] = [
   {
     title: 'FPSFix+',
     role: 'Creator',
-    type: ProjectType.PERSONAL,
+    purpose: ProjectPurpose.RECREATIONAL,
+    platforms: [ ProjectPlatform.WINDOWS ],
+    formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Bug fix', 'Video game' ],
     description: 'Automated fix for a common input bug in Dark Souls™: Prepare to Die Edition.',
     repository: 'https://github.com/SeanPesce/FPSFix-Plus',
@@ -78,14 +85,14 @@ export const PROJECTS: Project[] = [
     start: 2016,
     end: 2017,
     status: 'Released',
-    collaborators: [
+    collaborators: [],
+    acknowledgements: [
       {
         name: 'Youri de Mooij',
         username: 'Nullby7e',
         website: '',
         portfolio: 'https://github.com/nullby7e'
-      }],
-    acknowledgements: [
+      },
       {
         name: 'Lin Min',
         username: 'MavenLin',
@@ -95,6 +102,7 @@ export const PROJECTS: Project[] = [
     license: 'GNU General Public License v3.0',
     languages: [ 'C', 'C++' ],
     utilities: [ 'STL', 'Windows API' ],
+    software: [ 'Cheat Engine', 'Git', 'Visual Studio' ],
     images: [ {
         src: 'https://camo.githubusercontent.com/3adddce461985553b9b4ebaff'
             + 'd0950f1d9276d99/68747470733a2f2f73746174696364656c697665727'
@@ -107,7 +115,9 @@ export const PROJECTS: Project[] = [
   {
     title: 'Enhanced FoV Options for DXMD',
     role: 'Creator',
-    type: ProjectType.PERSONAL,
+    purpose: ProjectPurpose.RECREATIONAL,
+    platforms: [ ProjectPlatform.WINDOWS ],
+    formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Video game', 'Feature enhancement' ],
     description: 'Extended customization mod for field of view in Deus Ex: Mankind Divided and Deus Ex: Breach.',
     repository: 'https://github.com/SeanPesce/DXMD-FoV-Changer',
@@ -122,6 +132,7 @@ export const PROJECTS: Project[] = [
     license: 'GNU General Public License v3.0',
     languages: [ 'C', 'C++', 'x86 assembly' ],
     utilities: [ 'STL', 'Windows API' ],
+    software: [ 'Cheat Engine', 'Git', 'Visual Studio' ],
     images: [
       {
         src: 'https://camo.githubusercontent.com/a50725f85ee5f45e42b8634e7690babc6da3bb26/68747470733a2f2f74687'
@@ -147,7 +158,9 @@ export const PROJECTS: Project[] = [
   {
     title: 'DirectX 9 Overlay',
     role: 'Creator',
-    type: ProjectType.PERSONAL,
+    purpose: ProjectPurpose.RECREATIONAL,
+    platforms: [ ProjectPlatform.WINDOWS ],
+    formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Video game', 'New feature' ],
     description: 'Direct3D9 Wrapper DLL/classes with a built-in overlay framework that implements an in-game CLI'
                 + ' and a text feed for printing on-screen messages in DirectX9 programs.',
@@ -169,6 +182,7 @@ export const PROJECTS: Project[] = [
     license: 'GNU General Public License v3.0',
     languages: [ 'C', 'C++' ],
     utilities: [ 'DirectX SDK', 'MS Detours', 'SeqAn', 'STL', 'Windows API' ],
+    software: [ 'Git', 'Visual Studio' ],
     images: [
       {
         src: 'https://camo.githubusercontent.com/2ed1de1ee6f40001ae97b697dc31f32cd7a2c157/'
@@ -198,7 +212,7 @@ export const PROJECTS: Project[] = [
     ],
     videos: [
       {
-        title: 'Early build',
+        title: 'Early Build Showcase',
         author: 'Sean Pesce',
         description: 'Note: This was a very early build; the vast majority of features were implemented after this recording.',
         url: 'https://www.youtube.com/watch?v=F2FiOhFi0pw',
@@ -209,7 +223,9 @@ export const PROJECTS: Project[] = [
   {
     title: 'RestYourEyes',
     role: 'Creator',
-    type: ProjectType.PERSONAL,
+    purpose: ProjectPurpose.RECREATIONAL,
+    platforms: [ ProjectPlatform.WINDOWS, ProjectPlatform.LINUX ],
+    formats: [ ProjectFormat.DESKTOP_GUI_APP ],
     categories: [ 'Utility' ],
     description: 'A small program that runs in the background and periodically reminds'
                 + ' the user to take a break from their screen to avoid eye strain.',
@@ -225,6 +241,7 @@ export const PROJECTS: Project[] = [
     license: 'GNU General Public License v3.0',
     languages: [ 'Java', 'CSS' ],
     utilities: [ 'JavaFX', 'Inno Setup' ],
+    software: [ 'Eclipse', 'Git' ],
     images: [
       {
         src: 'https://camo.githubusercontent.com/3c7a5ee1ed69731f43a548ad1c4aba23bbf81042/'
@@ -262,7 +279,9 @@ export const PROJECTS: Project[] = [
   {
     title: 'Dark Souls Overhaul Project',
     role: 'Co-lead Developer',
-    type: ProjectType.PERSONAL,
+    purpose: ProjectPurpose.RECREATIONAL,
+    platforms: [ ProjectPlatform.WINDOWS ],
+    formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Video game', 'Bug fix', 'Feature enhancement', 'New feature', 'Team' ],
     description: 'Unofficial game patch for Dark Souls™: Prepare to Die Edition. Tasks include '
                 + 'reverse-engineering of undocumented file types, data structures, and engine bytecode'
@@ -270,7 +289,7 @@ export const PROJECTS: Project[] = [
     repository: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul',
     isPrivate: false,
     website: '',
-    download: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul/releases',
+    download: '',
     start: 2016,
     end: 0,
     status: 'In development',
@@ -279,13 +298,15 @@ export const PROJECTS: Project[] = [
         name: 'Giovanni Frank Crisanti',
         username: 'metal-crow',
         website: '',
-        portfolio: 'https://github.com/metal-crow'
+        portfolio: 'https://github.com/metal-crow',
+        role: 'Co-lead Developer'
       }
     ],
     acknowledgements: [],
     license: '',
-    languages: [ 'C', 'C++', 'x86 assembly' ],
-    utilities: [ 'DirectX SDK', 'MS Detours', 'SeqAn', 'STL', 'Windows API' ],
+    languages: [ 'C', 'C++', 'Lua', 'x86 assembly' ],
+    utilities: [ 'DirectX SDK', 'Havok SDK', 'MS Detours', 'SeqAn', 'STL', 'Windows API' ],
+    software: [ '010 Editor', 'Cheat Engine', 'Git', 'Havok Content Tools', 'IDA', 'Visual Studio', 'Wireshark' ],
     images: [],
     videos: [
       {
@@ -320,7 +341,9 @@ export const PROJECTS: Project[] = [
   {
     title: '',
     role: '',
-    type: ProjectType.PERSONAL,
+    purpose: ProjectPurpose.RECREATIONAL,
+    platforms: [],
+    formats: [],
     categories: [],
     description: '',
     repository: '',
@@ -334,6 +357,7 @@ export const PROJECTS: Project[] = [
     license: '',
     languages: [],
     utilities: [],
+    software: [],
     images: [],
     videos: []
   },

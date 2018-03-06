@@ -5,7 +5,6 @@ import { environment } from './../environments/environment';
 import { ImageSlide } from './classes/image-slide';
 import { LanguageSkill } from './classes/skill-language';
 import { Project } from './classes/project';
-import { ProjectType } from './enums/project-type';
 import { SocialMedia } from './classes/social-media-profile';
 import { SoftwareSkill } from './classes/skill-software';
 import { UtilitySkill } from './classes/skill-utility';
@@ -17,11 +16,49 @@ export const ASSETS_DEV  = '../assets/';
 export const ASSETS_PROD = 'assets/';
 export const ASSETS = PRODUCTION_MODE ? ASSETS_PROD : ASSETS_DEV;
 
+export const MOBILE_WIDTH_CUTOFF = 650; // Pixels
+
 export const EMAIL_OBFS: string[] = [
   'pesce.sean',
   '@',
   'gmai',
   'l.com'
+];
+
+export enum PortfolioPage {
+  HOME = 0,
+  PROJECTS = 1,
+  SKILLS = 2,
+  EDUCATION = 3,
+  WORK = 4,
+  CONTACT = 5
+}
+
+export const PAGE_TITLES: string [] = [
+  'About',
+  'Projects',
+  'Skills',
+  'Education',
+  'Work',
+  'Contact'
+];
+
+export const PAGE_ROUTES: string [] = [
+  'about',
+  'projects',
+  'skills',
+  'education',
+  'employment',
+  'contact'
+];
+
+export const PAGE_HOVER_TXT: string [] = [
+  'Resume & About Me',
+  'Personal Projects',
+  'Languages, tools, platforms, etc.',
+  'Degrees & Education',
+  'Employment History',
+  'Social Media'
 ];
 
 export const PROJECTS: Project [] = Projects.PROJECTS;

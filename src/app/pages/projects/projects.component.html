@@ -1,7 +1,7 @@
 <!-- Author: Sean Pesce -->
 <app-page-header [title]="'Personal Projects'"></app-page-header>
-<div class="content-background content-section" style="padding-bottom:30px;">
-  <div style="width:80%; padding-left:10%; padding-right:10%; min-width:400px;">
-    <app-project-showcase *ngFor="let project of projects" [project]="project"></app-project-showcase>
+<div [ngClass]="'content-background ' + (isMobile() ? 'content-section-mobile ' : 'content-section ')" style="padding-bottom:30px;">
+  <div style="width:90%; padding-left:5%; padding-right:5%; margin:auto;">
+    <app-project-showcase *ngFor="let project of projects" [project]="project" [minWidth]="100"></app-project-showcase>
   </div>
 </div>

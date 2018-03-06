@@ -1,4 +1,5 @@
 // Author: Sean Pesce
+import * as Globals from './globals';
 import { ContactPageComponent } from './pages/contact/contact.component';
 import { EducationPageComponent } from './pages/education/education.component';
 import { EmploymentPageComponent } from './pages/employment/employment.component';
@@ -16,11 +17,11 @@ import { RouterModule, Routes } from '@angular/router';
 export class AppRoutingModule {}
 
 export const ROUTES: Routes = [
-  { path: '',           component: HomePageComponent       },
-  { path: 'about',      component: HomePageComponent       },
-  { path: 'projects',   component: ProjectsPageComponent   },
-  { path: 'skills',     component: SkillsPageComponent     },
-  { path: 'education',  component: EducationPageComponent  },
-  { path: 'employment', component: EmploymentPageComponent },
-  { path: 'contact',    component: ContactPageComponent    }
+  { path: '',                                                   component: HomePageComponent       },
+  { path: Globals.PAGE_ROUTES[Globals.PortfolioPage.HOME],      component: HomePageComponent       },
+  { path: Globals.PAGE_ROUTES[Globals.PortfolioPage.PROJECTS],  component: ProjectsPageComponent   },
+  { path: Globals.PAGE_ROUTES[Globals.PortfolioPage.SKILLS],    component: SkillsPageComponent     },
+  { path: Globals.PAGE_ROUTES[Globals.PortfolioPage.EDUCATION], component: EducationPageComponent  },
+  { path: Globals.PAGE_ROUTES[Globals.PortfolioPage.WORK],      component: EmploymentPageComponent },
+  { path: Globals.PAGE_ROUTES[Globals.PortfolioPage.CONTACT],   component: ContactPageComponent    }
 ];

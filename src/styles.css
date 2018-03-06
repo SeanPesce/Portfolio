@@ -73,6 +73,7 @@
 }
 
 .txt-url-black {
+  text-decoration: none;
   color: black;
 }
 
@@ -80,11 +81,19 @@
   color: var(--sp-color-primary);
 }
 
+.txt-url-primary {
+  text-decoration: none;
+  color: var(--sp-color-primary);
+}
+
+.txt-url-primary:hover {
+  color: var(--sp-color-dark);
+}
+
 
 .header-background {
-  overflow: hidden;
-  background-color: var(--sp-color-primary);
   width: 100%;
+  background-color: var(--sp-color-primary);
 }
 
 .content-background {
@@ -95,6 +104,12 @@
 .content-section {
   text-align: center;
   padding-top: 60px;
+  color: var(--sp-color-txt-light-bg);
+}
+
+.content-section-mobile {
+  text-align: center;
+  padding-top: 20px;
   color: var(--sp-color-txt-light-bg);
 }
 
