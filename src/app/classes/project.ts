@@ -14,23 +14,23 @@ export class Project {
   public purpose: ProjectPurpose = ProjectPurpose.RECREATIONAL;
   public platforms: ProjectPlatform[] = [];
   public formats: ProjectFormat[] = [];
-  public categories: string[] = []; // Bugfix, video game mod, etc.
+  public categories?: string[] = []; // Bugfix, video game mod, etc.
   public description = '';
-  public repository = '';
-  public isPrivate = false; // Whether the source code/downloads are private
-  public website = '';
-  public download = '';
+  public repository ? = '';
+  public isPrivate ? = false; // Whether the source code/downloads are private
+  public website ? = '';
+  public download ? = '';
   public start: number = (new Date()).getFullYear() - 1; // Year the project was started
   public end = 0; // End of life (0 = still supported or in development)
-  public status = ''; // In development, completed, no longer supported, etc.
-  public collaborators: Collaborator[] = [];
-  public acknowledgements: Contributor[] = [];
-  public license = '';
+  public status ? = ''; // In development, completed, no longer supported, etc.
+  public collaborators?: Collaborator[] = [];
+  public acknowledgements?: Contributor[] = [];
+  public license ? = '';
   public languages: string[] = [];
   public utilities: string[] = [];
   public software: string[] = [];
-  public images: ImageSlide[] = [];
-  public videos: Video[] = [];
+  public images?: ImageSlide[] = [];
+  public videos?: Video[] = [];
 
   constructor(title: string, role: string, purpose: ProjectPurpose, platforms: ProjectPlatform[], formats: ProjectFormat[],
               categories: string[], description: string, repository: string, isPrivate: boolean, website: string,

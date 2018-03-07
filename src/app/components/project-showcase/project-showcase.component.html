@@ -60,6 +60,7 @@
           </mat-card>
         </div>
       </div>
+      <h1 class="mat-h1 txt-color-dark" *ngIf="project?.images?.length === 0 && project?.videos?.length === 0" style="margin:0px; font-size:26px; vertical-align:middle; min-height:100px">No media</h1>
     </mat-card-content>
 
     <mat-card-content [ngStyle]="{ 'display': sectionIndex == 2 ? 'block' : 'none' }" style="padding:16px; text-align:left;" class="bg-color-light">

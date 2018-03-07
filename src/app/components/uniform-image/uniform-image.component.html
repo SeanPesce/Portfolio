@@ -1,7 +1,7 @@
 <!-- Author: Sean Pesce -->
 
 <!-- Invisible image element (used to determine the proportional height for the given width) -->
-<img #fullImage style="position:fixed; display:block; opacity:0.0; height:auto; margin:0px; padding:0px;" [src]="imagePath()" [ngStyle]="widthStyle()">
+<img #fullImage class="unselectable" style="position:fixed; display:block; opacity:0.0; height:auto; margin:0px; padding:0px;" [src]="imagePath()" [ngStyle]="widthStyle()">
 
 <!-- Visible component -->
 <div class="outer-f-img-div" style="margin:0px; padding:0px;" [ngStyle]="dimenStyle()">

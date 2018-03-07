@@ -1,4 +1,5 @@
 // Author: Sean Pesce
+import * as Globals from './globals';
 import { Component } from '@angular/core';
 import { PRODUCTION_MODE } from './globals';
 import { VERSION as NG_MAT_VERSION } from '@angular/material';
@@ -12,7 +13,7 @@ import { VERSION as NG_COMPILER_VERSION } from '@angular/compiler';
 })
 export class AppComponent {
 
-  public static readonly title = 'Sean Pesce';
+  public static readonly title = Globals.AUTHOR;
 
   constructor() {
     if (!PRODUCTION_MODE) {
