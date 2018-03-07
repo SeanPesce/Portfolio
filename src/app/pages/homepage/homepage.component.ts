@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  isMobile(): boolean {
+  public isMobile(): boolean {
     return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
   }
 

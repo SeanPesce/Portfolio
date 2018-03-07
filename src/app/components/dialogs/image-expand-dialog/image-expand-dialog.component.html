@@ -1,5 +1,5 @@
 <!-- Author: Sean Pesce -->
-<div mat-dialog-content cdkFocusRegionstart>
+<div mat-dialog-content cdkFocusRegionstart [ngStyle]="{ 'marginLeft': (isMobile() ? -4 : -24)+'px', 'marginRight': (isMobile() ? -4 : -24)+'px', 'paddingLeft': (isMobile() ? 4 : 24)+'px', 'paddingRight': (isMobile() ? 4 : 24)+'px' }">
   <a href="{{imagePath()}}" target="_blank">
     <img [src]="imagePath()" [title]="title" [ngStyle]="{ 'maxWidth': maxWidth(), 'maxHeight': maxHeight() }">
   </a>

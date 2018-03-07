@@ -1,4 +1,5 @@
 // Author: Sean Pesce
+import * as Globals from './../../globals';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTabChangeEvent, MatDialog } from '@angular/material';
 import { NotImplementedDialogComponent } from './../dialogs/not-implemented-dialog/not-implemented-dialog.component';
@@ -36,7 +37,7 @@ export class ProjectShowcaseComponent implements OnInit {
   ngOnInit() {
   }
 
-  openNotImplDialog(): void {
+  public openNotImplDialog(): void {
     const dialogRef = this.notImplDialog.open(NotImplementedDialogComponent, {
       width: '350px',
       data: {}
@@ -57,6 +58,18 @@ export class ProjectShowcaseComponent implements OnInit {
     //     break;
     // }
     this.sectionIndex = event.index;
+  }
+
+  public isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
+  }
+
+  get mediaWidth(): number {
+    if (this.isMobile()) {
+      return (window.innerWidth * 0.8);
+    } else {
+      return 300;
+    }
   }
 
   get PLATFORMS(): string[] {

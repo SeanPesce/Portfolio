@@ -33,6 +33,10 @@ export class ImageExpandDialogComponent implements OnInit {
   ngOnInit() {
   }
 
+  public isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
+  }
+
   public imagePath(): string {
     return this.useAssetsPath ? (Globals.ASSETS + this.src) : this.src;
   }

@@ -20,16 +20,49 @@ export class SlideshowComponent implements OnInit {
   @Input() public borderWidth = 0;
   @Input() public borderColor = 'transparent';
   @Input() public useAssetsPath = true;
+  @Input() public forceShowButtons = false;
   @Input() public usePercent = false; // If false, use pixels for measurement
 
   public index = 0;
+  public hover = false;
+  public hoverBottom = false;
   public hoverLeft = false;
   public hoverRight = false;
   public hoverCenter = false;
 
+  private swipeCoord?: [number, number];
+  private swipeTime?:  number;
+
   constructor(public expandDialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  public swipeStart(event: TouchEvent): void {
+    const coord: [number, number] = [event.changedTouches[0].pageX, event.changedTouches[0].pageY];
+    const time = new Date().getTime();
+    this.swipeCoord = coord;
+    this.swipeTime = time;
+  }
+
+  public swipeEnd(event: TouchEvent): void {
+    // Source: https://stackoverflow.com/a/44511007/7891239
+    const coord: [number, number] = [event.changedTouches[0].pageX, event.changedTouches[0].pageY];
+    const time = new Date().getTime();
+    const direction = [coord[0] - this.swipeCoord[0], coord[1] - this.swipeCoord[1]];
+    const duration = time - this.swipeTime;
+
+    if (duration < 1000 && Math.abs(direction[0]) > 30 && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) {
+      if (direction[0] < 0) {
+        this.nextSlide();
+      } else {
+        this.previousSlide();
+      }
+    }
+  }
+
+  public isMobile(): boolean {
+    return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
   }
 
   public src(): string {
@@ -48,7 +81,7 @@ export class SlideshowComponent implements OnInit {
     return this.slides[this.index].ariaLabel;
   }
 
-  public nextProfilePic(): void {
+  public nextSlide(): void {
     if (this.index >= (this.slides.length - 1) || this.index < 0) {
       this.index = 0;
     } else {
@@ -56,7 +89,7 @@ export class SlideshowComponent implements OnInit {
     }
   }
 
-  public previousProfilePic(): void {
+  public previousSlide(): void {
     if (this.index <= 0 || this.index >= this.slides.length) {
       this.index = this.slides.length - 1;
     } else {
@@ -96,6 +129,22 @@ export class SlideshowComponent implements OnInit {
 
   public onMouseLeaveCenter(): void {
     this.hoverCenter = false;
+  }
+
+  public onMouseEnter(): void {
+    this.hover = true;
+  }
+
+  public onMouseLeave(): void {
+    this.hover = false;
+  }
+
+  public onMouseEnterBottom(): void {
+    this.hoverBottom = true;
+  }
+
+  public onMouseLeaveBottom(): void {
+    this.hoverBottom = false;
   }
 
   public imagePath(): string {
