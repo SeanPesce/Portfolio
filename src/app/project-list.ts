@@ -347,6 +347,82 @@ export const PROJECTS: Project[] = [
     videos: []
   },
   {
+    title: 'MolWear',
+    role: 'Lead developer',
+    purpose: ProjectPurpose.RESEARCH,
+    platforms: [ ProjectPlatform.ANDROID ],
+    formats: [ ProjectFormat.MOBILE_APP ],
+    categories: [ 'Mobile app' ],
+    description: 'MolWear is an Android app that aims to simplify the recording and sharing of'
+                + ' observational/descriptive data about molar surface wear for anthropological research'
+                + ' purposes. The development process involved working closely with a PhD student and research'
+                + ' assistant to determine GUI layout as well as requirements for recording & analyzing data.',
+    repository: 'https://github.com/SeanPesce/Molar-Wear',
+    isPrivate: false,
+    website: '',
+    download: 'https://github.com/SeanPesce/Molar-Wear/releases',
+    start: 2018,
+    end: 0,
+    status: 'In development',
+    collaborators: [
+      {
+        name: 'Daniel E. Ehrlich',
+        username: '',
+        website: 'https://as.nyu.edu/anthropology/graduate/alumni/masters-alumni-in-human-skeletal-biology-track/daniel-ehrlich.html',
+        portfolio: 'https://github.com/ehrlichd',
+        role: 'Research assistant, Coordinator'
+      },
+      {
+        name: 'Emma M. Lagan',
+        username: '',
+        website: 'http://as.nyu.edu/anthropology/graduate/alumni/masters-alumni-in-human-skeletal-biology-track/emma-lagan.html',
+        portfolio: '',
+        role: 'Research lead'
+      }
+    ],
+    acknowledgements: [],
+    license: 'GNU General Public License v3.0',
+    languages: [ 'Java', 'XML' ],
+    utilities: [ 'Android SDK', 'Gradle' ],
+    software: [ 'Android Studio', 'Git' ],
+    images: [
+      {
+        src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/01.jpg',
+        title: 'Projects list view', alt: 'Screenshot', ariaLabel: 'Screenshot of projects list view'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/02.jpg',
+        title: 'After opening a project, user can add new research subjects (or edit existing ones)', alt: 'Screenshot',
+        ariaLabel: 'Screenshot of open project'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/03.jpg',
+        title: 'Basic info editor view', alt: 'Screenshot', ariaLabel: ''
+      },
+      {
+        src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/04.jpg',
+        title: 'Molar data editor view', alt: 'Screenshot', ariaLabel: ''
+      },
+      {
+        src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/05.jpg',
+        title: 'Subject notes view', alt: 'Screenshot', ariaLabel: ''
+      },
+      {
+        src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/06.jpg',
+        title: 'Molar notes dialog', alt: 'Screenshot', ariaLabel: ''
+      },
+      {
+        src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/07.jpg',
+        title: 'Project export dialog', alt: 'Screenshot', ariaLabel: ''
+      },
+      {
+        src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/00.jpg',
+        title: 'Startup splash screen', alt: 'Screenshot', ariaLabel: 'Screenshot of startup splash screen'
+      }
+    ],
+    videos: []
+  },
+  {
     title: 'Portfolio Website',
     role: 'Creator',
     purpose: ProjectPurpose.RECREATIONAL,

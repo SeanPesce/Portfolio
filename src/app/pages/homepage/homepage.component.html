@@ -15,7 +15,7 @@
 </header>
 <div [ngClass]="'content-background ' + (isMobile() ? 'content-section-mobile ' : 'content-section ')">
   <div style="padding-left:10%; padding-right:10%; padding-bottom:50px;">
-    <app-slideshow [slides]="slides" [width]="300"></app-slideshow>
+    <app-slideshow [slides]="slides" [width]="300" [forceWidth]="true"></app-slideshow>
     <div style="justify-content:left; text-align:left; padding-top:3px; display:inline-block; vertical-align:bottom;">
       <div style="display:table-cell; vertical-align:top; height:200px;">
         <h2 class="mat-h2" style="margin-bottom:5px;">About Me</h2>

@@ -4,7 +4,7 @@
 <img #fullImage class="unselectable" style="position:fixed; display:block; opacity:0.0; height:auto; margin:0px; padding:0px;" [src]="imagePath()" [ngStyle]="widthStyle()">
 
 <!-- Visible component -->
-<div class="outer-f-img-div" style="margin:0px; padding:0px;" [ngStyle]="dimenStyle()">
+<div *ngIf="forceWidth" class="outer-f-img-div" style="margin:0px; padding:0px;" [ngStyle]="dimenStyle()">
   <div [ngStyle]="dimenStyle()" style="display:table;">
     <div style="display:table-cell; vertical-align:middle;" [ngStyle]="{'backgroundColor':backgroundColor}">
       <!-- Keep desired width and hide overflow on top/bottom -->
@@ -15,16 +15,7 @@
 </div>
 
 
-<!-- Invisible image element (used to determine the proportional width for the given height) -->
-<!-- <img #fullImage style="position:fixed; display:block; opacity:0.0; width:auto; margin:0px; padding:0px;" [src]="imagePath()" [ngStyle]="heightStyle()"> -->
-
-<!-- Visible component -->
-<!-- <div class="outer-f-img-div" style="margin:0px; padding:0px;" [ngStyle]="dimenStyle()">
-  <div [ngStyle]="dimenStyle()" style="display:table;">
-    <div style="display:table-cell; vertical-align:middle;"> -->
-      <!-- Keep desired height and hide overflow on the left/right -->
-      <!-- <img class="inner-f-img-div scale-trans-fix" [src]="imagePath()" [ngStyle]="{'width':widthString(), 'maxWidth':widthString(), 'minWidth':widthString(), 'height':'auto', 'marginTop':(fullImage.offsetHeight>width)?(0-((fullImage.offsetHeight/2.0)-(width/2.0)))+units():0}" style="height:auto;"
+<div *ngIf="!forceWidth" [ngStyle]="{'backgroundColor':backgroundColor, 'width':widthString(), 'minWidth':widthString(), 'maxWidth':widthString(), 'height':widthString(), 'minHeight':widthString(), 'maxHeight':widthString() }" style="text-align:center;">
+  <img class="inner-f-img-div scale-trans-fix" [src]="imagePath()" [ngStyle]="{'marginTop':(fullImage.offsetHeight<=fullImage.offsetWidth)?(0-((fullImage.offsetHeight/2.0)-(width/2.0)))+units():0, 'width':(fullImage.offsetHeight>fullImage.offsetWidth)?'auto':widthString(), 'maxWidth':(fullImage.offsetHeight>fullImage.offsetWidth)?'auto':widthString(), 'minWidth':(fullImage.offsetHeight>fullImage.offsetWidth)?'auto':widthString(), 'height':(fullImage.offsetHeight<=fullImage.offsetWidth)?'auto':widthString(), 'minHeight':(fullImage.offsetHeight<=fullImage.offsetWidth)?'auto':widthString(), 'maxHeight':(fullImage.offsetHeight<=fullImage.offsetWidth)?'auto':widthString(), 'borderWidth':borderWidth+units(), 'borderColor':borderColor, 'borderStyle':(borderWidth>0)?'solid':''}"
         title="{{title}}" alt="{{alt}}" attr.aria-valuenow="{{ariaLabel}}">
-    </div>
-  </div>
-</div> -->
+</div>

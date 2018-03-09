@@ -22,6 +22,7 @@ export class SlideshowComponent implements OnInit {
   @Input() public useAssetsPath = true;
   @Input() public forceShowButtons = false;
   @Input() public usePercent = false; // If false, use pixels for measurement
+  @Input() public forceWidth = false;
 
   public index = 0;
   public hover = false;
