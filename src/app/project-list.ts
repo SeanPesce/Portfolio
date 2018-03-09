@@ -68,7 +68,8 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: 'Example results from the search feature of the website',
         url: 'https://www.youtube.com/watch?v=DXqlODCi0dw',
-        embed: ''
+        embed: '',
+        youtubeId: 'DXqlODCi0dw'
       }
     ]
   },
@@ -135,7 +136,8 @@ export const PROJECTS: Project[] = [
             author: 'Sean Pesce',
             description: '',
             url: 'https://www.youtube.com/watch?v=OiVRokZtZAo',
-            embed: ''
+            embed: '',
+            youtubeId: 'OiVRokZtZAo'
           } ]
   },
   {
@@ -176,7 +178,8 @@ export const PROJECTS: Project[] = [
         author: 'metal-crow',
         description: '',
         url: 'https://www.youtube.com/watch?v=evYCvJXgrwU',
-        embed: ''
+        embed: '',
+        youtubeId: 'evYCvJXgrwU'
       },
       {
         title: 'Game Improvement: Movement while casting',
@@ -185,14 +188,16 @@ export const PROJECTS: Project[] = [
         url: 'https://streamable.com/gvy2a',
         embed: '<div style="width: 100%; height: 0px; position: relative; padding-bottom: 62.817%;">'
               + '<iframe src="https://streamable.com/s/gvy2a/ekvqba" frameborder="0" width="100%" height="100%"'
-              + ' allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>'
+              + ' allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>',
+        youtubeId: ''
       },
       {
         title: 'Game Improvement: Unlimited save slots',
         author: 'Sean Pesce',
         description: '',
         url: 'https://www.youtube.com/watch?v=QWTtksCB7Hk',
-        embed: ''
+        embed: '',
+        youtubeId: 'QWTtksCB7Hk'
       }
     ]
   },
@@ -257,7 +262,8 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: 'Note: This was a very early build; the vast majority of features were implemented after this recording.',
         url: 'https://www.youtube.com/watch?v=F2FiOhFi0pw',
-        embed: ''
+        embed: '',
+        youtubeId: 'F2FiOhFi0pw'
       }
     ]
   },
@@ -300,7 +306,8 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: '',
         url: 'https://www.youtube.com/watch?v=qWjd7HO216A',
-        embed: ''
+        embed: '',
+        youtubeId: 'qWjd7HO216A'
       }
     ]
   },

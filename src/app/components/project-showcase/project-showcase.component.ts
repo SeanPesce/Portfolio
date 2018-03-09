@@ -72,6 +72,10 @@ export class ProjectShowcaseComponent implements OnInit {
     }
   }
 
+  get videoHeight(): number {
+    return (this.mediaWidth * 0.5625);
+  }
+
   get PLATFORMS(): string[] {
     return PLATFORMS;
   }

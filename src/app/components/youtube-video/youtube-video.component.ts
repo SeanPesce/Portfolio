@@ -1,10 +1,12 @@
 // Author: Sean Pesce
 import { Component, Input, OnInit } from '@angular/core';
+import { SafeHtmlPipe } from './../../pipes/safe-html/safe-html.pipe';
 
 @Component({
   selector: 'app-youtube-video',
   templateUrl: './youtube-video.component.html',
-  styleUrls: ['./youtube-video.component.css']
+  styleUrls: ['./youtube-video.component.css'],
+  providers: [ SafeHtmlPipe ]
 })
 export class YoutubeVideoComponent implements OnInit {
 

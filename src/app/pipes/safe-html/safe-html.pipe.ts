@@ -1,14 +1,28 @@
 // Author: Sean Pesce
+// Source: https://forum.ionicframework.com/t/inserting-html-via-angular-2-use-of-domsanitizationservice-bypasssecuritytrusthtml/62562/2
 import { Pipe, PipeTransform } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
 
-@Pipe({ name: 'safeHtml'})
+@Pipe({ name: 'safe'})
 export class SafeHtmlPipe implements PipeTransform  {
 
-  constructor(private sanitized: DomSanitizer) {}
+  constructor(protected _sanitizer: DomSanitizer) {}
 
-  transform(value) {
-    // console.log(this.sanitized.bypassSecurityTrustHtml(value))
-    return this.sanitized.bypassSecurityTrustHtml(value);
+  transform(value: string, type: string): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
+    switch (type) {
+      case 'html':
+        return this._sanitizer.bypassSecurityTrustHtml(value);
+      case 'style':
+        return this._sanitizer.bypassSecurityTrustStyle(value);
+      case 'script':
+        return this._sanitizer.bypassSecurityTrustScript(value);
+      case 'url':
+        // return this._sanitizer.bypassSecurityTrustUrl(value);
+        return this._sanitizer.bypassSecurityTrustResourceUrl(value);
+      case 'resourceUrl':
+        return this._sanitizer.bypassSecurityTrustResourceUrl(value);
+      default:
+        throw new Error(`Unable to bypass security for invalid type: ${type}`);
+    }
   }
 }
