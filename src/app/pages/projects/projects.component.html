@@ -1,5 +1,5 @@
 <!-- Author: Sean Pesce -->
-<app-page-header [title]="'Personal Projects'"></app-page-header>
+<app-page-header [title]="'Projects'"></app-page-header>
 <div [ngClass]="'content-background ' + (isMobile() ? 'content-section-mobile ' : 'content-section ')" style="padding-bottom:30px;">
   <div style="width:90%; padding-left:5%; padding-right:5%; margin:auto;">
     <app-project-showcase *ngFor="let project of projects" [project]="project" [minWidth]="100"></app-project-showcase>

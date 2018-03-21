@@ -1,7 +1,7 @@
 <!-- Author: Sean Pesce -->
 
 <!-- Invisible image element (used to determine the proportional height for the given width) -->
-<img #fullImage class="unselectable" style="position:fixed; display:block; opacity:0.0; height:auto; margin:0px; padding:0px;" [src]="imagePath()" [ngStyle]="widthStyle()">
+<img #fullImage class="unselectable" style="position:fixed; display:block; opacity:0.0; height:auto; margin:0px; padding:0px; pointer-events:none;" [src]="imagePath()" [ngStyle]="widthStyle()">
 
 <!-- Visible component -->
 <div *ngIf="forceWidth" class="outer-f-img-div" style="margin:0px; padding:0px;" [ngStyle]="dimenStyle()">
@@ -16,6 +16,9 @@
 
 
 <div *ngIf="!forceWidth" [ngStyle]="{'backgroundColor':backgroundColor, 'width':widthString(), 'minWidth':widthString(), 'maxWidth':widthString(), 'height':widthString(), 'minHeight':widthString(), 'maxHeight':widthString() }" style="text-align:center;">
-  <img class="inner-f-img-div scale-trans-fix" [src]="imagePath()" [ngStyle]="{'marginTop':(fullImage.offsetHeight<=fullImage.offsetWidth)?(0-((fullImage.offsetHeight/2.0)-(width/2.0)))+units():0, 'width':(fullImage.offsetHeight>fullImage.offsetWidth)?'auto':widthString(), 'maxWidth':(fullImage.offsetHeight>fullImage.offsetWidth)?'auto':widthString(), 'minWidth':(fullImage.offsetHeight>fullImage.offsetWidth)?'auto':widthString(), 'height':(fullImage.offsetHeight<=fullImage.offsetWidth)?'auto':widthString(), 'minHeight':(fullImage.offsetHeight<=fullImage.offsetWidth)?'auto':widthString(), 'maxHeight':(fullImage.offsetHeight<=fullImage.offsetWidth)?'auto':widthString(), 'borderWidth':borderWidth+units(), 'borderColor':borderColor, 'borderStyle':(borderWidth>0)?'solid':''}"
+  <img *ngIf="fullImage.offsetHeight <= fullImage.offsetWidth" class="inner-f-img-div scale-trans-fix" [src]="imagePath()" [ngStyle]="{'marginTop':(0-((fullImage.offsetHeight/2.0)-(width/2.0)))+units(), 'width':widthString(), 'maxWidth':widthString(), 'minWidth':widthString(), 'height':'auto', 'minHeight':'auto', 'maxHeight':'auto', 'borderWidth':borderWidth+units(), 'borderColor':borderColor, 'borderStyle':(borderWidth>0)?'solid':''}"
+        title="{{title}}" alt="{{alt}}" attr.aria-valuenow="{{ariaLabel}}">
+
+  <img *ngIf="fullImage.offsetHeight > fullImage.offsetWidth" class="inner-f-img-div scale-trans-fix" [src]="imagePath()" [ngStyle]="{'marginTop':0, 'width':'auto', 'maxWidth':'auto', 'minWidth':'auto', 'height':widthString(), 'minHeight':widthString(), 'maxHeight':widthString(), 'borderWidth':borderWidth+units(), 'borderColor':borderColor, 'borderStyle':(borderWidth>0)?'solid':''}"
         title="{{title}}" alt="{{alt}}" attr.aria-valuenow="{{ariaLabel}}">
 </div>

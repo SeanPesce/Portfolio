@@ -12,6 +12,7 @@ export class YoutubeVideoComponent implements OnInit {
 
   @Input() public width = 560;
   @Input() public height = 315;
+  @Input() public title = '';
   @Input() public videoId = '';  // https://www.youtube.com/watch?v=videoId
   @Input() public startTime = 0; // Seconds
 

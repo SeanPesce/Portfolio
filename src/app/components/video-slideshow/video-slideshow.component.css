@@ -1,0 +1,17 @@
+/* Author: Sean Pesce */
+
+.slideshow-bt {
+  opacity: 0.7;
+}
+
+.slideshow-bt:hover {
+  opacity: 1.0;
+}
+
+.slideshow-middle-bt {
+  opacity: 0.5;
+}
+
+.slideshow-middle-bt:hover {
+  opacity: 0.8;
+}

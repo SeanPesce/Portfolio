@@ -39,13 +39,14 @@ export class UniformImageComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
 
-    Observable.interval(200)
-    .takeWhile(() => (this._naturalWidth <= 0 || this._naturalHeight <= 0))
-    .subscribe(i => {
-      // console.log('Full height: ' + this.fullImg.nativeElement.offsetHeight);
-      this._naturalHeight = this.fullImg.nativeElement.offsetHeight;
-      this._naturalWidth  = this.fullImg.nativeElement.offsetWidth;
-    });
+    // Observable.interval(50)
+    // .takeWhile(() => ((this._naturalWidth <= 0 || this._naturalHeight <= 0) && this.fullImg.nativeElement.offsetParent != null))
+    // .subscribe(i => {
+    //   // console.log('Full height: ' + this.fullImg.nativeElement.offsetHeight);
+    //   this._naturalHeight = this.fullImg.nativeElement.offsetHeight;
+    //   this._naturalWidth  = this.fullImg.nativeElement.offsetWidth;
+    //   console.log('resize (' + (this.fullImg.nativeElement.offsetParent == null) + ')');
+    // });
   }
 
   public imagePath(): string {

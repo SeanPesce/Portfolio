@@ -68,7 +68,7 @@ export class ProjectShowcaseComponent implements OnInit {
     if (this.isMobile()) {
       return (window.innerWidth * 0.8);
     } else {
-      return 300;
+      return 315;
     }
   }
 

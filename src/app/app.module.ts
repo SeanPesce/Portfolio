@@ -52,6 +52,8 @@ import { ImageExpandDialogComponent } from './components/dialogs/image-expand-di
 
 // Pipes
 import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
+import { VideoComponent } from './components/video/video.component';
+import { VideoSlideshowComponent } from './components/video-slideshow/video-slideshow.component';
 
 
 @NgModule({
@@ -82,7 +84,9 @@ import { SafeHtmlPipe } from './pipes/safe-html/safe-html.pipe';
     SlideshowComponent,
     ProjectShowcaseComponent,
     ImageExpandDialogComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    VideoComponent,
+    VideoSlideshowComponent
   ],
   imports: [
     BrowserModule,

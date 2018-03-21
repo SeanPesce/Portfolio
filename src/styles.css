@@ -27,6 +27,10 @@
   opacity: 0.3;
 }
 
+.dbg-div:hover {
+  background-color: rgb(255, 166, 0);
+}
+
 .theme-color-primary {
   background-color: var(--sp-color-primary);
   color: var(--sp-color-txt-dark-bg);

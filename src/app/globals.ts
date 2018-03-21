@@ -140,6 +140,15 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     isPrivate: false
   },
   {
+    title: 'Steam',
+    url: 'http://steamcommunity.com/id/SeanPesce',
+    website: 'http://www.steampowered.com/',
+    icon: ASSETS + '/img/social/icon/Steam-white-transparent.svg',
+    logo: ASSETS + '/img/social/logo/Steam-color.svg',
+    username: 'SeanPesce',
+    isPrivate: true
+  },
+  {
     title: 'Trello',
     url: 'https://trello.com/seanpesce',
     website: 'https://trello.com',

@@ -56,9 +56,16 @@
         <div *ngIf="project?.videos?.length > 0" style="text-align:center; display:inline-block; padding-left:8px; padding-right:8px; vertical-align:top;">
           <h5 class="mat-h5 txt-color-dark" style="padding-top:12px; margin-bottom:0px; text-align:center;">Video<span *ngIf="project?.videos?.length > 1">s</span></h5>
           <mat-card style="padding:0px;" [ngStyle]="{ 'width.px':(project?.images?.length > 0 || isMobile()) ? mediaWidth : 560, 'height.px':mediaWidth }">
-            <div [ngStyle]="{ 'paddingTop.px':(project?.images?.length > 0 || isMobile()) ? ((mediaWidth - videoHeight)/2) : 0 }">
-              <app-youtube-video [videoId]="project?.videos[0]?.youtubeId" [width]="(project?.images?.length > 0 || isMobile()) ? mediaWidth : 560" [height]="(project?.images?.length > 0 || isMobile()) ? videoHeight : 315"></app-youtube-video>
-            </div>
+              <app-video-slideshow
+                [videos]="project?.videos"
+                [width]="(project?.images?.length > 0 || isMobile()) ? mediaWidth : 560"
+                [height]="(project?.images?.length > 0 || isMobile()) ? videoHeight : 315"
+                [containerWidth]="(project?.images?.length > 0 || isMobile()) ? mediaWidth : 560"
+                [containerHeight]="mediaWidth"
+                [vidPaddingTop]="(project?.images?.length > 0 || isMobile()) ? ((mediaWidth - videoHeight)/2) : 0"
+                [useBottomButtons]="project?.images?.length > 0 || isMobile()"
+                [forceShowButtons]="isMobile()"
+              ></app-video-slideshow>
           </mat-card>
         </div>
       </div>

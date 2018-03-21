@@ -1,6 +1,6 @@
 // Author: Sean Pesce
 import * as Globals from './../../globals';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ImageSlide } from './../../classes/image-slide';
 import { MatDialog } from '@angular/material';
 import { ImageExpandDialogComponent } from './../dialogs/image-expand-dialog/image-expand-dialog.component';
@@ -34,7 +34,7 @@ export class SlideshowComponent implements OnInit {
   private swipeCoord?: [number, number];
   private swipeTime?:  number;
 
-  constructor(public expandDialog: MatDialog) { }
+  constructor(public expandDialog: MatDialog, private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
@@ -88,6 +88,7 @@ export class SlideshowComponent implements OnInit {
     } else {
       this.index++;
     }
+    this.cdRef.detectChanges();
   }
 
   public previousSlide(): void {
@@ -96,6 +97,7 @@ export class SlideshowComponent implements OnInit {
     } else {
       this.index--;
     }
+    this.cdRef.detectChanges();
   }
 
   public expand(): void {
@@ -106,30 +108,6 @@ export class SlideshowComponent implements OnInit {
         useAssetsPath: this.useAssetsPath
       }
     });
-  }
-
-  public onMouseEnterLeft(): void {
-    this.hoverLeft = true;
-  }
-
-  public onMouseLeaveLeft(): void {
-    this.hoverLeft = false;
-  }
-
-  public onMouseEnterRight(): void {
-    this.hoverRight = true;
-  }
-
-  public onMouseLeaveRight(): void {
-    this.hoverRight = false;
-  }
-
-  public onMouseEnterCenter(): void {
-    this.hoverCenter = true;
-  }
-
-  public onMouseLeaveCenter(): void {
-    this.hoverCenter = false;
   }
 
   public onMouseEnter(): void {

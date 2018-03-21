@@ -1,8 +1,11 @@
 // Author: Sean Pesce
+import { environment } from './../environments/environment';
 import { Project } from './classes/project';
 import { ProjectFormat } from './enums/project-format';
 import { ProjectPlatform } from './enums/project-platform';
 import { ProjectPurpose } from './enums/project-purpose';
+
+const ASSETS = environment.production ? 'assets/' : '../assets/';
 
 export const PROJECTS: Project[] = [
   {
@@ -68,8 +71,7 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: 'Example results from the search feature of the website',
         url: 'https://www.youtube.com/watch?v=DXqlODCi0dw',
-        embed: '',
-        youtubeId: 'DXqlODCi0dw'
+        embedUrl: 'https://www.youtube.com/embed/DXqlODCi0dw'
       }
     ]
   },
@@ -116,29 +118,30 @@ export const PROJECTS: Project[] = [
         portfolio: ''
       }
     ],
-  license: 'GNU General Public License v3.0',
-  languages: [ 'Java', 'CSS' ],
-  utilities: [ 'JavaFX', 'Inno Setup' ],
-  software: [ 'Eclipse', 'Git', 'NetBeans' ],
-  images: [
-    {
-      src: 'https://camo.githubusercontent.com/cf64b557ac8e21cbed6f277bb408c147e6d'
-        + 'edb4f/68747470733a2f2f692e696d6775722e636f6d2f483261733836312e706e67',
-      title: 'Texture mods tab', alt: 'Screenshot', ariaLabel: ''
-    },
-    { src: 'https://camo.githubusercontent.com/1559890d02bf25c602bf69ecef43cb8620d'
-        + 'ee606/687474703a2f2f692e696d6775722e636f6d2f62715a414234732e706e67',
-    title: 'Graphics settings tab', alt: 'Screenshot', ariaLabel: ''
-    }
-          ],
-  videos: [ {
-            title: 'v0.94 Demo',
-            author: 'Sean Pesce',
-            description: '',
-            url: 'https://www.youtube.com/watch?v=OiVRokZtZAo',
-            embed: '',
-            youtubeId: 'OiVRokZtZAo'
-          } ]
+    license: 'GNU General Public License v3.0',
+    languages: [ 'Java', 'CSS' ],
+    utilities: [ 'JavaFX', 'Inno Setup' ],
+    software: [ 'Eclipse', 'Git', 'NetBeans' ],
+    images: [
+      {
+        src: 'https://camo.githubusercontent.com/cf64b557ac8e21cbed6f277bb408c147e6d'
+          + 'edb4f/68747470733a2f2f692e696d6775722e636f6d2f483261733836312e706e67',
+        title: 'Texture mods tab', alt: 'Screenshot', ariaLabel: ''
+      },
+      { src: 'https://camo.githubusercontent.com/1559890d02bf25c602bf69ecef43cb8620d'
+          + 'ee606/687474703a2f2f692e696d6775722e636f6d2f62715a414234732e706e67',
+      title: 'Graphics settings tab', alt: 'Screenshot', ariaLabel: ''
+      }
+            ],
+    videos: [
+      {
+        title: 'v0.94 Demo',
+        author: 'Sean Pesce',
+        description: '',
+        url: 'https://www.youtube.com/watch?v=OiVRokZtZAo',
+        embedUrl: 'https://www.youtube.com/embed/OiVRokZtZAo'
+      }
+    ]
   },
   {
     title: 'Dark Souls Overhaul Project',
@@ -178,26 +181,22 @@ export const PROJECTS: Project[] = [
         author: 'metal-crow',
         description: '',
         url: 'https://www.youtube.com/watch?v=evYCvJXgrwU',
-        embed: '',
-        youtubeId: 'evYCvJXgrwU'
+        embedUrl: 'https://www.youtube.com/embed/evYCvJXgrwU'
       },
       {
         title: 'Game Improvement: Movement while casting',
         author: 'metal-crow',
         description: '',
         url: 'https://streamable.com/gvy2a',
-        embed: '<div style="width: 100%; height: 0px; position: relative; padding-bottom: 62.817%;">'
-              + '<iframe src="https://streamable.com/s/gvy2a/ekvqba" frameborder="0" width="100%" height="100%"'
-              + ' allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>',
-        youtubeId: ''
+        // embedUrl: 'https://streamable.com/s/gvy2a/ekvqba'
+        embedUrl: ASSETS + '/video/projects/DarkSoulsOverhaulMoveWhileCasting.mp4'
       },
       {
         title: 'Game Improvement: Unlimited save slots',
         author: 'Sean Pesce',
         description: '',
         url: 'https://www.youtube.com/watch?v=QWTtksCB7Hk',
-        embed: '',
-        youtubeId: 'QWTtksCB7Hk'
+        embedUrl: 'https://www.youtube.com/embed/QWTtksCB7Hk'
       }
     ]
   },
@@ -262,8 +261,7 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: 'Note: This was a very early build; the vast majority of features were implemented after this recording.',
         url: 'https://www.youtube.com/watch?v=F2FiOhFi0pw',
-        embed: '',
-        youtubeId: 'F2FiOhFi0pw'
+        embedUrl: 'https://www.youtube.com/embed/F2FiOhFi0pw'
       }
     ]
   },
@@ -306,8 +304,7 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: '',
         url: 'https://www.youtube.com/watch?v=qWjd7HO216A',
-        embed: '',
-        youtubeId: 'qWjd7HO216A'
+        embedUrl: 'https://www.youtube.com/embed/qWjd7HO216A'
       }
     ]
   },

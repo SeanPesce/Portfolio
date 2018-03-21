@@ -4,12 +4,11 @@ export class Video {
 
   public title = '';
   public author = '';
-  public description = '';
+  public description ? = '';
   public url = '';
-  public embed ? = '';
-  public youtubeId ? = '';
+  public embedUrl = '';
 
-  constructor(title: string, author: string, description: string, url: string, embed: string, youtubeId: string) {
+  constructor(title: string, author: string, description: string, url: string, embedUrl: string) {
     if (title != null) {
       this.title = title;
     }
@@ -22,11 +21,8 @@ export class Video {
     if (url != null) {
       this.url = url;
     }
-    if (embed != null) {
-      this.embed = embed;
-    }
-    if (youtubeId != null) {
-      this.youtubeId = youtubeId;
+    if (embedUrl != null) {
+      this.embedUrl = embedUrl;
     }
   }
 }

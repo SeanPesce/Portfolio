@@ -1,0 +1,3 @@
+<!-- Author: Sean Pesce -->
+<iframe *ngIf="!video" title="{{title}}" width="{{width}}" height="{{height}}" [src]="((embedUrl?.length > 0)?embedUrl : (url)?url:'') | safe: 'url'" frameborder="0" allow="autoplay; encrypted-media" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe *ngIf="video" title="{{video?.title}}" width="{{width}}" height="{{height}}" [src]="((video?.embedUrl?.length > 0)? video?.embedUrl : video?.url ? video?.url:'') | safe: 'url'" frameborder="0" allow="autoplay; encrypted-media" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
