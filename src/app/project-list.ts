@@ -363,7 +363,8 @@ export const PROJECTS: Project[] = [
                 + ' assistant to determine GUI layout as well as requirements for recording & analyzing data.',
     repository: 'https://github.com/SeanPesce/Molar-Wear',
     isPrivate: false,
-    website: '',
+    website: 'http://meeting.physanth.org/program/2018/session74/'
+           + 'lagan-2018-dentine-without-borders-an-improved-dental-macrowear-scoring-method-with-cross-cultural-application.html',
     download: 'https://github.com/SeanPesce/Molar-Wear/releases',
     start: 2018,
     end: 0,
