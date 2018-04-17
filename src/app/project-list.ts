@@ -120,7 +120,7 @@ export const PROJECTS: Project[] = [
     ],
     license: 'GNU General Public License v3.0',
     languages: [ 'Java', 'CSS' ],
-    utilities: [ 'JavaFX', 'Inno Setup' ],
+    utilities: [ 'JavaFX', 'Apache Commons IO', 'Inno Setup' ],
     software: [ 'Eclipse', 'Git', 'NetBeans' ],
     images: [
       {
@@ -388,7 +388,7 @@ export const PROJECTS: Project[] = [
     acknowledgements: [],
     license: 'GNU General Public License v3.0',
     languages: [ 'Java', 'XML' ],
-    utilities: [ 'Android SDK', 'Gradle' ],
+    utilities: [ 'Android SDK', 'Apache Commons CSV', 'Gradle' ],
     software: [ 'Android Studio', 'Git' ],
     images: [
       {
