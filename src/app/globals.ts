@@ -131,12 +131,30 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     isPrivate: false
   },
   {
+    title: 'PayPal',
+    url: 'https://www.paypal.me/SeanPesce',
+    website: 'https://www.paypal.com/',
+    icon: ASSETS + '/img/social/icon/PayPal-white-transparent.svg',
+    logo: ASSETS + '/img/social/logo/PayPal-color.svg',
+    username: 'SeanPesce',
+    isPrivate: false
+  },
+  {
     title: 'Reddit',
     url: 'https://www.reddit.com/u/SeanPesce',
     website: 'https://www.reddit.com',
     icon: ASSETS + '/img/social/icon/Reddit-white-transparent.svg',
     logo: ASSETS + '/img/social/logo/Reddit-full-color.svg',
     username: 'SeanPesce',
+    isPrivate: false
+  },
+  {
+    title: 'Skype',
+    url: 'skype:pescesean?chat',
+    website: 'https://www.skype.com',
+    icon: ASSETS + '/img/social/icon/Skype-white-transparent.svg',
+    logo: ASSETS + '/img/social/logo/Skype-color.svg',
+    username: 'pescesean',
     isPrivate: false
   },
   {

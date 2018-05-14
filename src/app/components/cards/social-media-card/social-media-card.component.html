@@ -5,7 +5,7 @@
       <a mat-card-avatar
        style="text-align:center;"
        [ngStyle]="{ 'height.px': imageHeight(), 'width.px': 50 }"
-       href="{{profile?.url?.length > 0 ? profile?.url : profile?.website}}"
+       [href]="(profile?.url?.length > 0 ? profile?.url : profile?.website) | safe: 'url'"
        title="{{profile?.title}}"
        attr.aria-valuenow="{{ariaLabelLogo?.length > 0 ? ariaLabelLogo : profile?.title + ' Logo'}}"
        target="{{target}}"
@@ -16,7 +16,7 @@
       <mat-card-title style="padding-left:2px; margin-bottom:0px;">
           <h1 class="mat-h1" style="font-size:26px; margin-bottom:0px;">{{profile?.title}}</h1>
           <a
-           href="{{profile?.url?.length > 0 ? profile?.url : profile?.website}}"
+           [href]="(profile?.url?.length > 0 ? profile?.url : profile?.website) | safe: 'url'"
            style="position:absolute; height:100%; width:100%; top:0px; left:0px; background-color:transparent; opacity:0.0;"
            title="{{profile?.title}}" attr.aria-valuenow="{{ariaLabelCard?.length > 0 ? ariaLabelCard : profile?.title}}"
            target="{{target}}"
