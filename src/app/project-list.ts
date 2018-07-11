@@ -150,9 +150,12 @@ export const PROJECTS: Project[] = [
     platforms: [ ProjectPlatform.WINDOWS ],
     formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Video game', 'Bug fix', 'Feature enhancement', 'New feature', 'Team' ],
-    description: 'Unofficial game patch for Dark Souls™: Prepare to Die Edition. Tasks include '
-                + 'reverse-engineering of undocumented file types, data structures, and engine bytecode'
-                + ' to develop bug-fixes and enhancements.',
+    description: 'Originally, this project was an unofficial game patch for Dark Souls™: Prepare to Die Edition, '
+                + 'but current development is now geared towards Dark Souls™: Remastered Edition. Tasks include '
+                + 'reverse-engineering of undocumented file types, data structures, and engine bytecode to '
+                + 'develop bug-fixes and enhancements. Some work continues on the Dark Souls™: Prepare to Die Edition '
+                + 'branch of the project, which actually boasts a more extensive list of fixes and quality-of-life '
+                + 'enhancements than the official Remaster.',
     repository: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul',
     isPrivate: false,
     website: '',
