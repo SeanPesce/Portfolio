@@ -24,7 +24,7 @@
       <!-- "Overview" tab -->
       <div *ngIf="project?.description?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Description</h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;">{{project?.description}}</h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;" [innerHTML]="project?.description | safe: 'html'"></h4>
       </div>
       <div *ngIf="project?.platforms?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Platform<span *ngIf="project?.platforms?.length > 1">s</span></h5>
@@ -57,6 +57,7 @@
           <h5 class="mat-h5 txt-color-dark" style="padding-top:12px; margin-bottom:0px; text-align:center;">Video<span *ngIf="project?.videos?.length > 1">s</span></h5>
           <mat-card style="padding:0px;" [ngStyle]="{ 'width.px':(project?.images?.length > 0 || isMobile()) ? mediaWidth : 560, 'height.px':mediaWidth }">
               <app-video-slideshow
+                #videosSlideshow
                 [videos]="project?.videos"
                 [width]="(project?.images?.length > 0 || isMobile()) ? mediaWidth : 560"
                 [height]="(project?.images?.length > 0 || isMobile()) ? videoHeight : 315"
@@ -92,7 +93,7 @@
       <!-- "Team" tab -->
       <div *ngIf="project?.collaborators?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Team</h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let teammate of project?.collaborators; let i = index;">{{teammate?.name}}<span *ngIf="i < (project?.collaborators?.length - 1)">,</span> </span></h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let teammate of project?.collaborators; let i = index;"><a *ngIf="teammate?.website?.length > 0 || teammate?.portfolio?.length > 0" href="{{teammate?.website?.length > 0 ? teammate?.website : teammate?.portfolio}}">{{teammate?.name}}</a><span *ngIf="teammate?.website?.length + teammate?.portfolio?.length == 0">{{teammate?.name}}</span><span *ngIf="i < (project?.collaborators?.length - 1)">,</span> </span></h4>
       </div>
       <div *ngIf="project?.acknowledgements?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Contributor<span *ngIf="project?.acknowledgements?.length > 1">s</span></h5>

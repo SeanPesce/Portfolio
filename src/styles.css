@@ -20,15 +20,18 @@
   --sp-color-dark: rgba(0, 0, 0, 0.54);
   --sp-color-txt-light-bg: var(--sp-color-dark);
   --sp-color-txt-dark-bg: var(--sp-color-light);
+  --sp-color-primary-saturated: #48559b;
 }
 
 .dbg-div {
   background-color: red;
+  color: green;
   opacity: 0.3;
 }
 
 .dbg-div:hover {
   background-color: rgb(255, 166, 0);
+  color: blue;
 }
 
 .theme-color-primary {
@@ -91,6 +94,15 @@
 }
 
 .txt-url-primary:hover {
+  color: var(--sp-color-dark);
+}
+
+.txt-url-primary-saturated {
+  text-decoration: none;
+  color: var(--sp-color-primary-saturated);
+}
+
+.txt-url-primary-saturated:hover {
   color: var(--sp-color-dark);
 }
 

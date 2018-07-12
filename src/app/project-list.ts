@@ -7,6 +7,21 @@ import { ProjectPurpose } from './enums/project-purpose';
 
 const ASSETS = environment.production ? 'assets/' : '../assets/';
 
+// URLs
+const AUDIUM_URL = 'http://app.audium.io.s3-website.us-east-2.amazonaws.com/';
+const AAPA_2018_URL = 'http://meeting.physanth.org/program/2018/session74';
+
+// Hyperlinks
+const DSPTDE_A = '<a href=\"https://store.steampowered.com/app/211420\" title=\"Steam store page for Dark Souls™:'
+                 + ' Prepare to Die Edition\" target=\"_blank\"><i>Dark Souls™: Prepare to Die Edition</i></a>';
+const DSR_A    = '<a href=\"https://store.steampowered.com/app/570940\" title=\"Steam store page for Dark Souls™:'
+                 + ' Remastered\" target=\"_blank\"><i>Dark Souls™: Remastered</i></a>';
+
+// Licenses
+const GPL3      = 'GNU General Public License v3.0';
+const APACHE_L2 = 'Apache License 2.0';
+
+
 export const PROJECTS: Project[] = [
   {
     title: 'Audium Music',
@@ -15,16 +30,18 @@ export const PROJECTS: Project[] = [
     platforms: [ ProjectPlatform.WEB ],
     formats: [ ProjectFormat.WEBSITE ],
     categories: [ 'Music', 'School', 'Website' ],
-    description: 'My undergraduate capstone project at Stony Brook University; worked with a team to create'
-                  + ' a web-based music streaming service (hosted on Amazon Web Services). My main responsibilities'
-                  + ' revolved around the database: design, deployment, data acquisition (via web scraping with custom'
-                  + ' Python scripts), population (using scraped data and randomly-generated data from custom MySQL procedures),'
-                  + ' and testing. I also assisted heavily in front and back-end development. To log into the website (link below),'
-                  + ' use the username \'seanpesce\' and password \'genericpassword\' (Note: website is hosted using the free'
-                  + ' AWS package, so loading might take longer than expected).',
+    description: 'My undergraduate capstone project at <a href=\"https://www.stonybrook.edu\" title=\"SBU homepage\"'
+                  + ' target=\"_blank\">Stony Brook University</a>;'
+                  + ' worked with a team to create a web-based music streaming service (hosted on Amazon Web Services). My'
+                  + ' main responsibilities revolved around the database: design, deployment, data acquisition (via web scraping'
+                  + ' with custom Python scripts), population (using scraped data and randomly-generated data from custom MySQL'
+                  + ' procedures), and testing. I also assisted heavily in front-end and back-end development. To log into the <a href=\"'
+                  + AUDIUM_URL + '\" title=\"Audium demo site\" target=\"_blank\">demo website</a>, use the username <b><tt>seanpesce</tt>'
+                  + '</b> and password <b><tt>genericpassword</tt></b> (Note: Demo website is hosted using the free AWS package, so loading'
+                  + ' might take longer than expected).',
     repository: 'https://github.com/ssparvez/AudiumFrontEnd',
     isPrivate: false,
-    website: 'http://app.audium.io.s3-website.us-east-2.amazonaws.com/',
+    website: AUDIUM_URL,
     download: '',
     start: 2017,
     end: 2017,
@@ -53,7 +70,7 @@ export const PROJECTS: Project[] = [
       }
     ],
     acknowledgements: [],
-    license: 'GNU General Public License v3.0',
+    license: GPL3,
     languages: [ 'CSS', 'HTML', 'Java', 'JavaScript', 'MySQL', 'Python', 'TypeScript' ],
     utilities: [ 'Angular 2+', 'AWS', 'Node.js', 'Spring' ],
     software: [ 'IntelliJ IDEA', 'MySQL Workbench', 'VS Code' ],
@@ -71,7 +88,8 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: 'Example results from the search feature of the website',
         url: 'https://www.youtube.com/watch?v=DXqlODCi0dw',
-        embedUrl: 'https://www.youtube.com/embed/DXqlODCi0dw'
+        embedUrl: 'https://www.youtube.com/embed/DXqlODCi0dw',
+        preview: ''
       }
     ]
   },
@@ -82,8 +100,8 @@ export const PROJECTS: Project[] = [
     platforms: [ ProjectPlatform.WINDOWS ],
     formats: [ ProjectFormat.DESKTOP_GUI_APP ],
     categories: [ 'Utility', 'Video game' ],
-    description: 'All-in-one settings utility for consolidating the installation and configuration processes'
-                 + ' of various community mods & fixes for Dark Souls™: Prepare to Die Edition.',
+    description: 'All-in-one settings utility for consolidating the installation and configuration'
+                 + ' of various community mods & fixes for ' + DSPTDE_A + '.',
     repository: 'https://github.com/SeanPesce/Dark_Souls_Config_Utility',
     isPrivate: false,
     website: '',
@@ -118,7 +136,7 @@ export const PROJECTS: Project[] = [
         portfolio: ''
       }
     ],
-    license: 'GNU General Public License v3.0',
+    license: GPL3,
     languages: [ 'Java', 'CSS' ],
     utilities: [ 'JavaFX', 'Apache Commons IO', 'Inno Setup' ],
     software: [ 'Eclipse', 'Git', 'NetBeans' ],
@@ -139,7 +157,8 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: '',
         url: 'https://www.youtube.com/watch?v=OiVRokZtZAo',
-        embedUrl: 'https://www.youtube.com/embed/OiVRokZtZAo'
+        embedUrl: 'https://www.youtube.com/embed/OiVRokZtZAo',
+        preview: ''
       }
     ]
   },
@@ -150,11 +169,14 @@ export const PROJECTS: Project[] = [
     platforms: [ ProjectPlatform.WINDOWS ],
     formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Video game', 'Bug fix', 'Feature enhancement', 'New feature', 'Team' ],
-    description: 'Originally, this project was an unofficial game patch for Dark Souls™: Prepare to Die Edition, '
-                + 'but current development is now geared towards Dark Souls™: Remastered Edition. Tasks include '
+    description: 'Originally, this project was an unofficial game patch for ' + DSPTDE_A + ', '
+                + 'but current development is now geared towards ' + DSR_A + '. Tasks include '
                 + 'reverse-engineering of undocumented file types, data structures, and engine bytecode to '
-                + 'develop bug-fixes and enhancements. Some work continues on the Dark Souls™: Prepare to Die Edition '
-                + 'branch of the project, which actually boasts a more extensive list of fixes and quality-of-life '
+                + 'develop bug-fixes and enhancements. Some work continues on the <a '
+                + 'href=\"https://github.com/metal-crow/Dark-Souls-1-Overhaul/tree/PtDE\" '
+                + 'title=\"Git branch for the Dark Souls™: Prepare to Die Edition build of the Overhaul Project\" '
+                + 'target=\"_blank\"><i>Prepare to Die Edition</i> '
+                + 'branch</a> of the project, which actually boasts a more extensive list of fixes and quality-of-life '
                 + 'enhancements than the official Remaster.',
     repository: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul',
     isPrivate: false,
@@ -180,26 +202,74 @@ export const PROJECTS: Project[] = [
     images: [],
     videos: [
       {
-        title: 'Game Improvement: Increased multiplayer limit',
-        author: 'metal-crow',
+        title: 'Game Improvement: Lava brightness settings',
+        author: 'Sean Pesce',
         description: '',
-        url: 'https://www.youtube.com/watch?v=evYCvJXgrwU',
-        embedUrl: 'https://www.youtube.com/embed/evYCvJXgrwU'
-      },
-      {
-        title: 'Game Improvement: Movement while casting',
-        author: 'metal-crow',
-        description: '',
-        url: 'https://streamable.com/gvy2a',
-        // embedUrl: 'https://streamable.com/s/gvy2a/ekvqba'
-        embedUrl: ASSETS + '/video/projects/DarkSoulsOverhaulMoveWhileCasting.mp4'
+        url: 'https://streamable.com/lrf0b',
+        embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulDimLava.mp4',
+        // embedUrl: 'https://web.archive.org/web/20180712090732/https://streamable.com/s/lrf0b',
+        preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulDimLava.jpg'
       },
       {
         title: 'Game Improvement: Unlimited save slots',
         author: 'Sean Pesce',
         description: '',
         url: 'https://www.youtube.com/watch?v=QWTtksCB7Hk',
-        embedUrl: 'https://www.youtube.com/embed/QWTtksCB7Hk'
+        embedUrl: 'https://www.youtube.com/embed/QWTtksCB7Hk',
+        preview: ''
+      },
+      {
+        title: 'Game Improvement: Save file selection dialog',
+        author: 'Sean Pesce',
+        description: '',
+        url: 'https://streamable.com/6ti45',
+        embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulSaveSelectDlg.mp4',
+        // embedUrl: 'https://web.archive.org/web/20180712064923/https://streamable.com/s/6ti45',
+        preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulSaveSelectDlg.jpg'
+      },
+      {
+        title: 'Game Improvement: Increased multiplayer phantom limit',
+        author: 'metal-crow',
+        description: '',
+        url: 'https://www.youtube.com/watch?v=evYCvJXgrwU',
+        embedUrl: 'https://www.youtube.com/embed/evYCvJXgrwU',
+        preview: ''
+      },
+      {
+        title: 'Game Improvement: Movement while casting spells',
+        author: 'metal-crow',
+        description: '',
+        url: 'https://streamable.com/gvy2a',
+        embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulMoveWhileCasting.mp4',
+        // embedUrl: 'https://web.archive.org/web/20180712064429/https://streamable.com/s/gvy2a',
+        preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulMoveWhileCasting.jpg'
+      },
+      {
+        title: 'Game Improvement: Weapon durability HUD meters',
+        author: 'Sean Pesce',
+        description: '',
+        url: 'https://streamable.com/7mmq3',
+        embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulDurabilityBars.mp4',
+        // embedUrl: 'https://web.archive.org/web/20180712064939/https://streamable.com/s/7mmq3',
+        preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulDurabilityBars.jpg'
+      },
+      {
+        title: 'Game Improvement: Multiple simultaneous item consumption',
+        author: 'Sean Pesce',
+        description: '',
+        url: 'https://streamable.com/064sk',
+        embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulMultiConsume.mp4',
+        // embedUrl: 'https://web.archive.org/web/20180712064932/https://streamable.com/s/064sk',
+        preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulMultiConsume.jpg'
+      },
+      {
+        title: 'Overhaul Feature: Update detection & Message of the Day',
+        author: 'Sean Pesce',
+        description: '',
+        url: 'https://streamable.com/jd26c',
+        embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulUpdateAndMotD.mp4',
+        // embedUrl: 'https://web.archive.org/web/20180712064957/https://streamable.com/s/jd26c',
+        preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulUpdateAndMotD.jpg'
       }
     ]
   },
@@ -211,7 +281,7 @@ export const PROJECTS: Project[] = [
     formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Video game', 'New feature' ],
     description: 'Direct3D9 Wrapper DLL/classes with a built-in overlay framework that implements an in-game CLI'
-                + ' and a text feed for printing on-screen messages in DirectX9 programs. Plugins are also supported.',
+                + ' and a text feed for printing on-screen messages in DirectX 9 programs. Plugins are also supported.',
     repository: 'https://github.com/SeanPesce/Direct3D9-Overlay',
     isPrivate: false,
     website: '',
@@ -227,7 +297,7 @@ export const PROJECTS: Project[] = [
         website: 'https://www.codeguru.com/member.php/Michael+Koch/',
         portfolio: ''
     }],
-    license: 'GNU General Public License v3.0',
+    license: GPL3,
     languages: [ 'C', 'C++' ],
     utilities: [ 'DirectX SDK', 'MS Detours', 'SeqAn', 'STL', 'Windows API' ],
     software: [ 'Git', 'Visual Studio' ],
@@ -264,7 +334,8 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: 'Note: This was a very early build; the vast majority of features were implemented after this recording.',
         url: 'https://www.youtube.com/watch?v=F2FiOhFi0pw',
-        embedUrl: 'https://www.youtube.com/embed/F2FiOhFi0pw'
+        embedUrl: 'https://www.youtube.com/embed/F2FiOhFi0pw',
+        preview: ''
       }
     ]
   },
@@ -275,7 +346,11 @@ export const PROJECTS: Project[] = [
     platforms: [ ProjectPlatform.WINDOWS ],
     formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Video game', 'Feature enhancement' ],
-    description: 'Extended customization mod for field of view in Deus Ex: Mankind Divided and Deus Ex: Breach.',
+    description: 'Extended field of view customization mod for <a href=\"https://store.steampowered.com/app/337000\"'
+                 + ' title=\"Steam store page for Deus Ex: Mankind Divided\"'
+                 + ' target=\"_blank\"><i>Deus Ex: Mankind Divided</i></a> and <a href=\"https://store.steampowered.com/app/555450\"'
+                 + ' title=\"Steam store page for Deus Ex: Breach\"'
+                 + ' target=\"_blank\"><i>Deus Ex: Breach</i></a>.',
     repository: 'https://github.com/SeanPesce/DXMD-FoV-Changer',
     isPrivate: false,
     website: '',
@@ -285,7 +360,7 @@ export const PROJECTS: Project[] = [
     status: 'Supported',
     collaborators: [],
     acknowledgements: [],
-    license: 'GNU General Public License v3.0',
+    license: GPL3,
     languages: [ 'C', 'C++', 'x86 assembly' ],
     utilities: [ 'STL', 'Windows API' ],
     software: [ 'Cheat Engine', 'Git', 'Visual Studio' ],
@@ -307,7 +382,8 @@ export const PROJECTS: Project[] = [
         author: 'Sean Pesce',
         description: '',
         url: 'https://www.youtube.com/watch?v=qWjd7HO216A',
-        embedUrl: 'https://www.youtube.com/embed/qWjd7HO216A'
+        embedUrl: 'https://www.youtube.com/embed/qWjd7HO216A',
+        preview: ''
       }
     ]
   },
@@ -318,7 +394,8 @@ export const PROJECTS: Project[] = [
     platforms: [ ProjectPlatform.WINDOWS ],
     formats: [ ProjectFormat.DYNAMIC_LIBRARY ],
     categories: [ 'Bug fix', 'Video game' ],
-    description: 'Automated fix for a common input bug in Dark Souls™: Prepare to Die Edition.',
+    description: 'Automated fix for a common input bug in ' + DSPTDE_A + '. This fix was eventually '
+                 + 'incorporated into the Dark Souls Overhaul Project.',
     repository: 'https://github.com/SeanPesce/FPSFix-Plus',
     isPrivate: false,
     website: '',
@@ -340,7 +417,7 @@ export const PROJECTS: Project[] = [
         website: '',
         portfolio: 'https://github.com/mavenlin'
       }],
-    license: 'GNU General Public License v3.0',
+    license: GPL3,
     languages: [ 'C', 'C++' ],
     utilities: [ 'STL', 'Windows API' ],
     software: [ 'Cheat Engine', 'Git', 'Visual Studio' ],
@@ -360,14 +437,21 @@ export const PROJECTS: Project[] = [
     platforms: [ ProjectPlatform.ANDROID ],
     formats: [ ProjectFormat.MOBILE_APP ],
     categories: [ 'Mobile app' ],
-    description: 'MolWear is an Android app that aims to simplify the recording and sharing of'
+    description: 'MolWear is an (in-progress) Android app that aims to simplify the recording and sharing of'
                 + ' observational/descriptive data about molar surface wear for anthropological research'
-                + ' purposes. The development process involved working closely with a PhD student and research'
-                + ' assistant to determine GUI layout as well as requirements for recording & analyzing data.',
+                + ' purposes. The development process involved working closely with PhD student (now doctor) Emma Lagan and research'
+                + ' assistant Daniel Ehrlich to determine GUI layout as well as requirements for recording & analyzing data using'
+                + ' Dr. Lagan\'s new method for dental wear scoring. The app was a cornerstone of <a href=\"' + ASSETS
+                + 'doc/Dentine_Without_Borders_Lagan_et_al.pdf\" title=\"PDF of poster presented at the 2018 AAPA national'
+                + ' conference\" target=\"_blank\">Dr. Lagan\'s presentation</a> at the <a href=\"' + AAPA_2018_URL + '\"'
+                + ' title=\"2018 AAPA national conference schedule\" target=\"_blank\">87th Annual Meeting of the American Association'
+                + ' of Physical Anthropologists (2018)</a>, where the project received an'
+                + ' <a href=\"https://www.dentalanthropology.org/news/2018/5/7/student-prize-winners-2018\"'
+                + '  title=\"2018 AAPA national conference prize winners\" target=\"_blank\">award for \"Best Poster\"</a>.',
     repository: 'https://github.com/SeanPesce/Molar-Wear',
     isPrivate: false,
-    website: 'http://meeting.physanth.org/program/2018/session74/'
-           + 'lagan-2018-dentine-without-borders-an-improved-dental-macrowear-scoring-method-with-cross-cultural-application.html',
+    website: AAPA_2018_URL
+             + '/lagan-2018-dentine-without-borders-an-improved-dental-macrowear-scoring-method-with-cross-cultural-application.html',
     download: 'https://github.com/SeanPesce/Molar-Wear/releases',
     start: 2018,
     end: 0,
@@ -383,13 +467,13 @@ export const PROJECTS: Project[] = [
       {
         name: 'Emma M. Lagan',
         username: '',
-        website: 'http://as.nyu.edu/anthropology/graduate/alumni/masters-alumni-in-human-skeletal-biology-track/emma-lagan.html',
+        website: 'https://as.nyu.edu/anthropology/graduate/alumni/masters-alumni-in-human-skeletal-biology-track/emma-lagan.html',
         portfolio: '',
         role: 'Research lead'
       }
     ],
     acknowledgements: [],
-    license: 'GNU General Public License v3.0',
+    license: GPL3,
     languages: [ 'Java', 'XML' ],
     utilities: [ 'Android SDK', 'Apache Commons CSV', 'Gradle' ],
     software: [ 'Android Studio', 'Git' ],
@@ -426,6 +510,11 @@ export const PROJECTS: Project[] = [
       {
         src: 'https://raw.githubusercontent.com/SeanPesce/Molar-Wear/master/docs/images/00.jpg',
         title: 'Startup splash screen', alt: 'Screenshot', ariaLabel: 'Screenshot of startup splash screen'
+      },
+      {
+        src: ASSETS + 'img/showcase/molwear/Dentine_Without_Borders_Lagan_et_al.jpg',
+        title: '2018 AAPA national conference poster for Dr. Lagan\'s research method (featuring MolWear)',
+        alt: 'Screenshot', ariaLabel: 'Screenshot of startup splash screen'
       }
     ],
     videos: []
@@ -437,8 +526,9 @@ export const PROJECTS: Project[] = [
     platforms: [ ProjectPlatform.WEB ],
     formats: [ ProjectFormat.WEBSITE ],
     categories: [ 'Website' ],
-    description: 'The website you\'re currently viewing, created for the purpose of providing easy access to my resume '
-                  + '& software portfolio for potential employers (or other curious parties).',
+    description: 'The website you\'re currently viewing, created for the purpose of providing easy access to my '
+                  + '<a href=\"' + ASSETS + 'doc/Resume_SeanPesce.pdf\" title=\"Download resume (PDF)\" target=\"_blank\">resume</a>'
+                  + ' and software portfolio for potential employers (or other curious parties).',
     repository: 'https://github.com/SeanPesce/Portfolio',
     isPrivate: false,
     website: 'https://SeanPesce.github.io/Portfolio',
@@ -448,7 +538,7 @@ export const PROJECTS: Project[] = [
     status: 'Supported',
     collaborators: [],
     acknowledgements: [],
-    license: 'Apache License 2.0',
+    license: APACHE_L2,
     languages: [ 'CSS', 'HTML', 'JavaScript', 'TypeScript' ],
     utilities: [ 'Angular 2+', 'Node.js' ],
     software: [ 'Git', 'VS Code' ],
@@ -463,17 +553,26 @@ export const PROJECTS: Project[] = [
     formats: [ ProjectFormat.DESKTOP_GUI_APP ],
     categories: [ 'Utility' ],
     description: 'A small program that runs in the background and periodically reminds'
-                + ' the user to take a break from their screen to avoid eye strain.',
-    repository: 'https://github.com/SeanPesce/Rest-Your-Eyes',
+                + ' the user to take a break from their screen to avoid eye strain.<br><b>Note:</b>'
+                + ' The <a href=\"' + ASSETS + 'download/RestYourEyes-v1.0-Lite.zip\" title=\"Download RestYourEyes '
+                + 'v1.0 Lite portable bundle (for Windows)\" target=\"_blank\">download URL</a> below links to the Lite Windows'
+                + ' build of RestYourEyes in a portable package, meaning the program doesn\'t need to be installed, but'
+                + ' a <a href=\"http://www.oracle.com/technetwork/java/javase/downloads/index.html\"'
+                + ' title=\"JRE download page\" target=\"_blank\">Java Runtime Environment</a> must be installed in order to run'
+                + ' the program.',
+    // repository: 'https://github.com/SeanPesce/Rest-Your-Eyes', // Made this repository private because my GitHub was getting cluttered
+    repository: 'https://web.archive.org/web/20180712045411/https://github.com/SeanPesce/Rest-Your-Eyes',
     isPrivate: true,
     website: '',
-    download: 'https://github.com/SeanPesce/Rest-Your-Eyes/releases',
+    // download: 'https://github.com/SeanPesce/Rest-Your-Eyes/releases',
+    // download: 'https://web.archive.org/web/20180712045551/https://github.com/SeanPesce/Rest-Your-Eyes/releases',
+    download: ASSETS + 'download/RestYourEyes-v1.0-Lite.zip',
     start: 2017,
     end: 2017,
     status: 'Unsupported',
     collaborators: [],
     acknowledgements: [],
-    license: 'GNU General Public License v3.0',
+    license: GPL3,
     languages: [ 'Java', 'CSS' ],
     utilities: [ 'JavaFX', 'Inno Setup' ],
     software: [ 'Eclipse', 'Git' ],

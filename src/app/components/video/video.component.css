@@ -1,1 +1,29 @@
 /* Author: Sean Pesce */
+
+.video-title {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.video-title:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.video-title-url {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.video-title-url:hover {
+  color: rgba(255, 255, 255, 0.95);
+}

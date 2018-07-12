@@ -1,7 +1,8 @@
 // Author: Sean Pesce
 import * as Globals from './../../globals';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Video } from '../../classes/video';
+import { VideoComponent } from '../../components/video/video.component';
 
 @Component({
   selector: 'app-video-slideshow',
@@ -22,10 +23,12 @@ export class VideoSlideshowComponent implements OnInit {
   @Input() public forceShowButtons = false;
   @Input() public useBottomButtons = false;
 
+  @ViewChild('childVidComponent') public videoComponent: VideoComponent;
+
   public index = 0;
   public hover = false;
   public hoverButtons = false;
-  public hoverVideo = false;
+  public hoverVideo   = false;
 
   private swipeCoord?: [number, number];
   private swipeTime?:  number;
@@ -35,6 +38,12 @@ export class VideoSlideshowComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public pausePlayBack(): void {
+    if (this.videoComponent) {
+      this.videoComponent.pausePlayBack();
+    }
   }
 
   public swipeStart(event: TouchEvent): void {
@@ -104,27 +113,47 @@ export class VideoSlideshowComponent implements OnInit {
     return window.innerWidth <= Globals.MOBILE_WIDTH_CUTOFF;
   }
 
-  public onMouseEnter(): void {
+  // Sets flag indicating that mouse cursor is hovering over the VideoComponent child element
+  public setMouseEnterVidComponent(event: MouseEvent): void {
+    if (this.videoComponent) {
+      this.videoComponent.onMouseEnterParent(event);
+    }
+  }
+
+  // Sets flag indicating that mouse cursor is no longer hovering over the VideoComponent child element
+  public setMouseLeaveVidComponent(event: MouseEvent): void {
+    if (this.videoComponent) {
+      this.videoComponent.onMouseLeaveParent(event);
+    }
+  }
+
+  public onMouseEnter(event: MouseEvent): void {
+    this.setMouseEnterVidComponent(event);
     this.hover = true;
   }
 
-  public onMouseLeave(): void {
+  public onMouseLeave(event: MouseEvent): void {
+    this.setMouseLeaveVidComponent(event);
     this.hover = false;
   }
 
-  public onMouseEnterButtons(): void {
+  public onMouseEnterButtons(event: MouseEvent): void {
+    this.setMouseEnterVidComponent(event);
     this.hoverButtons = true;
   }
 
-  public onMouseLeaveButtons(): void {
+  public onMouseLeaveButtons(event: MouseEvent): void {
+    this.setMouseLeaveVidComponent(event);
     this.hoverButtons = false;
   }
 
-  public onMouseEnterVideo(): void {
+  public onMouseEnterVideo(event: MouseEvent): void {
+    this.setMouseEnterVidComponent(event);
     this.hoverVideo = true;
   }
 
-  public onMouseLeaveVideo(): void {
+  public onMouseLeaveVideo(event: MouseEvent): void {
+    this.setMouseLeaveVidComponent(event);
     this.hoverVideo = false;
   }
 

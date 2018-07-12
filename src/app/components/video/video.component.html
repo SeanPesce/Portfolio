@@ -1,3 +1,61 @@
 <!-- Author: Sean Pesce -->
-<iframe *ngIf="!video" title="{{title}}" width="{{width}}" height="{{height}}" [src]="((embedUrl?.length > 0)?embedUrl : (url)?url:'') | safe: 'url'" frameborder="0" allow="autoplay; encrypted-media" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe *ngIf="video" title="{{video?.title}}" width="{{width}}" height="{{height}}" [src]="((video?.embedUrl?.length > 0)? video?.embedUrl : video?.url ? video?.url:'') | safe: 'url'" frameborder="0" allow="autoplay; encrypted-media" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div *ngIf="video" (mouseenter)="onMouseEnterVideo($event)" (mouseleave)="onMouseLeaveVideo($event)">
+  <!-- For displaying remote videos -->
+  <iframe
+   *ngIf="!getEmbedUrl()?.toLowerCase().endsWith('.mp4')"
+   title="{{video?.title}}"
+   width="{{width}}" height="{{height}}"
+   [src]="getEmbedUrl() | safe: 'url'"
+   frameborder="0" allow="autoplay; encrypted-media"
+   webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
+  <!-- For displaying local MP4 video files -->
+  <video
+   *ngIf="getEmbedUrl()?.toLowerCase().endsWith('.mp4')"
+   #videoElement
+   on-playing="playing=true;" on-pause="playing=false;" on-timeupdate="updateMediaControls();"
+   (click)="playing ? pausePlayBack() : resumePlayBack()"
+   width="{{width}}" height="{{height}}"
+   [src]="getEmbedUrl() | safe: 'url'"
+   poster="{{video?.preview ? video?.preview : ''}}" preload="metadata" controls loop
+   >{{notSupported()}}
+  </video>
+  <!-- Title bar -->
+  <h3
+   *ngIf="showTitle()"
+   class="video-title"
+   [ngStyle]="{ 'width.px':width-(width/20), 'height.px':(height/7), 'line-height.px':(height/7), 'padding-left.px':(width/40), 'padding-right.px':(width/40) }"
+   ><a *ngIf="useHyperlinkTitle()" class="video-title-url" href="{{video?.url?.length > 0 ? video?.url : video?.embedUrl}}" title="{{video?.title}}" target="_blank">{{video?.title}}</a><span *ngIf="!useHyperlinkTitle()">{{video?.title}}</span>
+  </h3>
+</div>
+
+
+<div *ngIf="!video">
+  <!-- For displaying remote videos -->
+  <iframe
+   *ngIf="!getEmbedUrl()?.toLowerCase().endsWith('.mp4')"
+   title="{{title}}"
+   width="{{width}}" height="{{height}}"
+   [src]="getEmbedUrl() | safe: 'url'"
+   frameborder="0" allow="autoplay; encrypted-media"
+   webkitallowfullscreen mozallowfullscreen allowfullscreen>
+  </iframe>
+  <!-- For displaying local MP4 video files -->
+  <video
+   *ngIf="getEmbedUrl()?.toLowerCase().endsWith('.mp4')"
+   #videoElement
+   on-playing="playing=true;" on-pause="playing=false;" on-timeupdate="updateMediaControls();"
+   (click)="playing ? pausePlayBack() : resumePlayBack()"
+   width="{{width}}" height="{{height}}"
+   [src]="getEmbedUrl() | safe: 'url'"
+   poster="{{preview ? preview : ''}}" preload="metadata" controls loop
+   >{{notSupported()}}
+  </video>
+  <!-- Title bar -->
+  <h3
+   *ngIf="showTitle()"
+   class="video-title"
+   [ngStyle]="{ 'width.px':width-(width/20), 'height.px':(height/7), 'line-height.px':(height/7), 'padding-left.px':(width/40), 'padding-right.px':(width/40) }"
+   ><a *ngIf="useHyperlinkTitle()" class="video-title-url" href="{{url?.length > 0 ? url : embedUrl}}" title="{{title}}" target="_blank">{{title}}</a><span *ngIf="!useHyperlinkTitle()">{{title}}</span>
+  </h3>
+</div>

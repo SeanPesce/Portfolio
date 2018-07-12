@@ -3,21 +3,20 @@
 <div [ngClass]="'content-background ' + (isMobile() ? 'content-section-mobile ' : 'content-section ')">
   <div style="width:90%; padding-left:5%; padding-right:5%; padding-bottom:50px;"><!--
 
-  --><div style="justify-content:left; display:inline-block; vertical-align:top; padding-right:3%; padding-bottom:32px;">
+  --><div style="justify-content:left; display:inline-block; vertical-align:top; padding: 0% 3% 32px 3%;">
       <h4 mat-subheader class="mat-h4" style="text-align:left; margin-bottom:5px;" title="Programming languages">Languages</h4>
       <app-language-skill-card *ngFor="let language of languages" [language]="language" [minWidth]="233" [maxWidth]="253">
       </app-language-skill-card>
     </div><!--
 
-  --><div style="justify-content:left; display:inline-block; vertical-align:top; padding: 0% 3% 0% 3%;">
+  --><div style="justify-content:left; display:inline-block; vertical-align:top; padding: 0% 3% 32px 3%;">
       <h4 mat-subheader class="mat-h4" style="text-align:left; margin-bottom:5px;" title="Libraries, frameworks, SDKs, etc.">Utilities</h4>
       <app-utility-skill-card *ngFor="let utility of utilities" [utility]="utility" [minWidth]="233" [maxWidth]="253">
       </app-utility-skill-card>
     </div><!--
 
-  --><div style="justify-content:left; display:inline-block; vertical-align:top; padding-left:3%;">
+  --><div style="justify-content:left; display:inline-block; vertical-align:top; padding: 0% 3% 0% 3%;">
       <h4 mat-subheader class="mat-h4" style="text-align:left; margin-bottom:5px;" title="Other software">Software</h4>
-      <!-- @TODO -->
       <app-software-skill-card *ngFor="let software of softwares" [software]="software" [minWidth]="233" [maxWidth]="253">
       </app-software-skill-card>
     </div><!--

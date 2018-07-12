@@ -1,11 +1,12 @@
 // Author: Sean Pesce
 import * as Globals from './../../globals';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatTabChangeEvent, MatDialog } from '@angular/material';
 import { NotImplementedDialogComponent } from './../dialogs/not-implemented-dialog/not-implemented-dialog.component';
 import { FORMATS } from './../../enums/project-format';
 import { PLATFORMS } from './../../enums/project-platform';
 import { Project } from '../../classes/project';
+import { VideoSlideshowComponent } from '../../components/video-slideshow/video-slideshow.component';
 
 export enum ProjectShowcaseSection {
   OVERVIEW = 0,
@@ -27,6 +28,8 @@ export class ProjectShowcaseComponent implements OnInit {
   @Input() public minHeight = 200;
   @Input() public showOptionsBt = false;
   @Input() public btIconOptions = 'more_vert';
+
+  @ViewChild('videosSlideshow') public videoSlideshowComponent: VideoSlideshowComponent;
 
   public sectionIndex = ProjectShowcaseSection.OVERVIEW;
 
@@ -57,6 +60,10 @@ export class ProjectShowcaseComponent implements OnInit {
     //   default:
     //     break;
     // }
+    // Pause any currently-playing videos when switching tabs
+    if (this.videoSlideshowComponent) {
+      this.videoSlideshowComponent.pausePlayBack();
+    }
     this.sectionIndex = event.index;
   }
 

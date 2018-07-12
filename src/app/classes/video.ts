@@ -7,6 +7,7 @@ export class Video {
   public description ? = '';
   public url = '';
   public embedUrl = '';
+  public preview ? = '';
 
   constructor(title: string, author: string, description: string, url: string, embedUrl: string) {
     if (title != null) {

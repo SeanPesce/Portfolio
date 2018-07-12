@@ -1,33 +1,33 @@
 <!-- Author: Sean Pesce -->
-<div *ngIf="videos?.length > 0" [ngStyle]="{ 'height.px':containerHeight, 'width.px':containerWidth }" style="justify-content:right; display:inline-block; vertical-align:top;" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (touchstart)="swipeStart($event)" (touchend)="swipeEnd($event)"><!--
+<div *ngIf="videos?.length > 0" [ngStyle]="{ 'height.px':containerHeight, 'width.px':containerWidth }" style="justify-content:right; display:inline-block; vertical-align:top;" (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)" (touchstart)="swipeStart($event)" (touchend)="swipeEnd($event)"><!--
 --><div [ngStyle]="{ 'height.px':height, 'width.px':width }" style="display:flex; text-align:right; vertical-align:middle; justify-content:center;">
     <app-video
+      #childVidComponent
       [video]="videos[index]"
       [width]="width"
       [height]="height"
-      (mouseenter)="onMouseEnterVideo()"
-      (mouseleave)="onMouseLeaveVideo()"
+      (mouseenter)="onMouseEnterVideo($event)"
+      (mouseleave)="onMouseLeaveVideo($event)"
       [ngStyle]="{ 'paddingTop.px':vidPaddingTop }"
     >
     </app-video>
-    <!-- <div #swipeVidCaptureDiv (touchstart)="swipeVideoStart($event)" (touchend)="swipeVideoEnd($event)" class="dbg-div" [ngStyle]="{ 'height.px':height+vidPaddingTop, 'width.px':width }" style="position:absolute; pointer-events:none;"></div> -->
   </div><!--
 
 --><div *ngIf="useBottomButtons" class="mat-h5" [ngStyle]="{ 'opacity':(isMobile() || hover || hoverButtons || hoverVideo || forceShowButtons) ? 0.5 : 0.0, 'marginTop.px':(0-(containerHeight * 0.1)), 'marginBottom':0, 'width.px':containerWidth, 'height.px':(containerHeight * 0.1), 'fontSize.px':(containerHeight * 0.06), 'lineHeight.px':(containerHeight * 0.1), 'bottom.px':0 }" style="position:absolute; background-color:black; color:white; overflow:hidden; white-space:nowrap;"><!--
---><div class="slideshow-bt unselectable" style="display:inline-block; text-align:center;" (mouseenter)="onMouseEnterButtons()" (mouseleave)="onMouseLeaveButtons()" [ngStyle]="{ 'marginTop.px':(0-(containerHeight * 0.1)), 'marginBottom':0, 'width.px':((containerWidth/3.0)-1), 'cursor':(videos?.length>1)?'pointer':'' }" title="{{(videos?.length>1)?'Previous video':''}}" (click)="previousVideo()"><mat-icon style="vertical-align:top;" [ngStyle]="{ 'width.px':(containerHeight * 0.1), 'fontSize.px':(containerHeight * 0.1), 'color':(videos?.length > 1)?'white':'transparent' }">keyboard_arrow_left</mat-icon></div><!--
---><div style="display:inline-block; text-align:center;" (mouseenter)="onMouseEnterButtons()" (mouseleave)="onMouseLeaveButtons()" [ngStyle]="{ 'opacity':1.0, 'marginTop.px':(0-(containerHeight * 0.1)), 'marginBottom':0, 'width.px':((containerWidth/3.0)-1) }">{{index+1}}/{{videos?.length}}</div><!--
---><div class="slideshow-bt unselectable" style="display:inline-block; text-align:center;" (mouseenter)="onMouseEnterButtons()" (mouseleave)="onMouseLeaveButtons()" [ngStyle]="{ 'marginTop.px':(0-(containerHeight * 0.1)), 'marginBottom':0, 'width.px':((containerWidth/3.0)-1), 'cursor':(videos?.length>1)?'pointer':'' }" title="{{(videos?.length>1)?'Next video':''}}" (click)="nextVideo()"><mat-icon style="vertical-align:top;" [ngStyle]="{ 'width.px':(containerHeight * 0.1), 'fontSize.px':(containerHeight * 0.1), 'color':(videos?.length > 1)?'white':'transparent' }">keyboard_arrow_right</mat-icon></div><!--
+--><div class="slideshow-bt unselectable" style="display:inline-block; text-align:center;" (mouseenter)="onMouseEnterButtons($event)" (mouseleave)="onMouseLeaveButtons($event)" [ngStyle]="{ 'marginTop.px':(0-(containerHeight * 0.1)), 'marginBottom':0, 'width.px':((containerWidth/3.0)-1), 'cursor':(videos?.length>1)?'pointer':'' }" title="{{(videos?.length>1)?'Previous video':''}}" (click)="previousVideo()"><mat-icon style="vertical-align:top;" [ngStyle]="{ 'width.px':(containerHeight * 0.1), 'fontSize.px':(containerHeight * 0.1), 'color':(videos?.length > 1)?'white':'transparent' }">keyboard_arrow_left</mat-icon></div><!--
+--><div style="display:inline-block; text-align:center;" (mouseenter)="onMouseEnterButtons($event)" (mouseleave)="onMouseLeaveButtons($event)" [ngStyle]="{ 'opacity':1.0, 'marginTop.px':(0-(containerHeight * 0.1)), 'marginBottom':0, 'width.px':((containerWidth/3.0)-1) }">{{index+1}}/{{videos?.length}}</div><!--
+--><div class="slideshow-bt unselectable" style="display:inline-block; text-align:center;" (mouseenter)="onMouseEnterButtons($event)" (mouseleave)="onMouseLeaveButtons($event)" [ngStyle]="{ 'marginTop.px':(0-(containerHeight * 0.1)), 'marginBottom':0, 'width.px':((containerWidth/3.0)-1), 'cursor':(videos?.length>1)?'pointer':'' }" title="{{(videos?.length>1)?'Next video':''}}" (click)="nextVideo()"><mat-icon style="vertical-align:top;" [ngStyle]="{ 'width.px':(containerHeight * 0.1), 'fontSize.px':(containerHeight * 0.1), 'color':(videos?.length > 1)?'white':'transparent' }">keyboard_arrow_right</mat-icon></div><!--
 --></div><!--
-
+   // "Previous video" button
 --><div *ngIf="!useBottomButtons" class="slideshow-middle-bt unselectable" [ngStyle]="{ 'backgroundColor':((isMobile() || hover || hoverButtons || hoverVideo || forceShowButtons) && videos?.length > 1) ? 'black' : 'transparent', 'marginTop.px':(0-(containerHeight * 0.25)), 'marginBottom':0, 'width.px':((containerWidth*0.1)+1), 'height.px':(containerHeight * 0.25), 'fontSize.px':(containerHeight * 0.06), 'lineHeight.px':(containerHeight * 0.25), 'bottom.px':((containerHeight / 2)-(containerHeight*0.125)), 'cursor':(videos?.length>1)?'pointer':'' }" style="position:absolute; left:0px; display:inline-block; text-align:left; margin-left:-1px; overflow:hidden; white-space:nowrap;"
      title="{{(videos?.length>1)?'Previous video':''}}" (click)="previousVideo()"
-     (mouseenter)="onMouseEnterButtons()" (mouseleave)="onMouseLeaveButtons()"
+     (mouseenter)="onMouseEnterButtons($event)" (mouseleave)="onMouseLeaveButtons($event)"
      ><mat-icon style="vertical-align:top;" [ngStyle]="{ 'width.px':(containerHeight * 0.25), 'fontSize.px':(containerHeight * 0.25), 'marginLeft.px':0-(containerHeight * 0.060), 'color':((isMobile() || hover || hoverButtons || hoverVideo || forceShowButtons) && videos?.length > 1)?'white':'transparent' }">keyboard_arrow_left</mat-icon><!--
 --></div><!--
-
+   // "Next video" button
 --><div *ngIf="!useBottomButtons" class="slideshow-middle-bt unselectable" [ngStyle]="{ 'backgroundColor':((isMobile() || hover || hoverButtons || hoverVideo || forceShowButtons) && videos?.length > 1) ? 'black' : 'transparent', 'marginTop.px':(0-(containerHeight * 0.25)), 'marginBottom':0, 'width.px':((containerWidth*0.1)+1), 'height.px':(containerHeight * 0.25), 'fontSize.px':(containerHeight * 0.06), 'lineHeight.px':(containerHeight * 0.25), 'bottom.px':((containerHeight / 2)-(containerHeight*0.125)), 'cursor':(videos?.length>1)?'pointer':'' }" style="position:absolute; right:0px; display:inline-block; text-align:right; margin-left:1px; overflow:hidden; white-space:nowrap;"
     title="{{(videos?.length>1)?'Next video':''}}" (click)="nextVideo()"
-    (mouseenter)="onMouseEnterButtons()" (mouseleave)="onMouseLeaveButtons()"
+    (mouseenter)="onMouseEnterButtons($event)" (mouseleave)="onMouseLeaveButtons($event)"
     ><mat-icon style="vertical-align:top;" [ngStyle]="{ 'width.px':(containerHeight * 0.25), 'fontSize.px':(containerHeight * 0.25), 'marginRight.px':0-(containerHeight * 0.060), 'color':((isMobile() || hover || hoverButtons || hoverVideo || forceShowButtons) && videos?.length > 1)?'white':'transparent' }">keyboard_arrow_right</mat-icon><!--
 --></div><!--
 
