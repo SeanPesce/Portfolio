@@ -75,3 +75,11 @@ yarn-error.log
 
 # rollup-test output
 /modules/rollup-test/dist/
+########################
+
+# Project-specific ignore entries
+
+# Data files used by custom deployment scripts
+GH_USER
+GH_PW
+GH_REPO
