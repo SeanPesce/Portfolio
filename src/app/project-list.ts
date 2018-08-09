@@ -263,6 +263,15 @@ export const PROJECTS: Project[] = [
         preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulMultiConsume.jpg'
       },
       {
+        title: 'Game Improvement: Multiple simultaneous covenant tributes',
+        author: 'Sean Pesce',
+        description: '',
+        url: 'https://streamable.com/5y57q',
+        embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulMultiTribute.mp4',
+        // embedUrl: 'https://web.archive.org/web/20180712064932/https://streamable.com/s/5y57q',
+        preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulMultiTribute.jpg'
+      },
+      {
         title: 'Overhaul Feature: Update detection & Message of the Day',
         author: 'Sean Pesce',
         description: '',
