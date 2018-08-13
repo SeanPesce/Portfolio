@@ -202,6 +202,14 @@ export const PROJECTS: Project[] = [
     images: [],
     videos: [
       {
+        title: 'Dark Souls Overhaul Feature Showcase',
+        author: 'Sean Pesce',
+        description: '',
+        url: 'https://www.youtube.com/watch?v=G8-mGx4nf-A',
+        embedUrl: 'https://www.youtube.com/embed/G8-mGx4nf-A',
+        preview: ''
+      },
+      {
         title: 'Game Improvement: Lava brightness settings',
         author: 'Sean Pesce',
         description: '',
