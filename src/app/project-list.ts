@@ -177,11 +177,19 @@ export const PROJECTS: Project[] = [
                 + 'title=\"Git branch for the Dark Souls™: Prepare to Die Edition build of the Overhaul Project\" '
                 + 'target=\"_blank\"><i>Prepare to Die Edition</i> '
                 + 'branch</a> of the project, which actually boasts a more extensive list of fixes and quality-of-life '
-                + 'enhancements than the official Remaster.',
+                + 'enhancements than the official Remaster.<br><br>The '
+                + '<a href=\"https://www.nexusmods.com/darksouls/mods/1474\" '
+                + 'title=\"Download page for the Prepare to Die Edition build\" target=\"_blank\"><i>Prepare to Die '
+                + 'Edition</i> build</a> has been featured '
+                + 'on the official Nexus Mods '
+                + '<a href=\"https://www.facebook.com/nexussites/photos/a.10154520236862834.1073741828.71629282833/10156750712767834\" '
+                + 'title=\"Nexus Mods Facebook page\" target=\"_blank\">Facebook</a> and '
+                + '<a href=\"https://twitter.com/NexusSites/status/1029306754767708160\" title=\"Nexus Mods Twitter\" '
+                + 'target=\"_blank\">Twitter</a> pages.',
     repository: 'https://github.com/metal-crow/Dark-Souls-1-Overhaul',
     isPrivate: false,
     website: '',
-    download: '',
+    download: 'https://www.nexusmods.com/darksouls/mods/1474',
     start: 2016,
     end: 0,
     status: 'In development',
