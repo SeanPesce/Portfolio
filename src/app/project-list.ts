@@ -252,6 +252,18 @@ export const PROJECTS: Project[] = [
         preview: ''
       },
       {
+        title: 'Game Improvement: Omni-directional dodging',
+        author: 'Sean Pesce',
+        description: '',
+        url: 'https://www.youtube.com/watch?v=LT7gOgAzNvs',
+        embedUrl: 'https://www.youtube.com/embed/LT7gOgAzNvs',
+        preview: ''
+        // url: 'https://streamable.com/pb7as',
+        // embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulOmniRoll.mp4',
+        // embedUrl: 'https://web.archive.org/web/20180816190655/https://streamable.com/s/pb7as',
+        // preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulOmniRoll.jpg'
+      },
+      {
         title: 'Game Improvement: Movement while casting spells',
         author: 'metal-crow',
         description: '',
