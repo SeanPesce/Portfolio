@@ -479,7 +479,7 @@ export const SOFTWARES: SoftwareSkill[] = [
     url: 'https://www.jetbrains.com/idea'
   },
   {
-    name: 'MetaSploit',
+    name: 'MetaSploitable',
     description: 'Penetration Testing Environment',
     proficient: false,
     start: 2017,
