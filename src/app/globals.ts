@@ -476,7 +476,15 @@ export const SOFTWARES: SoftwareSkill[] = [
     proficient: false,
     start: 2016,
     logo: '',
-    url: 'https://www.jetbrains.com/idea/'
+    url: 'https://www.jetbrains.com/idea'
+  },
+  {
+    name: 'MetaSploit',
+    description: 'Penetration Testing Environment',
+    proficient: false,
+    start: 2017,
+    logo: '',
+    url: 'https://www.metasploit.com'
   },
   {
     name: 'MySQL Workbench',
