@@ -2,9 +2,21 @@
 <app-page-header [title]="'Employment History'"></app-page-header>
 <div [ngClass]="'content-background ' + (isMobile() ? 'content-section-mobile ' : 'content-section ')">
   <div style="width:90%; padding-left:5%; padding-right:5%;">
+    <!-- SEI job listing: https://www.appone.com/maininforeq.asp?Ad=250944&R_ID=2109035 -->
+    <app-job-card
+      [employer]="'Software Engineering Institute'"
+      [start]="'2018'"
+      [positions]="[ {title:'Security Researcher',
+                        summary:'Member of the Monitoring & Response Directorate, supporting the US Department of Defense through cybersecurity with a focus on applied research into the functionality of emerging and already ubiquitous technologies at all constituent logical layers, from component-level aspects through system and software implementation to communication protocols.',
+                        tasks:['Digital forensics, incident response, investigation, operations, and academic research']}
+                   ]"
+      [url]="'https://www.sei.cmu.edu/about/divisions/cert'"
+      [logo]="ASSETS + '/img/logo/SEI_CERT.jpg'">
+    </app-job-card>
     <app-job-card
       [employer]="'Westhampton Free Library'"
       [start]="'2011'"
+      [end]="'2018'"
       [positions]="[ {title:'Digital Services Clerk',
                         summary:'Provide general-purpose technical assistance for employee and patron issues related to computer systems, software, and/or hardware. Queries could either be in-person or over the phone, and questions were not limited to a specific platform or operating system.',
                         tasks:['In-house software assistance & computer maintenance','Customer service & instruction']},

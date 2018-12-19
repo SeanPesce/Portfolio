@@ -112,6 +112,8 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     username: 'SeanPesce',
     isPrivate: false
   },
+  /*
+  // RIP Google+
   {
     title: 'Google+',
     url: 'https://plus.google.com/u/1/112323386266060385128',
@@ -120,7 +122,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     logo: ASSETS + '/img/social/logo/Google-Plus-color.svg',
     username: AUTHOR,
     isPrivate: false
-  },
+  },*/
   {
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/SeanPesce/',
