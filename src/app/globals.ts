@@ -466,7 +466,7 @@ export const SOFTWARES: SoftwareSkill[] = [
   },
   {
     name: 'IDA',
-    description: 'Disassembler',
+    description: 'Disassembler/decompiler',
     proficient: false,
     start: 2016,
     logo: '',
@@ -481,8 +481,16 @@ export const SOFTWARES: SoftwareSkill[] = [
     url: 'https://www.jetbrains.com/idea'
   },
   {
+    name: 'JEB',
+    description: 'Disassembler/decompiler',
+    proficient: false,
+    start: 2018,
+    logo: '',
+    url: 'https://www.pnfsoftware.com/'
+  },
+  {
     name: 'MetaSploitable',
-    description: 'Penetration Testing Environment',
+    description: 'Penetration testing environment',
     proficient: false,
     start: 2017,
     logo: '',
