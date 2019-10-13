@@ -30,9 +30,9 @@
           </div>
       </mat-card-title>
     </mat-card-header>
-    <mat-card-content style="margin-bottom:5px;" *ngIf="!showYearsInTopRight" [ngStyle]="{ 'paddingLeft.px': showIcon ? 0 : 2, 'marginLeft.px': showIcon ? 0 : 8 }">
+    <!--<mat-card-content style="margin-bottom:5px;" *ngIf="!showYearsInTopRight" [ngStyle]="{ 'paddingLeft.px': showIcon ? 0 : 2, 'marginLeft.px': showIcon ? 0 : 8 }">
       <mat-card-subtitle style="margin-top:2px;"><span *ngIf="yearsExperience() >= 1">{{yearsExperience()}}+ years</span><span *ngIf="yearsExperience() < 1">1 year</span></mat-card-subtitle>
-    </mat-card-content>
+    </mat-card-content>-->
     <mat-card-content style="margin-bottom:5px;" *ngIf="language?.description?.length > 0" [ngStyle]="{ 'paddingLeft.px': showIcon ? 0 : 2, 'marginLeft.px': showIcon ? 0 : 8 }">
       <mat-card-subtitle style="margin-top:5px;">{{language?.description}}</mat-card-subtitle>
     </mat-card-content>

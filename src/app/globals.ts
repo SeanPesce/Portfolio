@@ -378,7 +378,7 @@ export const UTILITIES: UtilitySkill[] = [
     languages: ['C++'],
     url: 'https://www.seqan.de/'
   },
-  {
+  /*{
     name: 'Spring',
     description: 'Back-end web development framework',
     proficient: false,
@@ -386,7 +386,7 @@ export const UTILITIES: UtilitySkill[] = [
     logo: '',
     languages: ['Java'],
     url: 'https://spring.io/'
-  },
+  },*/
   {
     name: 'STL',
     description: 'Standard Template Library',
@@ -457,6 +457,14 @@ export const SOFTWARES: SoftwareSkill[] = [
     url: 'https://www.gnu.org/software/gdb/'
   },
   {
+    name: 'Ghidra',
+    description: 'Disassembler/decompiler',
+    proficient: true,
+    start: 2019,
+    logo: '',
+    url: 'https://www.nsa.gov/resources/everyone/ghidra/'
+  },
+  {
     name: 'Git',
     description: 'Version control',
     proficient: false,
@@ -467,7 +475,7 @@ export const SOFTWARES: SoftwareSkill[] = [
   {
     name: 'IDA',
     description: 'Disassembler/decompiler',
-    proficient: false,
+    proficient: true,
     start: 2016,
     logo: '',
     url: 'https://www.hex-rays.com/products/ida/'
@@ -488,14 +496,14 @@ export const SOFTWARES: SoftwareSkill[] = [
     logo: '',
     url: 'https://www.pnfsoftware.com/'
   },
-  {
+  /*{
     name: 'MetaSploitable',
     description: 'Penetration testing environment',
     proficient: false,
     start: 2017,
     logo: '',
     url: 'https://www.metasploit.com'
-  },
+  },*/
   {
     name: 'MySQL Workbench',
     description: 'Database design',
