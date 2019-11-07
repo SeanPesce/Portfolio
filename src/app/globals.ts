@@ -325,6 +325,15 @@ export const UTILITIES: UtilitySkill[] = [
     url: 'https://www.microsoft.com/en-us/download/details.aspx?id=6812'
   },
   {
+    name: 'Frida',
+    description: 'Binary instrumentation toolkit',
+    proficient: true,
+    start: 2018,
+    logo: '',
+    languages: ['JavaScript', 'Python'],
+    url: 'https://frida.re'
+  },
+  {
     name: 'Inno Setup',
     description: 'Script-driven installation system',
     proficient: false,
