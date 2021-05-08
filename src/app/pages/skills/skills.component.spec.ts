@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SkillsPageComponent } from './skills.component';
 
@@ -7,7 +7,7 @@ describe('SkillsPageComponent', () => {
   let component: SkillsPageComponent;
   let fixture: ComponentFixture<SkillsPageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SkillsPageComponent ]
     })

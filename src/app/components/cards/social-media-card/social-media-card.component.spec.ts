@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SocialMediaCardComponent } from './social-media-card.component';
 
@@ -7,7 +7,7 @@ describe('SocialMediaCardComponent', () => {
   let component: SocialMediaCardComponent;
   let fixture: ComponentFixture<SocialMediaCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SocialMediaCardComponent ]
     })

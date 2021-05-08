@@ -27,7 +27,7 @@ export class UniformImageComponent implements OnInit, AfterViewInit {
   @Input() public usePercent = false; // If false, use pixels for measurement
   @Input() public forceWidth = false; // If true, width is always 100% (if height is greater, top and bottom overflow and are hidden)
 
-  @ViewChild('fullImage') public fullImg: ElementRef;
+  @ViewChild('fullImage', { static: true }) public fullImg: ElementRef;
 
   private _naturalWidth  = 0;
   private _naturalHeight = 0;

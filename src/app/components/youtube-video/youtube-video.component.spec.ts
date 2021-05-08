@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { YoutubeVideoComponent } from './youtube-video.component';
 
@@ -7,7 +7,7 @@ describe('YoutubeVideoComponent', () => {
   let component: YoutubeVideoComponent;
   let fixture: ComponentFixture<YoutubeVideoComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ YoutubeVideoComponent ]
     })

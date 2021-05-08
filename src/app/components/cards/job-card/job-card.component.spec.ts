@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { JobCardComponent } from './job-card.component';
 
@@ -7,7 +7,7 @@ describe('JobCardComponent', () => {
   let component: JobCardComponent;
   let fixture: ComponentFixture<JobCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ JobCardComponent ]
     })

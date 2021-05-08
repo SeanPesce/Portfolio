@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ImageExpandDialogComponent } from './image-expand-dialog.component';
 
@@ -7,7 +7,7 @@ describe('ImageExpandDialogComponent', () => {
   let component: ImageExpandDialogComponent;
   let fixture: ComponentFixture<ImageExpandDialogComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ImageExpandDialogComponent ]
     })

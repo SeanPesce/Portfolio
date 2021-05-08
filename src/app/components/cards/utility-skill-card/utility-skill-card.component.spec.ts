@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UtilitySkillCardComponent } from './utility-skill-card.component';
 
@@ -7,7 +7,7 @@ describe('UtilitySkillCardComponent', () => {
   let component: UtilitySkillCardComponent;
   let fixture: ComponentFixture<UtilitySkillCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ UtilitySkillCardComponent ]
     })

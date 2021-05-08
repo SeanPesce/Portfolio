@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NotImplementedComponent } from './not-implemented.component';
 
@@ -7,7 +7,7 @@ describe('NotImplementedComponent', () => {
   let component: NotImplementedComponent;
   let fixture: ComponentFixture<NotImplementedComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ NotImplementedComponent ]
     })

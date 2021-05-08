@@ -2,7 +2,7 @@
 import * as Globals from './../../globals';
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ImageSlide } from './../../classes/image-slide';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { ImageExpandDialogComponent } from './../dialogs/image-expand-dialog/image-expand-dialog.component';
 
 @Component({

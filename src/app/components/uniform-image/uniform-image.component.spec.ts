@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UniformImageComponent } from './uniform-image.component';
 
@@ -7,7 +7,7 @@ describe('UniformImageComponent', () => {
   let component: UniformImageComponent;
   let fixture: ComponentFixture<UniformImageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ UniformImageComponent ]
     })

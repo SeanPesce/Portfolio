@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VideoSlideshowComponent } from './video-slideshow.component';
 
@@ -7,7 +7,7 @@ describe('VideoSlideshowComponent', () => {
   let component: VideoSlideshowComponent;
   let fixture: ComponentFixture<VideoSlideshowComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VideoSlideshowComponent ]
     })

@@ -1,6 +1,6 @@
 // Author: Sean Pesce
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { NotImplementedDialogComponent } from './../../dialogs/not-implemented-dialog/not-implemented-dialog.component';
 import { UtilitySkill } from './../../../classes/skill-utility';
 

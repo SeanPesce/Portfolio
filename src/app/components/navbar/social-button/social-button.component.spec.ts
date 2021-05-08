@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SocialButtonComponent } from './social-button.component';
 
@@ -7,7 +7,7 @@ describe('SocialButtonComponent', () => {
   let component: SocialButtonComponent;
   let fixture: ComponentFixture<SocialButtonComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SocialButtonComponent ]
     })

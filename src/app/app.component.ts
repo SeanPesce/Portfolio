@@ -2,7 +2,7 @@
 import * as Globals from './globals';
 import { Component } from '@angular/core';
 import { PRODUCTION_MODE } from './globals';
-import { VERSION as NG_MAT_VERSION } from '@angular/material';
+import { VERSION as NG_MAT_VERSION } from '@angular/material/core';
 import { VERSION as NG_COMPILER_VERSION } from '@angular/compiler';
 
 

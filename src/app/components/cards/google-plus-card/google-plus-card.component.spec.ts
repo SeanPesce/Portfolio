@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GooglePlusCardComponent } from './google-plus-card.component';
 
@@ -7,7 +7,7 @@ describe('GooglePlusCardComponent', () => {
   let component: GooglePlusCardComponent;
   let fixture: ComponentFixture<GooglePlusCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ GooglePlusCardComponent ]
     })

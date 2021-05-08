@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LanguageSkillCardComponent } from './language-skill-card.component';
 
@@ -7,7 +7,7 @@ describe('LanguageSkillCardComponent', () => {
   let component: LanguageSkillCardComponent;
   let fixture: ComponentFixture<LanguageSkillCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LanguageSkillCardComponent ]
     })

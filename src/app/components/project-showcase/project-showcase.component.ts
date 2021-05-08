@@ -1,7 +1,8 @@
 // Author: Sean Pesce
 import * as Globals from './../../globals';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { MatTabChangeEvent, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 import { NotImplementedDialogComponent } from './../dialogs/not-implemented-dialog/not-implemented-dialog.component';
 import { FORMATS } from './../../enums/project-format';
 import { PLATFORMS } from './../../enums/project-platform';

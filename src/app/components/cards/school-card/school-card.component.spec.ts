@@ -1,5 +1,5 @@
 // Author: Sean Pesce
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SchoolCardComponent } from './school-card.component';
 
@@ -7,7 +7,7 @@ describe('SchoolCardComponent', () => {
   let component: SchoolCardComponent;
   let fixture: ComponentFixture<SchoolCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SchoolCardComponent ]
     })

@@ -109,7 +109,7 @@ export class VideoComponent implements OnInit, OnChanges {
   public updateMediaControls(): void {
     const vid: HTMLVideoElement = this.getVideoElement();
     if (vid) {
-      if (this.showTitle() && !vid.webkitDisplayingFullscreen) {
+      if (this.showTitle() /*&& !vid.webkitDisplayingFullscreen*/) {
         // Re-apply focus on video element to display media controls
         vid.blur();
         vid.focus();

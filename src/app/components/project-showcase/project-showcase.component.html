@@ -28,11 +28,11 @@
       </div>
       <div *ngIf="project?.platforms?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Platform<span *ngIf="project?.platforms?.length > 1">s</span></h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let platform of project?.platforms; let i = index;">{{PLATFORMS[project?.platforms[i]]}}<span *ngIf="i < (project?.platforms?.length - 1)">,</span> </span></h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let platform of project?.platforms; let i = index;">{{PLATFORMS[project?.platforms[i]]}}<span *ngIf="i < (project?.platforms?.length - 1)">, </span> </span></h4>
       </div>
       <div *ngIf="project?.formats?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Format<span *ngIf="project?.formats?.length > 1">s</span></h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let format of project?.formats; let i = index;">{{FORMATS[project?.formats[i]]}}<span *ngIf="i < (project?.formats?.length - 1)">,</span> </span></h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let format of project?.formats; let i = index;">{{FORMATS[project?.formats[i]]}}<span *ngIf="i < (project?.formats?.length - 1)">, </span> </span></h4>
       </div>
       <div *ngIf="project?.license?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">License</h5>
@@ -77,15 +77,15 @@
       <!-- "Tools" tab -->
       <div *ngIf="project?.languages?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Language<span *ngIf="project?.languages?.length > 1">s</span></h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let language of project?.languages; let i = index;">{{language}}<span *ngIf="i < (project?.languages?.length - 1)">,</span> </span></h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let language of project?.languages; let i = index;">{{language}}<span *ngIf="i < (project?.languages?.length - 1)">, </span> </span></h4>
       </div>
       <div *ngIf="project?.utilities?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Utilit<span>{{(project?.utilities?.length > 1) ? 'ies' : 'y'}}</span></h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let utility of project?.utilities; let i = index;">{{utility}}<span *ngIf="i < (project?.utilities?.length - 1)">,</span> </span></h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let utility of project?.utilities; let i = index;">{{utility}}<span *ngIf="i < (project?.utilities?.length - 1)">, </span> </span></h4>
       </div>
       <div *ngIf="project?.software?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Software</h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let program of project?.software; let i = index;">{{program}}<span *ngIf="i < (project?.software?.length - 1)">,</span> </span></h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let program of project?.software; let i = index;">{{program}}<span *ngIf="i < (project?.software?.length - 1)">, </span> </span></h4>
       </div>
     </mat-card-content>
 
@@ -93,11 +93,11 @@
       <!-- "Team" tab -->
       <div *ngIf="project?.collaborators?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Team</h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let teammate of project?.collaborators; let i = index;"><a *ngIf="teammate?.website?.length > 0 || teammate?.portfolio?.length > 0" href="{{teammate?.website?.length > 0 ? teammate?.website : teammate?.portfolio}}">{{teammate?.name}}</a><span *ngIf="teammate?.website?.length + teammate?.portfolio?.length == 0">{{teammate?.name}}</span><span *ngIf="i < (project?.collaborators?.length - 1)">,</span> </span></h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let teammate of project?.collaborators; let i = index;"><a *ngIf="teammate?.website?.length > 0 || teammate?.portfolio?.length > 0" href="{{teammate?.website?.length > 0 ? teammate?.website : teammate?.portfolio}}">{{teammate?.name}}</a><span *ngIf="teammate?.website?.length + teammate?.portfolio?.length == 0">{{teammate?.name}}</span><span *ngIf="i < (project?.collaborators?.length - 1)">, </span> </span></h4>
       </div>
       <div *ngIf="project?.acknowledgements?.length > 0">
         <h5 class="mat-h5 txt-color-dark" style="padding-top:5px; margin-bottom:-2px;">Contributor<span *ngIf="project?.acknowledgements?.length > 1">s</span></h5>
-        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let contributor of project?.acknowledgements; let i = index;">{{contributor?.name}}<span *ngIf="i < (project?.acknowledgements?.length - 1)">,</span> </span></h4>
+        <h4 class="mat-h4" style="margin-bottom:5px; line-height:20px;"><span *ngFor="let contributor of project?.acknowledgements; let i = index;">{{contributor?.name}}<span *ngIf="i < (project?.acknowledgements?.length - 1)">, </span> </span></h4>
       </div>
     </mat-card-content>
   </mat-card>

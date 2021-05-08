@@ -1,7 +1,7 @@
 // Author: Sean Pesce
 import * as Globals from './../../globals';
 import { Component, OnInit } from '@angular/core';
-import { MatTabChangeEvent } from '@angular/material';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 import { SocialMedia } from './../../classes/social-media-profile';
 
 @Component({
