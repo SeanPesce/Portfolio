@@ -5,12 +5,12 @@ GitHub page for my resume & software portfolio.
 
 ## Built With  
 
- * [Angular CLI v1.7.1](https://cli.angular.io/)  
- * [Angular Framework v5.2.6](https://angular.io/)  
+ * [Angular CLI](https://cli.angular.io/)  
+ * [Angular Framework](https://angular.io/)  
  * [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)  
  * [GitHub Pages](https://pages.github.com/)  
  * [Material Design Icons](https://material.io/icons)  
- * [Node.js® v6.11.3](https://nodejs.org)  
+ * [Node.js®](https://nodejs.org)  
  * [Visual Studio Code](https://code.visualstudio.com/)  
 
 
