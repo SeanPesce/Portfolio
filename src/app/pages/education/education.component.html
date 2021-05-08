@@ -1,7 +1,16 @@
 <!-- Author: Sean Pesce -->
-<app-page-header [title]="'Education'"></app-page-header>
+<app-page-header [title]="'Degrees & Professional Certifications'"></app-page-header>
 <div [ngClass]="'content-background ' + (isMobile() ? 'content-section-mobile ' : 'content-section ')">
   <div style="width:90%; padding-left:5%; padding-right:5%;">
+    <app-school-card
+      [school]="'Offensive Security Certified Professional'"
+      [start]="'November 2020'"
+      [end]="'May 2021'"
+      [degree]="'Certification ID: OS-101-34893'"
+      [url]="'https://www.offensive-security.com/pwk-oscp/'"
+      [logo]="ASSETS + '/img/logo/OSCP.png'"
+      [maxWidth]="800">
+    </app-school-card>
     <app-school-card
       [school]="'Stony Brook University'"
       [start]="'September 2013'"

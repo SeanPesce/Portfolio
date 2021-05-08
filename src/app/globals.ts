@@ -56,7 +56,7 @@ export const PAGE_HOVER_TXT: string [] = [
   'Resume & About Me',
   'Personal Projects',
   'Languages, tools, platforms, etc.',
-  'Degrees & Education',
+  'Degrees & Professional Certifications',
   'Employment History',
   'Social Media'
 ];
@@ -159,7 +159,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     username: 'pescesean',
     isPrivate: false
   },
-  {
+  /*{
     title: 'Steam',
     url: 'http://steamcommunity.com/id/SeanPesce',
     website: 'http://www.steampowered.com/',
@@ -167,7 +167,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
     logo: ASSETS + '/img/social/logo/Steam-color.svg',
     username: 'SeanPesce',
     isPrivate: true
-  },
+  },*/
   {
     title: 'Trello',
     url: 'https://trello.com/seanpesce',
@@ -505,14 +505,6 @@ export const SOFTWARES: SoftwareSkill[] = [
     logo: '',
     url: 'https://www.pnfsoftware.com/'
   },
-  /*{
-    name: 'MetaSploitable',
-    description: 'Penetration testing environment',
-    proficient: false,
-    start: 2017,
-    logo: '',
-    url: 'https://www.metasploit.com'
-  },*/
   {
     name: 'MySQL Workbench',
     description: 'Database design',
