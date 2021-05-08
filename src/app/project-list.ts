@@ -221,7 +221,7 @@ export const PROJECTS: Project[] = [
         title: 'Game Improvement: Lava brightness settings',
         author: 'Sean Pesce',
         description: '',
-        url: 'https://streamable.com/lrf0b',
+        url: ASSETS + 'video/projects/DarkSoulsOverhaulDimLava.mp4',
         embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulDimLava.mp4',
         // embedUrl: 'https://web.archive.org/web/20180712090732/https://streamable.com/s/lrf0b',
         preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulDimLava.jpg'
@@ -238,7 +238,7 @@ export const PROJECTS: Project[] = [
         title: 'Game Improvement: Save file selection dialog',
         author: 'Sean Pesce',
         description: '',
-        url: 'https://streamable.com/6ti45',
+        url: ASSETS + 'video/projects/DarkSoulsOverhaulSaveSelectDlg.mp4',
         embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulSaveSelectDlg.mp4',
         // embedUrl: 'https://web.archive.org/web/20180712064923/https://streamable.com/s/6ti45',
         preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulSaveSelectDlg.jpg'
@@ -267,7 +267,7 @@ export const PROJECTS: Project[] = [
         title: 'Game Improvement: Movement while casting spells',
         author: 'metal-crow',
         description: '',
-        url: 'https://streamable.com/gvy2a',
+        url: ASSETS + 'video/projects/DarkSoulsOverhaulMoveWhileCasting.mp4',
         embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulMoveWhileCasting.mp4',
         // embedUrl: 'https://web.archive.org/web/20180712064429/https://streamable.com/s/gvy2a',
         preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulMoveWhileCasting.jpg'
@@ -276,7 +276,7 @@ export const PROJECTS: Project[] = [
         title: 'Game Improvement: Weapon durability HUD meters',
         author: 'Sean Pesce',
         description: '',
-        url: 'https://streamable.com/7mmq3',
+        url: ASSETS + 'video/projects/DarkSoulsOverhaulDurabilityBars.mp4',
         embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulDurabilityBars.mp4',
         // embedUrl: 'https://web.archive.org/web/20180712064939/https://streamable.com/s/7mmq3',
         preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulDurabilityBars.jpg'
@@ -285,7 +285,7 @@ export const PROJECTS: Project[] = [
         title: 'Game Improvement: Multiple simultaneous item consumption',
         author: 'Sean Pesce',
         description: '',
-        url: 'https://streamable.com/064sk',
+        url: ASSETS + 'video/projects/DarkSoulsOverhaulMultiConsume.mp4',
         embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulMultiConsume.mp4',
         // embedUrl: 'https://web.archive.org/web/20180712064932/https://streamable.com/s/064sk',
         preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulMultiConsume.jpg'
@@ -294,7 +294,7 @@ export const PROJECTS: Project[] = [
         title: 'Game Improvement: Multiple simultaneous covenant tributes',
         author: 'Sean Pesce',
         description: '',
-        url: 'https://streamable.com/5y57q',
+        url: ASSETS + 'video/projects/DarkSoulsOverhaulMultiTribute.mp4',
         embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulMultiTribute.mp4',
         // embedUrl: 'https://web.archive.org/web/20180712064932/https://streamable.com/s/5y57q',
         preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulMultiTribute.jpg'
@@ -303,7 +303,7 @@ export const PROJECTS: Project[] = [
         title: 'Overhaul Feature: Update detection & Message of the Day',
         author: 'Sean Pesce',
         description: '',
-        url: 'https://streamable.com/jd26c',
+        url: ASSETS + 'video/projects/DarkSoulsOverhaulUpdateAndMotD.mp4',
         embedUrl: ASSETS + 'video/projects/DarkSoulsOverhaulUpdateAndMotD.mp4',
         // embedUrl: 'https://web.archive.org/web/20180712064957/https://streamable.com/s/jd26c',
         preview: ASSETS + 'video/projects/preview/DarkSoulsOverhaulUpdateAndMotD.jpg'
