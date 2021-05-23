@@ -1,5 +1,8 @@
 @ECHO OFF
 
+REM @TODO: Fix this script to use the newer deploy command:
+REM        ng deploy --repo=https://github.com/SeanPesce/Portfolio.git
+
 REM This script executes "ng build --prod" which compiles a production-ready build of the web app,
 REM and then runs "angular-cli-ghpages --repo=https://%GITHUB_USERNAME%:%GITHUB_PASSWORD%@github.com/%GITHUB_REPOSITORY%.git"
 REM to deploy the web app to GitHub pages.
