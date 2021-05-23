@@ -86,6 +86,15 @@ export const PROFILE_PICS: ImageSlide[] = [
 
 export const SOCIAL_MEDIA: SocialMedia[] = [
   {
+    title: 'Credly',
+    url: 'https://www.credly.com/users/sean-pesce/badges',
+    website: 'https://www.credly.com/',
+    icon: ASSETS + '/img/social/icon/Credly-white-transparent.png',
+    logo: ASSETS + '/img/social/logo/Credly-vectorized.svg',
+    username: 'Sean Pesce',
+    isPrivate: false
+  },
+  {
     title: 'Discord',
     url: '',
     website: 'https://discordapp.com/',
