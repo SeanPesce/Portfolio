@@ -65,8 +65,14 @@ export const PROJECTS: Project [] = Projects.PROJECTS;
 
 export const PROFILE_PICS: ImageSlide[] = [
   {
+    src: '/img/profile/03.jpg',
+    title: 'Coffee date in Pittsburgh (2021)',
+    alt: 'Pofile picture',
+    ariaLabel: ''
+  },
+  {
     src: '/img/profile/01.png',
-    title: 'My girlfriend and I (2017)',
+    title: 'My wife (then girlfriend) and I (2017)',
     alt: 'Pofile picture',
     ariaLabel: ''
   },
