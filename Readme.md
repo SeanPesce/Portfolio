@@ -16,7 +16,7 @@ GitHub page for my resume & software portfolio.
 
 ## Deployment  
 
-See the auto-generated [Angular CLI Readme](Readme_AngularCLI.md).  
+See the auto-generated [Angular CLI Readme](Readme_AngularCLI.md) and the [`angular-cli-pages` documentation](https://www.npmjs.com/package/angular-cli-ghpages).  
 
 
 ## Author  
